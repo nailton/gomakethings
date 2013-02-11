@@ -1,19 +1,21 @@
 <?php get_header(); ?>
 
-<article>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<header>
-			<h1><?php the_title(); ?></h1>
-		</header>
+    <article>
 
-		<?php the_content(); ?>
+	    <header>
+		    <h1><?php the_title(); ?></h1>
+	    </header>
 
-		<?php edit_post_link('[Edit]', '<p>', '</p>'); ?>
+	    <?php the_content(); ?>
 
-	<?php endwhile; endif; ?>
+	    <?php edit_post_link('[Edit]', '<p>', '</p>'); ?>
 
-</article>
+    </article>
+
+<?php endwhile; endif; ?>
+
 
 <?php get_footer(); ?>
