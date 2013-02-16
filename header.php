@@ -12,7 +12,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	    <!-- Stylesheet -->
-	    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen">
+	    <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
 
         <!-- HTML5 Shim for IE 6-8 -->
 	    <!--[if lt IE 9]>    
@@ -44,10 +44,9 @@
     <body>
     
         <header class="container">
-	        <!-- Old Browser Warning -->
-	        <!-- If you're supporting IE 6-8, remove this -->
+            <!-- Old Browser Warning -->
             <!--[if lt IE 9]>
-                Did you know that your web browser (<em>the program you're using to access the internet</em>) is a bit old? Some of the content on this site might not work right as a result. <a href="http://whatbrowser.org">Upgrade your browser</a> for a faster, better, and safer web experience.
+                <span class="text-muted text-small">Did you know that your web browser is a bit old? Some of the content on this site might not work right as a result. <a href="http://whatbrowser.org">Upgrade your browser</a> for a faster, better, and safer web experience.</span>
             <![endif]-->
 
             <nav class="text-center">

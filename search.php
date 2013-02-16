@@ -42,7 +42,7 @@
 		</header>
 		<p>Sorry, your search didn't turn up any results. Maybe try using different keywords?</p>
 
-		<?php echo kraken_wpsearch(); ?>
+		<?php echo gmt_wpsearch(); ?>
 	</article>
 <?php endif; ?>
 	
