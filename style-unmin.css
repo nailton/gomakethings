@@ -46,8 +46,8 @@ time, mark, audio, video {
     margin: 0; 
     padding: 0; 
     border: 0; 
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 100%; 
+    font-family: Georgia, Times, serif;
+    font-size: 106.25%; 
     font: inherit; 
     vertical-align: baseline; 
 }
@@ -925,6 +925,14 @@ table {
         text-shadow: none !important;
     }
 
+    body {
+        border-top: none;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
     a, a:visited {
         text-decoration: underline;
     }
@@ -933,27 +941,13 @@ table {
         content: " (" attr(href) ")";
     }
 
-    a[href^="#"]:after {
+    a[href^="#"]:after, a.logo:after {
         content: "";
     }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
+    pre, blockquote {
+        border-color: #999;
         page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    @page {
-        margin: 0.5cm;
     }
 
     p, h1, h2, h3 {
@@ -963,6 +957,19 @@ table {
 
     h1, h2, h3 {
         page-break-after: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr, img {
+        page-break-inside: avoid;
+    }
+
+    form, .nav, #respond {
+        display: none;
+        visibility: hidden;
     }
     
 }
