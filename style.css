@@ -247,6 +247,11 @@ p {
     line-height: 1.4;
 }
 
+.text-venti {
+    font-size: 2em;
+    line-height: 1.2;
+}
+
 @media (min-width: 28.235294118em) {
     .text-grande {
         font-size: 1.529411765em;

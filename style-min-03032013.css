@@ -62,6 +62,7 @@ p{margin-bottom:1.529411765em;}
 .text-small{font-size:.882352941em;line-height:1.533333333;}
 .text-tall{font-size:1.166666667em;line-height:1.4;}
 .text-grande{font-size:1.352941176em;line-height:1.4;}
+.text-venti{font-size: 2em;line-height: 1.2;}
 @media (min-width:28.235294118em){.text-grande{font-size:1.529411765em;}
 }
 @media (min-width:37.647058824em){.text-tall{font-size:1.352941176em;}
