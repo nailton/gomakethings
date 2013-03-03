@@ -23,7 +23,7 @@
 
 <?php if ($comments) : ?>
 
-	<ul class="unstyled">
+	<ul class="list-unstyled">
 
 	    <?php foreach ($comments as $comment) : ?>
 

@@ -1,4 +1,4 @@
-/* View an unminified version of this stylesheet at http://gomakethings.com/wp-content/themes/gomakethingsv4.1/style.css */
+/* View an unminified version of this stylesheet at http://gomakethings.com/wp-content/themes/gomakethingsv4.2/style.css */
 @-webkit-viewport{width:device-width;zoom:1.0;}
 @-moz-viewport{width:device-width;zoom:1.0;}
 @-ms-viewport{width:device-width;zoom:1.0;}
@@ -70,13 +70,14 @@ p{margin-bottom:1.529411765em;}
 .text-muted{color:#808080;}
 a{color:#0088cc;text-decoration:none;}
 a:hover{color:#005580;text-decoration:underline;}
+.link-unstyled:hover{text-decoration:none;}
 a img{border:none;background:none;}
 a:hover img{border:none;background:none;opacity:0.8;filter:alpha(opacity=80);}
 ul, ol{margin-bottom:1.529411765em;margin-left:2em;}
 ul ul, ul ol, ol ol, ol ul{margin-bottom:0;}
 ul{list-style:disc;}
 ol{list-style:decimal;}
-.unstyled{margin-left:0;list-style:none;}
+.list-unstyled{list-style:none;margin-left:0;}
 h1, h2, h3, h4, h5, h6{line-height:1.2;font-weight:normal;margin-bottom:1em;padding-top:1em;text-align:center;}
 h1, .h1{font-size:1.529411765em;padding-top:.307692308em;}
 h2, .h2{font-size:1.352941176em;}
@@ -140,7 +141,16 @@ url('fonts/icomoon.svg#IcoMoon') format('svg');font-weight:normal;font-style:nor
 .icon-twitter:before{content:"\e003";}
 .icon-search:before{content:"\e004";}
 .icon-heart:before{content:"\e005";}
+.icon-paws:before{content:"\e006";}
+.icon-jetpack:before{content:"\e007";}
+.icon-petfinder:before{content:"\e008";}
 .icon-heart{color:#880e14;}
+a .icon-paws{color:#6aa120;}
+a .icon-jetpack{color:#4d4d4d;}
+a .icon-petfinder{color:#4b1f6f;}
+a:hover .icon-paws,
+a:hover .icon-jetpack,
+a:hover .icon-petfinder{color:#005580;}
 .img-rounded{border-radius:.352941176em;}
 .img-border, .img-polaroid{border:.071428571em solid #ccc;box-shadow:0 .071428571em .176470588em rgba(0, 0, 0, 0.1);}
 .img-polaroid{padding:.235294118em;background-color:#ffffff.176470588;}
