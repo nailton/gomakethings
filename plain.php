@@ -8,10 +8,6 @@ Template Name: Plain
 
     <article>
 
-	    <header class="screen-reader">
-		    <h1><?php the_title(); ?></h1>
-	    </header>
-
 	    <?php the_content(); ?>
 
 	    <?php edit_post_link('[Edit]', '<p>', '</p>'); ?>
