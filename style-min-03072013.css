@@ -62,7 +62,7 @@ p{margin-bottom:1.529411765em;}
 .text-small{font-size:.882352941em;line-height:1.533333333;}
 .text-tall{font-size:1.166666667em;line-height:1.4;}
 .text-grande{font-size:1.352941176em;line-height:1.4;}
-.text-venti{font-size: 2em;line-height: 1.2;}
+.text-venti{font-size:2em;line-height:1.2;}
 @media (min-width:28.235294118em){.text-grande{font-size:1.529411765em;}
 }
 @media (min-width:37.647058824em){.text-tall{font-size:1.352941176em;}
@@ -152,9 +152,7 @@ a .icon-petfinder{color:#4b1f6f;}
 a:hover .icon-paws,
 a:hover .icon-jetpack,
 a:hover .icon-petfinder{color:#005580;}
-.img-rounded{border-radius:.352941176em;}
-.img-border, .img-polaroid{border:.071428571em solid #ccc;box-shadow:0 .071428571em .176470588em rgba(0, 0, 0, 0.1);}
-.img-polaroid{padding:.235294118em;background-color:#ffffff.176470588;}
+.img-border{border:.071428571em solid #ccc;box-shadow:0 .071428571em .176470588em rgba(0, 0, 0, 0.1);}
 .img-circle, .avatar{border-radius:50%;}
 .avatar{float:left;margin-right:.823529412em;height:3.529411765em;width:3.529411765em;}
 .alignleft,

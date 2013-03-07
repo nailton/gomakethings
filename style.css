@@ -679,18 +679,9 @@ a:hover .icon-petfinder {
 /*  IMAGES */
 /*  Styling for images. */
 
-.img-rounded { 
-    border-radius: .352941176em; 
-}
-
-.img-border, .img-polaroid { 
+.img-border { 
     border: .071428571em solid #ccc;
     box-shadow: 0 .071428571em .176470588em rgba(0, 0, 0, 0.1); 
-}
-
-.img-polaroid { 
-    padding: .235294118em; 
-    background-color: #ffffff.176470588; 
 }
 
 .img-circle, .avatar { 
