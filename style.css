@@ -550,7 +550,8 @@ input, textarea, select {
     margin-bottom: 1.176470588em; 
     padding: .294117647em; 
     border: .071428571em solid #b8b8b8; 
-    border-radius: .176470588em; 
+    border-radius: .071428571em;
+    -webkit-appearance: none;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
@@ -582,9 +583,7 @@ input[type="submit"] {
 
 input:focus, 
 textarea:focus { 
-    border-color: rgba(82, 168, 236, 0.8); 
-    -webkit-box-shadow: inset 0 .071428571em .071428571em rgba(0, 0, 0, 0.075), 0 0 .470588235em rgba(82, 168, 236, 0.6);
-            box-shadow: inset 0 .071428571em .071428571em rgba(0, 0, 0, 0.075), 0 0 .470588235em rgba(82, 168, 236, 0.6);
+    border-color: #0088cc;
     outline: 0; 
     outline: thin dotted \9; 
 }
