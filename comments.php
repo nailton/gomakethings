@@ -19,7 +19,7 @@
 <!-- You can start editing here. -->
 <h2 id="comments"><?php comments_number( 'Respond', '1 Response', '% Responses' ); ?></h2>
 
-<p><a href="#respond">Leave a comment</a> or contact me on Twitter at <a href="http://twitter.com/ChrisFerdinandi">@ChrisFerdinandi</a>.</p>
+<p><a href="#respond">Leave a comment</a> or contact me on Twitter at <a rel="nofollow" target="_blank" href="http://twitter.com/?status=<?php the_title(); ?>%20<?php echo the_permalink(); ?>%20by%20@ChrisFerdinandi">@ChrisFerdinandi</a>.</p>
 
 <?php if ($comments) : ?>
 
