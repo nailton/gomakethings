@@ -5,21 +5,22 @@
     Author: Chris Ferdinandi
     Author URI: http://gomakethings.com
 
-	COLORS
-	Blue: #3892d0
-	Dark Blue: #266ea0
-	Dark Gray: #272727
-	Meta Gray: #808080
-	Lite Gray: #e5e5e5
+
+    COLORS
+    Blue: #0088cc
+    Dark Blue: #005580
+    Dark Gray: #272727
+    Meta Gray: #808080
+    Lite Gray: #e5e5e5
 
 
-	FONT STACKS
+    FONT STACKS
     Serif: Georgia, Times, serif
-	Sans-Serif: "Helvetica Neue", Arial, sans-serif
+    Sans-Serif: "Helvetica Neue", Arial, sans-serif
 
 
-	TYPOGRAPHIC SCALE
-	4px, 5px, 8px, 10px, 11px, 14px, 15px, 17px (base), 20px, 23px, 26px, 30px, 34px, 51px, 68px, 85px, 102px
+    TYPOGRAPHIC SCALE
+    4px, 5px, 8px, 10px, 11px, 14px, 15px, 17px (base), 20px, 23px, 26px, 30px, 34px, 51px, 68px, 85px, 102px
 	
 
 */
@@ -416,9 +417,14 @@ sub {
     bottom: -0.25em; 
 }
 
-::selection, ::-moz-selection { 
+::selection { 
     color: #ffffff; 
-    background: #3892d0; 
+    background: #0088cc; 
+}
+
+::-moz-selection { 
+    color: #ffffff; 
+    background: #0088cc; 
 }
 
 blockquote {
@@ -582,7 +588,9 @@ input[type="submit"] {
 
 input:focus, 
 textarea:focus { 
-    border-color: #0088cc;
+    border-color: rgba(82, 168, 236, 0.8); 
+    -webkit-box-shadow: inset 0 .071428571em .071428571em rgba(0, 0, 0, 0.075), 0 0 .470588235em rgba(82, 168, 236, 0.6);
+            box-shadow: inset 0 .071428571em .071428571em rgba(0, 0, 0, 0.075), 0 0 .470588235em rgba(82, 168, 236, 0.6);
     outline: 0; 
     outline: thin dotted \9; 
 }
