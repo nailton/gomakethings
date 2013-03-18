@@ -32,7 +32,8 @@
 		        <hr class="no-space-bottom">
 		
 		        <?php if ($comment->comment_approved == '0') : ?>
-			        <p>Your comment is being held for moderation.</p>
+			        <p>Your comment is being held for moderation, either because it contained a link or WordPress thought it was spam. I'll approve it as soon as possible.</p>
+			        <p>Cheers!<br>Chris</p>
 		        <?php endif; ?>
 
 		        <article>
