@@ -551,7 +551,6 @@ input, textarea, select {
     padding: .294117647em; 
     border: .071428571em solid #b8b8b8; 
     border-radius: .071428571em;
-    -webkit-appearance: none;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
