@@ -212,7 +212,7 @@ a:hover, a:active {
 /*  Sets font styles for entire site. */
 
 body { 
-    font-family: Georgia, Times, serif;
+    font-family: "Lato", Georgia, Times, serif;
     font-size: 106.25%; 
     line-height: 1.470588235; 
     color: #272727; 
@@ -335,7 +335,7 @@ ol {
 
 h1, h2, h3, h4, h5, h6 { 
     line-height: 1.2; 
-    font-weight: normal;
+    font-weight: bold;
     margin-bottom: 1em; 
     padding-top: 1em;
     text-align: center;
@@ -795,6 +795,7 @@ table {
     margin-top: .470588235em;
     margin-bottom: .235294118em;
     text-decoration: none;
+    font-weight: 900;
 }
 
 .logo:hover {
