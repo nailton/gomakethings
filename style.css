@@ -1,7 +1,7 @@
 /*
 
-    Theme Name: Go Make Things v5.1
-    Version: 5.1
+    Theme Name: Go Make Things v5.2
+    Version: 5.2
     Author: Chris Ferdinandi
     Author URI: http://gomakethings.com
 
@@ -16,7 +16,6 @@
 
     FONT STACKS
     Serif: Georgia, Times, serif
-    Sans-Serif: "Helvetica Neue", Arial, sans-serif
 
 
     TYPOGRAPHIC SCALE
@@ -335,13 +334,13 @@ ol {
 
 h1, h2, h3, h4, h5, h6 { 
     line-height: 1.2; 
-    font-weight: bold;
+    font-weight: normal;
     margin-bottom: 1em; 
     padding-top: 1em;
     text-align: center;
 }
 
-h1, .h1 { 
+h1, .h1 {
     font-size: 1.529411765em; 
     padding-top: .307692308em;
 }
@@ -795,7 +794,6 @@ table {
     margin-top: .470588235em;
     margin-bottom: .235294118em;
     text-decoration: none;
-    font-weight: 900;
 }
 
 .logo:hover {
