@@ -1,6 +1,8 @@
 		    <footer class="text-center text-small">
 			    <hr>
 
+			    <p class="space-bottom-small"><a href="http://twitter.com/ChrisFerdinandi"><i class="icon-twitter"></i> Twitter</a> &nbsp;&bull;&nbsp; <a href="http://feeds.feedburner.com/GoMakeThings"><i class="icon-rss"></i> RSS Feed</a></p>
+			    
 			    <p class="space-bottom">Made with <i class="icon-heart"></i><span class="screen-reader">love</span> by Chris Ferdinandi.<br>Remix freely under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>. <a href="<?php echo get_option('home'); ?>/disclaimer/">Disclaimers</a>.</p>
 		    </footer>
 

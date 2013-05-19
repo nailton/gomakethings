@@ -12,7 +12,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	    <!-- Stylesheet -->
-	    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.min.04192013.css">
+	    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.min.05192013.css">
 
         <!-- HTML5 Shim for IE 6-8 -->
 	    <!--[if lt IE 9]>    
@@ -53,9 +53,9 @@
                 <a class="logo" href="<?php echo get_option('home'); ?>/"><i class="icon-logo"></i> Go Make Things</a>
                 <ul class="nav">
                     <li <?php if (is_front_page() || is_single()) { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/">Writing</a></li>
-                    <li <?php if (is_page('about') || $post->post_parent == '2') { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/about/">About</a></li>
+                    <li <?php if (is_page('about')) { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/about/">About</a></li>
+                    <li <?php if (is_page('Projects') || $post->post_parent == '4493') { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/projects/">Projects</a></li>
                     <li <?php if (is_page('Search') || is_search() || is_archive()) { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/search/">Search</a></li>
-                    <li><a href="http://feeds.feedburner.com/GoMakeThings">RSS Feed</a></li>
                 </ul>
             </nav>
         </header>
