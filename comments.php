@@ -82,7 +82,7 @@
 
 	    <?php if ( $user_ID ) : ?>
 
-		    <p class="muted"><em>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Logout &raquo;</a></em></p>
+		    <p>Logged in as <?php echo $user_identity; ?>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout">Logout</a></p>
 
 	    <?php else : ?>
 	        <div class="row">
