@@ -23,51 +23,47 @@
 
 <?php if ($comments) : ?>
 
-	<ul class="list-unstyled">
+        <?php foreach ($comments as $comment) : ?>
 
-	    <?php foreach ($comments as $comment) : ?>
+            <article id="comment-<?php comment_ID() ?>">
 
-	        <li id="comment-<?php comment_ID() ?>">
+	            <hr class="no-space-bottom">
+	
+	            <?php if ($comment->comment_approved == '0') : ?>
+		            <p>Your comment is being held for moderation, either because it contained a link or WordPress thought it was spam. I'll approve it as soon as possible.</p>
+		            <p>Cheers!<br>Chris</p>
+	            <?php endif; ?>
 
-		        <hr class="no-space-bottom">
-		
-		        <?php if ($comment->comment_approved == '0') : ?>
-			        <p>Your comment is being held for moderation, either because it contained a link or WordPress thought it was spam. I'll approve it as soon as possible.</p>
-			        <p>Cheers!<br>Chris</p>
-		        <?php endif; ?>
+	            <article>
+		            <header class="group">
+			            <figure>
+				            <p><?php echo get_avatar( $comment, $size = '120' ); // $size at 2x for retina displays ?></p>
+			            </figure>
+			            <h3 class="text-left no-space"><?php comment_author_link() ?></h3>
+			            <aside>
+				            <p class="text-small text-muted"><?php comment_date('F jS, Y') ?><?php edit_comment_link('[Edit]', ' - ', ''); ?></p>
+			            </aside>
+		            </header>
 
-		        <article>
-			        <header class="group">
-				        <figure>
-					        <p><?php echo get_avatar( $comment, $size = '120' ); // $size at 2x for retina displays ?></p>
-				        </figure>
-				        <h3 class="text-left no-space"><?php comment_author_link() ?></h3>
-				        <aside>
-					        <p class="text-small text-muted"><?php comment_date('F jS, Y') ?><?php edit_comment_link('[Edit]', ' - ', ''); ?></p>
-				        </aside>
-			        </header>
+		            <?php comment_text() ?>
+	            <article>
+	
+            </article>
 
-			        <?php comment_text() ?>
-		        <article>
-		
-	        </li>
-
-		<?php endforeach; // end for each comment ?>
-
-	</ul>
+	    <?php endforeach; // end for each comment ?>
 
 
 
 <?php else : // this is displayed if there are no comments so far ?>
 
-	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
+    <?php if ('open' == $post->comment_status) : ?>
+	    <!-- If comments are open, but there are no comments. -->
 
-	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p>Comments are closed.</p>
+     <?php else : // comments are closed ?>
+	    <!-- If comments are closed. -->
+	    <p>Comments are closed.</p>
 
-	<?php endif; ?>
+    <?php endif; ?>
 <?php endif; ?>
 
 
@@ -76,43 +72,43 @@
     <h2 id="respond">Leave a Reply</h2>
 
     <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-	    <!-- If user must be logged in to comment -->
+        <!-- If user must be logged in to comment -->
     <?php else : ?>
     <form class="text-center" id="commentform" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
 
-	    <?php if ( $user_ID ) : ?>
+        <?php if ( $user_ID ) : ?>
 
-		    <p>Logged in as <?php echo $user_identity; ?>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout">Logout</a></p>
+	        <p>Logged in as <?php echo $user_identity; ?>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout">Logout</a></p>
 
-	    <?php else : ?>
-	        <div class="row">
+        <?php else : ?>
+            <div class="row">
         	        <div class="grid-4 offset-1">
-		            <label for="author" class="text-small">Your Name</label>
-		            <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" tabindex="1" required>
+	                <label for="author" class="text-small">Your Name</label>
+	                <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" tabindex="1" required>
         		    </div>
-		    </div>
+	        </div>
 
-	        <div class="row">
+            <div class="row">
         	        <div class="grid-4 offset-1">
-		            <label for="email" class="text-small">Your Email</label>
-		            <input type="email" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" required>
+	                <label for="email" class="text-small">Your Email</label>
+	                <input type="email" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" required>
         		    </div>
-		    </div>
+	        </div>
 
-	        <div class="row">
+            <div class="row">
         	        <div class="grid-4 offset-1">
-		            <label for="url" class="text-small">Your Website (optional)</label>
-		            <input type="url" name="url" id="url" value="<?php echo $comment_author_url; ?>" tabindex="3" >
+	                <label for="url" class="text-small">Your Website (optional)</label>
+	                <input type="url" name="url" id="url" value="<?php echo $comment_author_url; ?>" tabindex="3" >
         		    </div>
-		    </div>
-	    <?php endif; ?>
+	        </div>
+        <?php endif; ?>
 
-		    <textarea name="comment" id="comment" tabindex="4" required></textarea>
+	        <textarea name="comment" id="comment" tabindex="4" required></textarea>
 
-		    <input name="submit" type="submit" class="btn" id="submit" tabindex="5" value="Submit Comment">
-		    <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
+	        <input name="submit" type="submit" class="btn" id="submit" tabindex="5" value="Submit Comment">
+	        <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 
-		    <?php do_action('comment_form', $post->ID); ?>
+	        <?php do_action('comment_form', $post->ID); ?>
 
     </form>
 
