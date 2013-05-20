@@ -23,34 +23,32 @@
 
 <?php if ($comments) : ?>
 
-        <?php foreach ($comments as $comment) : ?>
+    <?php foreach ($comments as $comment) : ?>
 
-            <article id="comment-<?php comment_ID() ?>">
+        <article id="comment-<?php comment_ID() ?>">
 
-	            <hr class="no-space-bottom">
-	
-	            <?php if ($comment->comment_approved == '0') : ?>
-		            <p>Your comment is being held for moderation, either because it contained a link or WordPress thought it was spam. I'll approve it as soon as possible.</p>
-		            <p>Cheers!<br>Chris</p>
-	            <?php endif; ?>
+            <hr class="no-space-bottom">
 
-	            <article>
-		            <header class="group">
-			            <figure>
-				            <p><?php echo get_avatar( $comment, $size = '120' ); // $size at 2x for retina displays ?></p>
-			            </figure>
-			            <h3 class="text-left no-space"><?php comment_author_link() ?></h3>
-			            <aside>
-				            <p class="text-small text-muted"><?php comment_date('F jS, Y') ?><?php edit_comment_link('[Edit]', ' - ', ''); ?></p>
-			            </aside>
-		            </header>
+            <?php if ($comment->comment_approved == '0') : ?>
+	            <p>Your comment is being held for moderation, either because it contained a link or WordPress thought it was spam. I'll approve it as soon as possible.</p>
+	            <p>Cheers!<br>Chris</p>
+            <?php endif; ?>
 
-		            <?php comment_text() ?>
-	            <article>
-	
-            </article>
+            <header class="group">
+	            <figure>
+		            <p><?php echo get_avatar( $comment, $size = '120' ); // $size at 2x for retina displays ?></p>
+	            </figure>
+	            <h3 class="text-left no-space"><?php comment_author_link() ?></h3>
+	            <aside>
+		            <p class="text-small text-muted"><?php comment_date('F jS, Y') ?><?php edit_comment_link('[Edit]', ' - ', ''); ?></p>
+	            </aside>
+            </header>
 
-	    <?php endforeach; // end for each comment ?>
+            <?php comment_text() ?>
+
+        </article>
+
+    <?php endforeach; // end for each comment ?>
 
 
 
