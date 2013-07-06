@@ -99,7 +99,7 @@ sup{top:-0.5em;}
 sub{bottom:-0.25em;}
 ::selection{color:#ffffff;background:#0088cc;}
 ::-moz-selection{color:#ffffff;background:#0088cc;}
-blockquote{font-style:italic;border-left:.235294118em solid #e5e5e5;margin-bottom:1.529411765em;padding-left:1.529411765em;padding-right:1.529411765em;}
+blockquote{color:#555555;border-left:.235294118em solid #e5e5e5;margin-bottom:1.529411765em;padding-left:1.529411765em;padding-right:1.529411765em;}
 blockquote, q{quotes:none;}
 blockquote:before, blockquote:after,
 q:before, q:after{content:'';content:none;}
