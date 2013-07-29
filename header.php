@@ -6,7 +6,6 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' |'; } ?> <?php bloginfo('name'); ?></title>
 	    <?php if (is_home ()) : ?><meta name="description" content="<?php bloginfo('description'); ?>"><?php endif; ?>
-	    <link rel="canonical" href="<?php the_permalink() ?>">
 
 	    <!-- Mobile Screen Resizing -->
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
