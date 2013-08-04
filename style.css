@@ -666,15 +666,18 @@ select:focus {
 .icon-paws:before { content: "\e007"; }
 .icon-jetpack:before { content: "\e008"; }
 .icon-petfinder:before { content: "\e009"; }
+.icon-tonyluong:before { content: "\e00a"; }
 
 .icon-heart { color: #880e14; }
 a .icon-paws { color: #6aa120; }
 a .icon-jetpack { color: #4d4d4d; }
 a .icon-petfinder { color: #4b1f6f; }
+a .icon-tonyluong { color: #272727; }
 
 a:hover .icon-paws,
 a:hover .icon-jetpack,
-a:hover .icon-petfinder {
+a:hover .icon-petfinder,
+a:hover .icon-tonyluong {
     color: #005580;
 }
 

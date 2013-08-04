@@ -146,13 +146,16 @@ url('fonts/icomoon.svg#IcoMoon') format('svg');font-weight:normal;font-style:nor
 .icon-paws:before{content:"\e007";}
 .icon-jetpack:before{content:"\e008";}
 .icon-petfinder:before{content:"\e009";}
+.icon-tonyluong:before{content:"\e00a";}
 .icon-heart{color:#880e14;}
 a .icon-paws{color:#6aa120;}
 a .icon-jetpack{color:#4d4d4d;}
 a .icon-petfinder{color:#4b1f6f;}
+a .icon-tonyluong{color:#272727;}
 a:hover .icon-paws,
 a:hover .icon-jetpack,
-a:hover .icon-petfinder{color:#005580;}
+a:hover .icon-petfinder,
+a:hover .icon-tonyluong{color:#005580;}
 .img-border{border:.071428571em solid #ccc;box-shadow:0 .071428571em .176470588em rgba(0, 0, 0, 0.1);}
 .img-circle, .avatar{border-radius:50%;}
 .avatar{float:left;margin-right:.823529412em;height:3.529411765em;width:3.529411765em;}
