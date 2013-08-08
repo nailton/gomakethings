@@ -53,8 +53,8 @@
                 <ul class="nav">
                     <li <?php if (is_front_page() || is_single()) { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/">Writing</a></li>
                     <li <?php if (is_page('about')) { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/about/">About</a></li>
-                    <li <?php if (is_page('Projects') || $post->post_parent == '4493') { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/projects/">Projects</a></li>
-                    <li <?php if (is_page('Search') || is_search() || is_archive()) { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/search/">Search</a></li>
+                    <li <?php if (is_page('projects') || $post->post_parent == '4493') { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/projects/">Projects</a></li>
+                    <li <?php if (is_page('speaking')) { echo 'class="active"'; }?>><a href="<?php echo get_option('home'); ?>/speaking/">Speaking</a></li>
                 </ul>
             </nav>
         </header>
