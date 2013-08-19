@@ -1,41 +1,57 @@
 /* =============================================================
 
-    Fluid Vids v1.0
+    Fluid Vids v2.0
     Fluid and responsive YouTube and Vimeo videos, by Todd Motto.
     https://github.com/toddmotto/fluidvids
-
-    Remixed by Chris Ferdinandi.
-    http://gomakethings.com
 
     Licensed under MIT License.
     http://toddmotto.com/licensing
 
  * ============================================================= */
 
-(function() {
-	var iframes = document.getElementsByTagName('iframe');
-	
-	for (var i = 0; i < iframes.length; ++i) {
-		var iframe = iframes[i];
-		var players = /www.youtube.com|player.vimeo.com|www.hulu.com|www.slideshare.net/;
-		if(iframe.src.search(players) !== -1) {
-			var videoRatio = (iframe.height / iframe.width) * 100;
-			
-			iframe.style.position = 'absolute';
-			iframe.style.top = '0';
-			iframe.style.left = '0';
-			iframe.width = '100%';
-			iframe.height = '100%';
-			
-			var div = document.createElement('div');
-			div.className = 'video-wrap';
-			div.style.width = '100%';
-			div.style.position = 'relative';
-			div.style.paddingTop = videoRatio + '%';
-			
-			var parentNode = iframe.parentNode;
-			parentNode.insertBefore(div, iframe);
-			div.appendChild(iframe);
-		}
-	}
-})();
+window.fluidvids = (function (window, document, undefined) {
+
+  'use strict';
+
+  // Constructor function
+  var Fluidvids = function (elem) {
+    this.elem = elem;
+  };
+
+  // Prototypal setup
+  Fluidvids.prototype = {
+
+    init : function () {
+
+      var videoRatio = (this.elem.height / this.elem.width) * 100;
+      this.elem.style.position = 'absolute';
+      this.elem.style.top = '0';
+      this.elem.style.left = '0';
+      this.elem.width = '100%';
+      this.elem.height = '100%';
+
+      var wrap = document.createElement('div');
+      wrap.className = 'fluidvids';
+      wrap.style.width = '100%';
+      wrap.style.position = 'relative';
+      wrap.style.paddingTop = videoRatio + '%';
+      
+      var thisParent = this.elem.parentNode;
+      thisParent.insertBefore(wrap, this.elem);
+      wrap.appendChild(this.elem);
+
+    }
+
+  };
+
+  // Initiate the plugin
+  var iframes = document.getElementsByTagName( 'iframe' );
+
+  for (var i = 0; i < iframes.length; i++) {
+    var players = /www.youtube.com|player.vimeo.com|www.hulu.com|www.slideshare.net/;
+    if (iframes[i].src.search(players) > 0) {
+      new Fluidvids(iframes[i]).init();
+    }
+  }
+
+})(window, document);
