@@ -5,10 +5,10 @@
     Load external JavaScript files in WordPress.
  * ====================================================================== */
 
-function my_scripts_method() {
+function load_theme_js() {
 	wp_register_script('gmt-js', get_template_directory_uri() . '/js/gmt.min.07292013.js', false, null, true);
 	wp_enqueue_script('gmt-js');
 }
-add_action('wp_enqueue_scripts', 'my_scripts_method');
+add_action('wp_enqueue_scripts', 'load_theme_js');
 
 ?>

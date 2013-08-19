@@ -656,17 +656,17 @@ select:focus {
     text-rendering: optimizeLegibility; 
 }
 
-.icon-logo:before { content: "\e000"; }
-.icon-chat:before { content: "\e001"; }
-.icon-email:before { content: "\e002"; }
-.icon-twitter:before { content: "\e003"; }
-.icon-rss:before { content: "\e004"; }
-.icon-search:before { content: "\e005"; }
-.icon-heart:before { content: "\e006"; }
-.icon-paws:before { content: "\e007"; }
-.icon-jetpack:before { content: "\e008"; }
-.icon-petfinder:before { content: "\e009"; }
-.icon-tonyluong:before { content: "\e00a"; }
+.font-face .icon-logo:before { content: "\e000"; }
+.font-face .icon-chat:before { content: "\e001"; }
+.font-face .icon-email:before { content: "\e002"; }
+.font-face .icon-twitter:before { content: "\e003"; }
+.font-face .icon-rss:before { content: "\e004"; }
+.font-face .icon-search:before { content: "\e005"; }
+.font-face .icon-heart:before { content: "\e006"; }
+.font-face .icon-paws:before { content: "\e007"; }
+.font-face .icon-jetpack:before { content: "\e008"; }
+.font-face .icon-petfinder:before { content: "\e009"; }
+.font-face .icon-tonyluong:before { content: "\e00a"; }
 
 .icon-heart { color: #880e14; }
 a .icon-paws { color: #6aa120; }
@@ -909,12 +909,22 @@ table {
 }
 
 
-/*  Screen Reader Text */
+/*  Visibility */
 
 .screen-reader { 
     position: absolute; 
     top: -9999px; 
     left:-9999px; 
+}
+
+.show-font-face {
+    display: none;
+    visiblity: hidden;
+}
+
+.font-face .show-font-face {
+    display: inline;
+    visibility: visible;
 }
 
 

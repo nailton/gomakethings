@@ -1,5 +1,6 @@
 <?php
 
+require_once('functions/feature-test.php'); // Run a feature test
 require_once('functions/load-js.php'); // Load external JS files
 require_once('functions/search-form-shortcode.php'); // A WordPress search form shortcode
 require_once('functions/remove-header-junk.php'); // Remove the unneccessary junk WordPress adds to the header
