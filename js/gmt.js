@@ -48,7 +48,7 @@ window.fluidvids = (function (window, document, undefined) {
   var iframes = document.getElementsByTagName( 'iframe' );
 
   for (var i = 0; i < iframes.length; i++) {
-    var players = /www.youtube.com|player.vimeo.com|www.hulu.com|www.slideshare.net/;
+    var players = /www.youtube.com|player.vimeo.com|www.hulu.com|www.slideshare.net//;
     if (iframes[i].src.search(players) > 0) {
       new Fluidvids(iframes[i]).init();
     }
