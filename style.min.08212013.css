@@ -107,30 +107,30 @@ code, pre{font-family:Menlo, Monaco, "Courier New", monospace;font-size:.7647058
 code{color:#d14;background-color:#f7f7f9;padding:.235294118em;}
 pre{display:block;margin-bottom:1.529411765em;line-height:1.538461538em;background-color:#f5f5f5;padding:.823529412em;white-space:pre;white-space:pre-wrap;word-break:break-all;}
 pre code{font-size:1em;padding:0;color:inherit;background-color:transparent;border:0;}
-@media screen{.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata{color:slategray;}
-.token.punctuation{color:#999;}
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number{color:#905;}
-.token.selector,
-.token.attr-name,
-.token.string{color:#690;}
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string{color:#a67f59;}
-.token.atrule,
-.token.attr-value,
-.token.keyword{color:#07a;}
-.token.regex,
-.token.important{color:#e90;}
-.token.important{font-weight:bold;}
-.token.entity{cursor:help;}
+@media screen{pre .token.comment,
+pre .token.prolog,
+pre .token.doctype,
+pre .token.cdata{color:slategray;}
+pre .token.punctuation{color:#999;}
+pre .token.property,
+pre .token.tag,
+pre .token.boolean,
+pre .token.number{color:#905;}
+pre .token.selector,
+pre .token.attr-name,
+pre .token.string{color:#690;}
+pre .token.operator,
+pre .token.entity,
+pre .token.url,
+pre .language-css .token.string,
+pre .style .token.string{color:#a67f59;}
+pre .token.atrule,
+pre .token.attr-value,
+pre .token.keyword{color:#07a;}
+pre .token.regex,
+pre .token.important{color:#e90;}
+pre .token.important{font-weight:bold;}
+pre .token.entity{cursor:help;}
 }
 .btn{display:inline-block;padding:.588235294em .882352941em;line-height:1.333333333;font-weight:normal;color:#ffffff;background:#3892d0;border:.071428571em solid #3892d0;border-radius:.071428571em;margin-left:.3em;margin-bottom:.3em;}
 .btn:hover, a .btn:hover{color:#ffffff;background:#266ea0;border-color:#266ea0;text-decoration:none;}
