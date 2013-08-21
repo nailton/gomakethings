@@ -28,7 +28,7 @@
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
         <!-- Stylesheet -->
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.min.08192013.css">
+        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.min.08212013.css">
 
         <!-- HTML5 Shim for IE 6-8 -->
         <!--[if lt IE 9]>    
