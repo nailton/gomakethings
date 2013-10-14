@@ -28,10 +28,10 @@
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
         <!-- Stylesheet -->
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.min.08212013.css">
+        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/style.min.10142013.css">
 
         <!-- HTML5 Shim for IE 6-8 -->
-        <!--[if lt IE 9]>    
+        <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
@@ -40,7 +40,7 @@
     </head>
 
     <body>
-    
+
         <header class="container">
             <!-- Old Browser Warning -->
             <!--[if lt IE 9]>
