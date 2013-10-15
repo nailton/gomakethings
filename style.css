@@ -637,7 +637,13 @@ input[type="radio"] {
     cursor: pointer;
 }
 
-input[type="submit"] {
+/*input[type="submit"] {
+    display: inline-block;
+    width: auto;
+}*/
+
+/*  Inline Inputs */
+.input-inline {
     display: inline-block;
     width: auto;
 }
@@ -709,22 +715,20 @@ select:focus {
     speak: none;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
 .font-face .icon-logo:before { content: "\e000"; }
-.font-face .icon-chat:before { content: "\e001"; }
-.font-face .icon-email:before { content: "\e002"; }
-.font-face .icon-twitter:before { content: "\e003"; }
-.font-face .icon-rss:before { content: "\e004"; }
-.font-face .icon-search:before { content: "\e005"; }
-.font-face .icon-heart:before { content: "\e006"; }
-.font-face .icon-paws:before { content: "\e007"; }
-.font-face .icon-jetpack:before { content: "\e008"; }
-.font-face .icon-petfinder:before { content: "\e009"; }
-.font-face .icon-tonyluong:before { content: "\e00a"; }
-.font-face .icon-emseek:before { content: "\e00b"; }
+.font-face .icon-email:before { content: "\e001"; }
+.font-face .icon-twitter:before { content: "\e002"; }
+.font-face .icon-rss:before { content: "\e003"; }
+.font-face .icon-search:before { content: "\e004"; }
+.font-face .icon-heart:before { content: "\e005"; }
+.font-face .icon-paws:before { content: "\e006"; }
+.font-face .icon-jetpack:before { content: "\e007"; }
+.font-face .icon-petfinder:before { content: "\e008"; }
+.font-face .icon-tonyluong:before { content: "\e009"; }
+.font-face .icon-emseek:before { content: "\e00a"; }
 
 .icon-heart { color: #880e14; }
 a .icon-paws { color: #6aa120; }
