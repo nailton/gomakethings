@@ -1,7 +1,7 @@
 /*
 
-    Theme Name: Go Make Things v5.7
-    Version: 5.7
+    Theme Name: Go Make Things v5.8
+    Version: 5.8
     Author: Chris Ferdinandi
     Author URI: http://gomakethings.com
 
@@ -20,7 +20,6 @@
 
     TYPOGRAPHIC SCALE
     4px, 5px, 8px, 10px, 11px, 14px, 15px, 17px (base), 20px, 23px, 26px, 30px, 34px, 51px, 68px, 85px, 102px
-
 
 */
 
@@ -281,6 +280,7 @@ p {
 a {
     color: #0088cc;
     text-decoration: none;
+    word-wrap: break-word;
 }
 
 a:hover {
