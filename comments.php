@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     // Do not delete these lines
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
@@ -103,7 +103,7 @@
 
 	        <textarea name="comment" id="comment" tabindex="4" required></textarea>
 
-	        <input name="submit" type="submit" class="btn" id="submit" tabindex="5" value="Submit Comment">
+	        <input name="submit" type="submit" class="input-inline btn" id="submit" tabindex="5" value="Submit Comment">
 	        <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 
 	        <?php do_action('comment_form', $post->ID); ?>
