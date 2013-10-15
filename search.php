@@ -40,7 +40,7 @@
 		</header>
 		<p>Sorry, your search didn't turn up any results. Maybe try using different keywords?</p>
 
-		<?php echo gmt_wpsearch(); ?>
+		<?php get_search_form(); ?>
 	</article>
 <?php endif; ?>
 
