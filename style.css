@@ -1,12 +1,16 @@
 /*
 
     Theme Name: Go Make Things v5.8
+    Theme URI: https://github.com/cferdinandi/gomakethings
+    Description: The theme for Go Make Things.
     Version: 5.8
     Author: Chris Ferdinandi
     Author URI: http://gomakethings.com
+    License: MIT
+    License URI: http://gomakethings.com/mit/
 
 
-    COLORS
+    # Colors
     Blue: #0088cc
     Dark Blue: #005580
     Dark Gray: #272727
@@ -14,11 +18,11 @@
     Lite Gray: #e5e5e5
 
 
-    FONT STACKS
+    # Font Stack
     Serif: Georgia, Times, serif
 
 
-    TYPOGRAPHIC SCALE
+    # Typographic Scale
     4px, 5px, 8px, 10px, 11px, 14px, 15px, 17px (base), 20px, 23px, 26px, 30px, 34px, 51px, 68px, 85px, 102px
 
 */

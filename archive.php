@@ -5,7 +5,6 @@
 
 	<header>
 		<h1 class="no-space">
-			<?php $post = $posts[0]; // Set $post so that the_date() works. ?>
 			<?php /* If this is a category archive */ if (is_category()) { ?>
 				On <?php single_cat_title(); ?>...
 			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
