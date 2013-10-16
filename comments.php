@@ -40,7 +40,7 @@
 
 
 <?php elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-	<p><?php _e( 'Comments are closed.', 'kraken' ); ?></p>
+	<p>Comments are closed.</p>
 <?php endif; ?>
 
 
