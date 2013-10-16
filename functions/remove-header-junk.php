@@ -1,9 +1,9 @@
 <?php
 
 /* ======================================================================
-    Remove Header Junk v1.0
-    Removes unneccessary junk WordPress adds to the header, by ThemeLab.
-    http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
+	Remove Header Junk v1.0
+	Removes unneccessary junk WordPress adds to the header, by ThemeLab.
+	http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
  * ====================================================================== */
 
 remove_action('wp_head', 'rsd_link');

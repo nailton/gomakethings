@@ -1,11 +1,5 @@
 <?php
 
-require_once('functions/remove-header-junk.php'); // Remove the unneccessary junk WordPress adds to the header
-require_once('functions/search-exclude.php'); // Exclude pages from your search results
-require_once('functions/remove-trackbacks.php'); // Remove trackbacks from comments
-require_once('functions/no-self-pings.php'); // Prevent self-pings
-
-
 function load_theme_js() {
 	// Feature Test (in header)
 	wp_register_script('feature-test', get_template_directory_uri() . '/js/feature-test.min.08192013.js', false, null, false);
@@ -20,9 +14,20 @@ add_action('wp_enqueue_scripts', 'load_theme_js');
 
 
 function gmt_wpsearch() {
-    $form = get_search_form();
-    return $form;
+	$form = get_search_form();
+	return $form;
 }
 add_shortcode( 'searchform', 'gmt_wpsearch' );
+
+
+
+function my_password_form() {
+	global $post;
+	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+	$form =
+		'<div class="row"><div class="grid-4 offset-1"><form class="text-center" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><p>This is a password protected post.</p><label class="screen-reader" for="' . $label . '">Password</label><input id="' . $label . '" name="post_password" type="password"><input type="submit" class="input-inline btn" name="Submit" value="Submit"></form></div></div>';
+	return $form;
+}
+add_filter( 'the_password_form', 'my_password_form' );
 
 ?>

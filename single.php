@@ -3,7 +3,7 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <article>
+	<article>
 
 			<header>
 				<h1 class="no-space-bottom"><?php the_title(); ?></h1>
@@ -12,11 +12,11 @@
 				</aside>
 			</header>
 
-	    <?php the_content(); ?>
+		<?php the_content(); ?>
 
-	    <?php comments_template(); ?>
+		<?php comments_template(); ?>
 
-    </article>
+	</article>
 
 <?php endwhile; endif; ?>
 

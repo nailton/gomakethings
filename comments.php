@@ -58,36 +58,38 @@
 			<p>Logged in as <?php echo $user_identity; ?>. <a href="<?php echo wp_logout_url( get_permalink() . '#respond' ); ?>">Logout</a></p>
 		<?php else : ?>
 			<div class="row">
-					<div class="grid-4 offset-1">
-					<label for="author" class="text-small">Your Name</label>
-					<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" tabindex="1" required>
-					</div>
+				<div class="grid-4 offset-1">
+				<label for="author" class="text-small">Your Name</label>
+				<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" tabindex="1" required>
+				</div>
 			</div>
 
 			<div class="row">
-					<div class="grid-4 offset-1">
-					<label for="email" class="text-small">Your Email</label>
-					<input type="email" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" required>
-					</div>
+				<div class="grid-4 offset-1">
+				<label for="email" class="text-small">Your Email</label>
+				<input type="email" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" required>
+				</div>
 			</div>
 
 			<div class="row">
-					<div class="grid-4 offset-1">
-					<label for="url" class="text-small">Your Website (optional)</label>
-					<input type="url" name="url" id="url" value="<?php echo $comment_author_url; ?>" tabindex="3" >
-					</div>
+				<div class="grid-4 offset-1">
+				<label for="url" class="text-small">Your Website (optional)</label>
+				<input type="url" name="url" id="url" value="<?php echo $comment_author_url; ?>" tabindex="3" >
+				</div>
 			</div>
 		<?php endif; ?>
+			<div>
+				<textarea name="comment" id="comment" tabindex="4" required></textarea>
+			</div>
 
-			<textarea name="comment" id="comment" tabindex="4" required></textarea>
-
-			<input name="submit" type="submit" class="input-inline btn" id="submit" tabindex="5" value="Submit Comment">
-			<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-
-			<?php do_action('comment_form', $post->ID); ?>
+			<div>
+				<input name="submit" type="submit" class="input-inline btn" id="submit" tabindex="5" value="Submit Comment">
+				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>">
+				<?php do_action('comment_form', $post->ID); ?>
+			</div>
 
 	</form>
 
 	<?php endif; // If registration required and not logged in ?>
 
-<?php endif; // if comments are open ?>
+<?php endif; // If comments are open ?>

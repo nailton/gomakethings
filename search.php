@@ -28,9 +28,7 @@
 
 
 	<!-- Previous/Next page navigation -->
-	<nav>
-		<p class="text-center"><?php posts_nav_link( '&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;', '&larr; Newer', 'Older &rarr;' ); ?></p>
-	</nav>
+	<?php get_template_part( 'nav-page', 'Page Navigation' ); ?>
 
 
 <?php else : ?>
