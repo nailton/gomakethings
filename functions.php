@@ -30,4 +30,24 @@ function my_password_form() {
 }
 add_filter( 'the_password_form', 'my_password_form' );
 
+
+
+function pretty_wp_title( $title, $sep ) {
+
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'pretty_wp_title', 10, 2 );
+
 ?>
