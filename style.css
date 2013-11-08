@@ -70,14 +70,21 @@ html {
 		-ms-text-size-adjust: 100%;
 }
 
-audio, canvas, video {
+audio,
+canvas,
+video {
 	display: inline-block;
-	*display: inline;
-	*zoom: 1;
 }
 
 audio:not([controls]) {
-	display: none;
+    display: none;
+    height: 0;
+}
+
+[hidden],
+template {
+    display: none;
+    visibility: hidden;
 }
 
 img, video {
@@ -100,7 +107,8 @@ button:focus {
 	outline-offset: -.142857143em;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	outline: 0;
 }
 
@@ -1006,7 +1014,6 @@ table {
 .row:before, .row:after {
 	display: table;
 	content: "";
-	*zoom: 1;
 }
 
 .group:after,
