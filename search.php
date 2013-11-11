@@ -24,7 +24,7 @@
 				<?php endif; ?>
 			</header>
 
-			<?php the_content('<p>Keep reading...</p>'); ?>
+			<?php the_content('<p>Keep reading<span class="screen-reader"> "' . get_the_title() . '"</span>...</p>'); ?>
 
 		</article>
 
