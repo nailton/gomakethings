@@ -89,13 +89,16 @@ a:hover{color:#005580;text-decoration:underline;}
 a img{border:none;background:none;}
 a:hover img{border:none;background:none;opacity:0.8;filter:alpha(opacity=80);}
 ul,
-ol{margin-bottom:1.529411765em;margin-left:2em;}
+ol,
+dl{margin-bottom:1.529411765em;margin-left:2em;}
 ul ul,
 ul ol,
 ol ol,
 ol ul{margin-bottom:0;}
 ul{list-style:disc;}
 ol{list-style:decimal;}
+dl{margin-left:0;}
+dt{font-weight:bold;}
 .list-unstyled{list-style:none;margin-left:0;}
 h1, h2, h3, h4, h5, h6{line-height:1.2;font-weight:normal;margin-bottom:1em;padding-top:1em;text-align:center;}
 h1,

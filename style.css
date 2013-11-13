@@ -330,7 +330,8 @@ a:hover img {
 /*  Lists */
 
 ul,
-ol {
+ol,
+dl {
 	margin-bottom: 1.529411765em;
 	margin-left: 2em;
 }
@@ -348,6 +349,14 @@ ul {
 
 ol {
 	list-style: decimal;
+}
+
+dl {
+	margin-left: 0;
+}
+
+dt {
+	font-weight: bold;
 }
 
 .list-unstyled {
