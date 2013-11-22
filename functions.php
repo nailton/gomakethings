@@ -2,7 +2,7 @@
 
 function load_theme_js() {
 	// Feature Test (in header)
-	wp_register_script('feature-test', get_template_directory_uri() . '/js/feature-test.min.08192013.js', false, null, false);
+	wp_register_script('feature-test', get_template_directory_uri() . '/js/feature-test.min.11222013.js', false, null, false);
 	wp_enqueue_script('feature-test');
 
 	// Theme scripts (in footer)
