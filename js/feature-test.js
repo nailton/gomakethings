@@ -1,6 +1,6 @@
 /* =============================================================
 
-	Feature Test v1.0
+	Feature Test v2.0
 	A simple feature tests by Paul Irish, Diego Perini,
 	and Mat "Wilto" Marquis
 
