@@ -1,12 +1,33 @@
-			<footer class="text-center text-small">
-				<hr>
+<?php
 
-				<p class="space-bottom-small"><a href="<?php echo site_url(); ?>/search/"><i class="icon-search"></i> Search</a> &nbsp;&bull;&nbsp; <a href="http://feeds.feedburner.com/GoMakeThings"><i class="icon-rss"></i> RSS Feed</a></p>
+/* ======================================================================
+	footer.php
+	Template for footer content.
+ * ====================================================================== */
 
-				<p class="space-bottom">Made <span class="show-font-face">with <i class="icon-heart"></i><span class="screen-reader">love</span></span> by Chris Ferdinandi.</p>
-			</footer>
+?>
 
 		</section>
+
+		<footer class="container text-center">
+
+			<hr>
+
+			<p class="text-small space-bottom-small">
+				<a href="<?php echo site_url(); ?>/search/">
+					<i class="icon-search"></i> Search
+				</a>
+				&nbsp;&nbsp;/&nbsp;&nbsp;
+				<a href="http://feeds.feedburner.com/GoMakeThings">
+					<i class="icon-rss"></i> RSS Feed
+				</a>
+			</p>
+			<p class="text-small space-bottom">
+				Made with <span class="icon-fallback-text">love</span> <i class="icon-heart"></i> by Chris Ferdinandi.<br>
+				Copyright 2014 Go Make Things, LLC.
+			</p>
+
+		</footer>
 
 		<?php wp_footer(); ?>
 

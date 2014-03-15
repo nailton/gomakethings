@@ -6,7 +6,7 @@
 ?>
 
 <?php if ( comments_open() || $comments ) : ?>
-	<h2 id="comments"><?php comments_number( 'Respond', '1 Response', '% Responses' ); ?></h2>
+	<h2 id="comments"><?php comments_number( 'Comment', '1 Comment', '% Comments' ); ?></h2>
 	<p><a href="#respond">Leave a comment</a> or contact me on Twitter at <a href="http://twitter.com/ChrisFerdinandi">@ChrisFerdinandi</a>.</p>
 <?php endif; ?>
 
@@ -16,7 +16,7 @@
 
 		<article id="comment-<?php comment_ID() ?>">
 
-			<hr class="no-space-bottom">
+			<hr class="line-secondary no-space-bottom">
 
 			<?php if ($comment->comment_approved == '0') : ?>
 				<p class="space-top space-bottom-small"><em>Your comment is being held for moderation, either because it contained a link or WordPress thought it was spam. I'll approve it as soon as possible. -Chris</em></p>
@@ -28,7 +28,7 @@
 				</figure>
 				<h3 class="text-left no-space"><?php comment_author_link() ?></h3>
 				<aside>
-					<p class="text-small text-muted"><?php comment_date('F jS, Y') ?><?php edit_comment_link('Edit', ' &bull; ', ''); ?></p>
+					<p class="text-small text-muted"><?php comment_date('F jS, Y') ?><?php edit_comment_link('Edit', ' / ', ''); ?></p>
 				</aside>
 			</header>
 
@@ -58,21 +58,21 @@
 			<p>Logged in as <?php echo $user_identity; ?>. <a href="<?php echo wp_logout_url( get_permalink() . '#respond' ); ?>">Logout</a></p>
 		<?php else : ?>
 			<div class="row">
-				<div class="grid-4 offset-1">
+				<div class="grid-two-thirds float-center">
 				<label for="author" class="text-small">Your Name</label>
 				<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" tabindex="1" required>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="grid-4 offset-1">
+				<div class="grid-two-thirds float-center">
 				<label for="email" class="text-small">Your Email</label>
 				<input type="email" name="email" id="email" value="<?php echo $comment_author_email; ?>" tabindex="2" required>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="grid-4 offset-1">
+				<div class="grid-two-thirds float-center">
 				<label for="url" class="text-small">Your Website (optional)</label>
 				<input type="url" name="url" id="url" value="<?php echo $comment_author_url; ?>" tabindex="3" >
 				</div>

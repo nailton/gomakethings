@@ -1,14 +1,3 @@
-/* =============================================================
-
-	Feature Test v2.0
-	A simple feature tests by Paul Irish, Diego Perini,
-	and Mat "Wilto" Marquis
-
-	Free to use under the MIT License.
-	http://gomakethings.com/mit/
-
- * ============================================================= */
-
 // Function to test for @font-face support
 // https://github.com/filamentgroup/face-off
 var isFontFaceSupported = (function( win, undefined ) {

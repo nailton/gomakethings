@@ -2,11 +2,13 @@
 
 /* ======================================================================
 	nav-page.php
-	Template for next/previous page navigation.
+	Template for older/newer page navigation.
  * ====================================================================== */
 
 ?>
 
-<nav>
-	<p class="text-center"><?php posts_nav_link( '&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;', '&larr; Newer', 'Older &rarr;' ); ?></p>
-</nav>
+<?php if ( is_paginated() ) : ?>
+    <nav>
+    	<p class="text-center space-top space-bottom-small"><?php posts_nav_link( '&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;', '&larr; Newer', 'Older &rarr;' ); ?></p>
+    </nav>
+<?php endif; ?>

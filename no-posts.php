@@ -9,6 +9,6 @@
 
 <article>
 	<header>
-		<h1>No posts to display</h1>
+		<h1><?php _e( 'No posts to display', 'kraken' ) ?></h1>
 	</header>
 </article>

@@ -1,14 +1,19 @@
-<?php get_header(); ?>
+<?php
+
+/* ======================================================================
+	404.php
+	Template for 404 error page.
+ * ====================================================================== */
+
+get_header(); ?>
 
 
 <article>
 	<header>
-		<h1>Oh snap!</h1>
+		<h1>Oh Snap!</h1>
 	</header>
 
-	<p>The page you're looking for was looted by pirates! (<em>Or more likely, I messed up and moved something on you - sorry!</em>)</p>
-
-	<p>At this point, you have a few options:</p>
+	<p>The page you're looking for was looted by pirates! (<em>Or more likely, I messed up and moved something on you&mdash;sorry!</em>) At this point, you have a few options:</p>
 
 	<ol>
 		<li>Try <a href="<?php echo site_url(); ?>/search/">searching</a> for it.</li>

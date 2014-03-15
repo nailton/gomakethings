@@ -1,0 +1,45 @@
+//
+// CONFIGURATION SETTINGS
+// Adjust colors, font stacks, breakpoints and sizing.
+//
+
+// # Typographic Scale
+// (For math purposes. Actual font sizes in ems.)
+// 1px, 4px, 5px, 8px, 9px, 11px, 12px, 13px, 15px, 16px, 19px, 21px, 24px, 28px, 32px, 48px, 64px, 80px, 96px
+// line height: 1.5em on small screens, 1.5625em on big screens
+
+// Colors
+$color-primary: #0088cc;
+// $color-secondary: #377f31;
+// $color-tertiary: #4b1f6f;
+$color-black: #272727;
+$color-white: #ffffff;
+
+// $color-success: #377f31; // Green
+// $color-danger: #880e14; // Red
+// $color-warning: #dba909; // Yellow
+$color-code: #dd1144;
+
+$color-gray-dark: #808080;
+$color-gray-light: #e5e5e5;
+
+
+// Font Stacks
+$font-primary: Georgia, Times, serif;
+// $font-secondary: "Helvetica Neue", Arial, sans-serif;
+$font-monospace: Menlo, Monaco, "Courier New", monospace;
+
+
+// Breakpoints
+$bp-xsmall: 19em;
+$bp-small: 28em;
+$bp-medium: 38em;
+// $bp-large: 60em;
+// $bp-xlarge: 80em;
+
+
+// Sizing
+$font-base: 106.25%;
+$spacing: 1.5625em;
+$container-max: 38em;
+$grid-margins: 1.4%;
