@@ -57,6 +57,9 @@
 			</section>
 		<![endif]-->
 
+		<!-- Skip link for better accessibility -->
+		<a class="screen-reader" href="#main">Skip to main content</a>
+
 		<?php get_template_part( 'nav-main', 'Site Navigation' ); ?>
 
 		<section class="container">
