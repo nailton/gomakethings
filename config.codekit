@@ -42,14 +42,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/css\/gomakethings.min.03152014.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/gomakethings.min.03152014.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/footer.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -139,7 +131,7 @@
 		"inputAbbreviatedPath": "\/js\/components\/fluidvids.js",
 		"outputAbbreviatedPath": "\/js\/fluidvids.min.js",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/components\/prism.js": {
@@ -149,7 +141,7 @@
 		"inputAbbreviatedPath": "\/js\/components\/prism.js",
 		"outputAbbreviatedPath": "\/js\/prism.min.js",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/feature-test.js": {
@@ -169,7 +161,7 @@
 		"inputAbbreviatedPath": "\/js\/feature-test.min.js",
 		"outputAbbreviatedPath": "\/js\/feature-test.min.min.js",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/gomakethings.js": {
@@ -179,7 +171,7 @@
 		"inputAbbreviatedPath": "\/js\/gomakethings.js",
 		"outputAbbreviatedPath": "\/js\/gomakethings.min.js",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/gomakethings.min.js": {
@@ -189,7 +181,7 @@
 		"inputAbbreviatedPath": "\/js\/gomakethings.min.js",
 		"outputAbbreviatedPath": "\/js\/gomakethings.min.min.js",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/nav-main.php": {
@@ -253,7 +245,7 @@
 		"inputAbbreviatedPath": "\/sass\/_config.scss",
 		"outputAbbreviatedPath": "\/css\/_config.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -268,7 +260,7 @@
 		"inputAbbreviatedPath": "\/sass\/_mixins.scss",
 		"outputAbbreviatedPath": "\/css\/_mixins.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -283,7 +275,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_astro.scss",
 		"outputAbbreviatedPath": "\/css\/_astro.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -298,7 +290,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_buttons.scss",
 		"outputAbbreviatedPath": "\/css\/_buttons.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -313,7 +305,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_code.scss",
 		"outputAbbreviatedPath": "\/css\/_code.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -328,7 +320,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_forms.scss",
 		"outputAbbreviatedPath": "\/css\/_forms.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -343,7 +335,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_grid.scss",
 		"outputAbbreviatedPath": "\/css\/_grid.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -358,7 +350,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_icons.scss",
 		"outputAbbreviatedPath": "\/css\/_icons.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -373,7 +365,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_overrides.scss",
 		"outputAbbreviatedPath": "\/css\/_overrides.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -388,7 +380,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_print.scss",
 		"outputAbbreviatedPath": "\/css\/_print.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -403,7 +395,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_reset.scss",
 		"outputAbbreviatedPath": "\/css\/_reset.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -418,7 +410,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_snapshot.scss",
 		"outputAbbreviatedPath": "\/css\/_snapshot.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -433,7 +425,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_tables.scss",
 		"outputAbbreviatedPath": "\/css\/_tables.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -448,7 +440,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_typography.scss",
 		"outputAbbreviatedPath": "\/css\/_typography.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -463,7 +455,7 @@
 		"inputAbbreviatedPath": "\/sass\/components\/_wordpress-images.scss",
 		"outputAbbreviatedPath": "\/css\/_wordpress-images.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -478,7 +470,7 @@
 		"inputAbbreviatedPath": "\/sass\/gomakethings.scss",
 		"outputAbbreviatedPath": "\/css\/gomakethings.css",
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 3,
 		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 1,
 		"useLibsass": 0
@@ -675,7 +667,7 @@
 	"javascriptAutoOutputPathReplace2": "",
 	"javascriptAutoOutputPathStyle": 1,
 	"javascriptCreateSourceMap": 1,
-	"javascriptOutputStyle": 0,
+	"javascriptOutputStyle": 1,
 	"javascriptOutputSuffix": ".min",
 	"javascriptSyntaxCheckerStyle": 1,
 	"jsCheckerReservedNamesString": "",
@@ -1103,7 +1095,7 @@
 	"sassCreateSourceMap": 0,
 	"sassDebugStyle": 0,
 	"sassDecimalPrecision": 5,
-	"sassOutputStyle": 1,
+	"sassOutputStyle": 3,
 	"sassUseLibsass": 0,
 	"shouldRunAutoprefixer": 1,
 	"shouldRunBless": 1,
