@@ -28,11 +28,12 @@ p {
 }
 
 .text-tall {
-	font-size: calc-em(19px);
+	// font-size: calc-em(19px);
+	font-size: calc-em(21px);
 	line-height: 1.4;
-	@media (min-width: $bp-medium) {
-		font-size: calc-em(21px);
-	}
+	// @media (min-width: $bp-medium) {
+	// 	font-size: calc-em(21px);
+	// }
 }
 
 .text-venti {

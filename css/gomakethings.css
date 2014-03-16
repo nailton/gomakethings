@@ -297,13 +297,8 @@ p {
 }
 
 .text-tall {
-  font-size: 1.1875em;
+  font-size: 1.3125em;
   line-height: 1.4;
-}
-@media (min-width: 38em) {
-  .text-tall {
-    font-size: 1.3125em;
-  }
 }
 
 .text-venti {

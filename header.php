@@ -42,7 +42,7 @@
 		<![endif]-->
 
 		<!-- Stylesheet -->
-		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/gomakethings.min.03152014.css">
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/gomakethings.min.03162014.css">
 
 		<?php wp_head(); ?>
 

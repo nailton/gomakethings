@@ -2,6 +2,8 @@
 The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomakethings.com)
 
 ## Changelog
+* v6.3 - March 16, 2014
+	* Set `.text-tall` to same size on all screen sizes.
 * v6.2 - March 15, 2014
 	* Added skip link.
 	* Improved `content.php` template.
