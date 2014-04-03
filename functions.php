@@ -18,7 +18,7 @@ add_action('wp_enqueue_scripts', 'kraken_load_theme_js');
 
 // Initialize theme scripts
 function kraken_initialize_theme_js( $query ) {
-	if ( is_front_page() || is_single() ) {
+	if ( is_front_page() || is_single() || is_search() || is_archive() ) {
 		echo
 			'<script>' .
 				'fluidvids.init({' .
