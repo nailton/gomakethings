@@ -80,6 +80,8 @@
 		<?php endif; ?>
 			<div>
 				<textarea name="comment" id="comment" tabindex="4" required></textarea>
+				<p class="space-bottom-small">Share links, code and more with <a href="http://en.support.wordpress.com/markdown-quick-reference/">Markdown</a>.</p>
+				<?php show_subscription_checkbox($post->ID); ?>
 			</div>
 
 			<div>
