@@ -80,7 +80,7 @@
 		<?php endif; ?>
 			<div>
 				<textarea name="comment" id="comment" tabindex="4" required></textarea>
-				<p class="space-bottom-small">Share links, code and more with <a href="http://en.support.wordpress.com/markdown-quick-reference/">Markdown</a>.</p>
+				<p class="space-bottom-small">Share links, code and more with <a target="_blank" href="http://en.support.wordpress.com/markdown-quick-reference/">Markdown</a>. Add an avatar with <a target="_blank" href="https://en.gravatar.com/">Gravatar</a>.</p>
 				<?php show_subscription_checkbox($post->ID); ?>
 			</div>
 
