@@ -64,7 +64,8 @@ var banner = {
 	' * Author: <%= package.author.name %>\n' +
 	' * Author URI: <%= package.author.url %>\n' +
 	' * License: <%= package.license %>\n' +
-	' * License URI: <%= package.author.url %>/mit/\n'
+	' * License URI: <%= package.author.url %>/mit/\n' +
+	' */'
 };
 
 gulp.task('scripts', ['clean'], function() {
