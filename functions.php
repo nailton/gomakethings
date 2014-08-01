@@ -72,6 +72,14 @@ add_filter( 'wp_title', 'kraken_pretty_wp_title', 10, 2 );
 
 
 
+// Deregister JetPack's devicepx.js script
+function dequeue_devicepx() {
+    wp_dequeue_script( 'devicepx' );
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_devicepx', 20 );
+
+
+
 // If more than one page exists, return TRUE.
 function is_paginated() {
 	global $wp_query;
