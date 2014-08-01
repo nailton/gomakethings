@@ -8,7 +8,7 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 	* Switched to three number versioning.
 	* Inlined CSS for better performance.
 	* @TODO Converted icon font to SVGs.
-	* @TODO Add async to javascript.
+	* @TODO Added async loading to javascript.
 	* @TODO Deregister JetPack's devicepx script.
 * v6.3 - March 16, 2014
 	* Set `.text-tall` to same size on all screen sizes.
