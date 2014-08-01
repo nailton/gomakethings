@@ -112,7 +112,7 @@ gulp.task('svgs', ['clean'], function () {
         .pipe(svgmin())
         .pipe(svgstore({
             fileName: 'icons.svg',
-            prefix: '',
+            prefix: 'icon-',
             inlineSvg: true
         }))
         .pipe(gulp.dest(paths.svgs.output));

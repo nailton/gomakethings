@@ -558,104 +558,43 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 
 /* =============================================================
 	ICONS
-	A placeholder for icon fonts.
-	Learn more at http://gomakethings.com/icon-fonts/
+	A placeholder for svg icon styles.
  * ============================================================= */
-/*  @font-face mixin */
-@font-face {
-  font-family: 'icomoon';
-  font-weight: normal;
-  font-style: normal;
-  src: url('../fonts/icomoon.eot');
-  src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg'); }
+/* Icon sizes */
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em; }
 
-/*	Assign icon font to icons */
-.icon-logo:before, .icon-email:before, .icon-twitter:before, .icon-search:before, .icon-heart:before, .icon-paws:before, .icon-jetpack:before, .icon-petfinder:before, .icon-tonyluong:before, .icon-emseek:before, .icon-github:before, .icon-kraken:before, .icon-rss:before, .icon-xray:before, .icon-smoothscroll:before, .icon-wpwebapps:before, .icon-jellyfish:before {
-  font-family: 'icomoon';
-  font-style: normal;
-  speak: none;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility; }
+.icon-large {
+  height: 2em;
+  width: 2em; }
+  @media (min-width: 38em) {
+    .icon-large {
+      height: 3em;
+      width: 3em; } }
 
-/*	Define specific characters for each icon */
-.font-face .icon-logo:before {
-  content: "\e600"; }
+/* Icon colors */
+.icon-link {
+  fill: #0088cc; }
 
-.font-face .icon-email:before {
-  content: "\e601"; }
-
-.font-face .icon-twitter:before {
-  content: "\e602"; }
-
-.font-face .icon-search:before {
-  content: "\e603"; }
-
-.font-face .icon-heart:before {
-  content: "\e604"; }
-
-.font-face .icon-paws:before {
-  content: "\e605"; }
-
-.font-face .icon-jetpack:before {
-  content: "\e606"; }
-
-.font-face .icon-tonyluong:before {
-  content: "\e607"; }
-
-.font-face .icon-emseek:before {
-  content: "\e608"; }
-
-.font-face .icon-github:before {
-  content: "\e609"; }
-
-.font-face .icon-rss:before {
-  content: "\e60a"; }
-
-.font-face .icon-xray:before {
-  content: "\e60b"; }
-
-.font-face .icon-smoothscroll:before {
-  content: "\e60c"; }
-
-.font-face .icon-wpwebapps:before {
-  content: "\e60d"; }
-
-.font-face .icon-petfinder:before {
-  content: "\e60e"; }
-
-.font-face .icon-kraken:before {
-  content: "\e60f"; }
-
-.font-face .icon-jellyfish:before {
-  content: "\e610"; }
-
-/*	Adjust icon colors*/
 .icon-heart {
-  color: #880e14; }
+  fill: #880e14; }
 
-a .icon-paws {
-  color: #6aa120; }
+.icon-paws {
+  fill: #6aa120; }
 
-a .icon-jetpack, a .icon-emseek {
-  color: #5a5a5a; }
+.icon-jetpack, .icon-emseek {
+  fill: #5a5a5a; }
 
-a .icon-petfinder {
-  color: #4b1f6f; }
+.icon-petfinder {
+  fill: #4b1f6f; }
 
-a .icon-tonyluong, a .icon-kraken, a .icon-xray, a .icon-smoothscroll, a .icon-wpwebapps, a .icon-jellyfish {
-  color: #272727; }
+.icon-tonyluong, .icon-kraken, .icon-smoothscroll, .icon-wpwebapps {
+  fill: #272727; }
 
-/*	Adjust icon colors on hover */
-a:hover .icon-paws, a:hover .icon-jetpack, a:hover .icon-petfinder, a:hover .icon-tonyluong, a:hover .icon-emseek, a:hover .icon-kraken, a:hover .icon-xray, a:hover .icon-smoothscroll, a:hover .icon-wpwebapps, a:hover .icon-jellyfish {
-  color: #005580; }
-
-/*	Text that displays when @font-face is unsupported.
- *	Also provides assistance for screen readers. */
-.font-face .icon-fallback-text {
-  position: absolute;
-  top: -9999em;
-  left: -9999em; }
+.icon-link:hover {
+  fill: #005580; }
 
 /* =============================================================
 

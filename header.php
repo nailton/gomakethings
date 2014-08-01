@@ -50,6 +50,8 @@
 
 	<body>
 
+		<div hidden><?php include_once( get_template_directory() . '/dist/svg/icons.svg' ); ?></div>
+
 		<!-- Old Browser Warning -->
 		<!--[if lt IE 9]>
 			<section class="container">
