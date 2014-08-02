@@ -528,22 +528,22 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
   display: inline;
   width: 85%;
   padding-left: 0.9375em;
-  padding-right: 4.375em;
+  padding-right: 2.5em;
   border-radius: 1.3125em; }
-
-.font-face .input-search {
-  padding-right: 2.5em; }
 
 .btn-search {
   display: inline;
   color: #808080;
   border: none;
   background: none;
-  margin-left: -4.375em;
+  margin-left: -2.5em;
   margin-bottom: 0; }
 
-.font-face .btn-search {
-  margin-left: -2.5em; }
+.btn-search .icon {
+  fill: #808080; }
+
+.btn-search:hover .icon {
+  fill: #5a5a5a; }
 
 /*  Inline Inputs */
 .input-inline {
@@ -569,10 +569,6 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 .icon-large {
   height: 2em;
   width: 2em; }
-  @media (min-width: 38em) {
-    .icon-large {
-      height: 3em;
-      width: 3em; } }
 
 /* Icon colors */
 .icon-link {
@@ -584,16 +580,19 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 .icon-paws {
   fill: #6aa120; }
 
+.icon-smoothscroll {
+  fill: #808080; }
+
 .icon-jetpack, .icon-emseek {
   fill: #5a5a5a; }
 
 .icon-petfinder {
   fill: #4b1f6f; }
 
-.icon-tonyluong, .icon-kraken, .icon-smoothscroll, .icon-wpwebapps {
+.icon-tonyluong, .icon-kraken, .icon-wpwebapps {
   fill: #272727; }
 
-.icon-link:hover {
+.icon-link:hover, a:hover .icon-link {
   fill: #005580; }
 
 /* =============================================================
@@ -631,8 +630,11 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
   color: #0088cc;
   text-decoration: none; }
 
-.logo .icon-logo {
+.logo .icon {
   font-size: 0.8em; }
+
+.logo:hover .icon {
+  fill: #0088cc; }
 
 /*  Remove default list styling for navigation list */
 .nav {

@@ -37,8 +37,12 @@
 	text-decoration: none;
 }
 
-.logo .icon-logo {
+.logo .icon {
 	font-size: .8em;
+}
+
+.logo:hover .icon {
+	fill: $color-primary;
 }
 
 /*  Remove default list styling for navigation list */

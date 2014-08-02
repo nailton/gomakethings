@@ -76,12 +76,8 @@ select:focus {
 	display: inline;
 	width: 85%;
 	padding-left: calc-em(15px);
-	padding-right: calc-em(70px);
-	border-radius: calc-em(21px);
-}
-
-.font-face .input-search {
 	padding-right: calc-em(40px);
+	border-radius: calc-em(21px);
 }
 
 .btn-search {
@@ -89,12 +85,16 @@ select:focus {
 	color: $color-gray-dark;
 	border: none;
 	background: none;
-	margin-left: calc-em(-70px);
+	margin-left: calc-em(-40px);
 	margin-bottom: 0;
 }
 
-.font-face .btn-search {
-	margin-left: calc-em(-40px);
+.btn-search .icon {
+	fill: $color-gray-dark;
+}
+
+.btn-search:hover .icon {
+	fill: darken( $color-gray-dark, 15% );
 }
 
 

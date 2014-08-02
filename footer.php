@@ -15,15 +15,17 @@
 
 			<p class="text-small space-bottom-small">
 				<a href="<?php echo site_url(); ?>/search/">
-					<i class="icon-search"></i> Search
+					<svg class="icon icon-link" role="presentation"><use xlink:href="#icon-search"></use></svg>
+					Search
 				</a>
 				&nbsp;&nbsp;/&nbsp;&nbsp;
 				<a href="http://feeds.feedburner.com/GoMakeThings">
-					<i class="icon-rss"></i> RSS Feed
+					<svg class="icon icon-link" role="presentation"><use xlink:href="#icon-rss"></use></svg>
+					RSS Feed
 				</a>
 			</p>
 			<p class="text-small space-bottom">
-				Made with <span class="icon-fallback-text">love</span> <i class="icon-heart"></i> by Chris Ferdinandi.<br>
+				Made with <svg class="icon icon-heart" role="img" title="love"><use xlink:href="#icon-heart">love</use></svg> by Chris Ferdinandi.<br>
 				Copyright 2014 Go Make Things, LLC.
 			</p>
 
