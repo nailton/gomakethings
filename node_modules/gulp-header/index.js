@@ -1,8 +1,6 @@
 /* jshint node: true */
 'use strict';
 
-var path = require('path');
-
 var es = require('event-stream');
 var gutil = require('gulp-util');
 var extend = require('lodash.assign');

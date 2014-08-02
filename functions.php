@@ -7,7 +7,7 @@
 
 // Load theme scripts
 function kraken_load_theme_js() {
-	wp_register_script('gomakethings-js', get_template_directory_uri() . '/js/gomakethings.min.js', false, null, true);
+	wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/gmt.js', false, null, true);
 	wp_enqueue_script('gomakethings-js');
 }
 add_action('wp_enqueue_scripts', 'kraken_load_theme_js');
@@ -20,7 +20,7 @@ function kraken_initialize_theme_js( $query ) {
 		echo
 			'<script>' .
 				'fluidvids.init({' .
-					'selector: "iframe",' .
+					'selector: ["iframe", "object"],' .
 					'players: ["www.youtube.com", "player.vimeo.com", "slideshare.net", "www.hulu.com"]' .
 				'});' .
 			'</script>';

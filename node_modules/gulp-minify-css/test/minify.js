@@ -62,3 +62,29 @@ describe('gulp-minify-css minification', function() {
     });
   });
 });
+
+describe('does not loose other properties in the file object', function () {
+  var filename = path.join(__dirname, './fixture/index.css');
+  it('should pass through the same file instance', function (done) {
+    var originalFile;
+    gulp.src(filename)
+    .pipe(es.mapSync(function (file) { return originalFile = file; }))
+    .pipe(minifyCSS())
+    .pipe(es.map(function (file) {
+      expect(file).to.equal(originalFile);
+      done();
+    }))
+  });
+  it('should preserve additional properties on the original file instance', function (done) {
+    gulp.src(filename)
+    .pipe(es.mapSync(function (file) {
+      file.someProperty = 42;
+      return file;
+    }))
+    .pipe(minifyCSS())
+    .pipe(es.map(function (file) {
+      expect(file.someProperty).to.equal(42);
+      done();
+    }))
+  });
+});

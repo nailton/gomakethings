@@ -38,11 +38,14 @@
 
 		<!-- HTML5 Shim for IE 6-8 -->
 		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/html5.js"></script>
 		<![endif]-->
 
 		<!-- Stylesheet -->
+		<!-- Included inline for faster rendering -->
+		<!-- http://filamentgroup.com/lab/performance-rwd.html -->
 		<style><?php include_once( get_template_directory() . '/dist/css/gmt.min.css' ); ?></style>
+
 
 		<?php wp_head(); ?>
 
