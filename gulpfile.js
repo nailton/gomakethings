@@ -79,7 +79,7 @@ gulp.task('scripts', ['clean'], function() {
 					.pipe(concat(name))
 					.pipe(header(banner.full, { package : package }))
 					.pipe(gulp.dest(paths.scripts.output))
-					.pipe(rename({ suffix: '.min.' + Date.now() }))
+					.pipe(rename({ suffix: '.min' }))
 					.pipe(uglify())
 					.pipe(header(banner.min, { package : package }))
 					.pipe(gulp.dest(paths.scripts.output));
@@ -87,7 +87,7 @@ gulp.task('scripts', ['clean'], function() {
 		}))
 		.pipe(header(banner.full, { package : package }))
 		.pipe(gulp.dest(paths.scripts.output))
-		.pipe(rename({ suffix: '.min.' + Date.now() }))
+		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(header(banner.min, { package : package }))
 		.pipe(gulp.dest(paths.scripts.output));
@@ -103,7 +103,7 @@ gulp.task('styles', ['clean'], function() {
 		.pipe(gulp.dest(paths.styles.output))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minify())
-		.pipe(header(banner.min, { package : package }))
+		// .pipe(header(banner.min, { package : package }))
 		.pipe(gulp.dest(paths.styles.output));
 });
 

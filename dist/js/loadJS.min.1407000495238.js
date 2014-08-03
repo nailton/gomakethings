@@ -1,2 +1,0 @@
-/** gomakethings v6.4.0, by Chris Ferdinandi | https://github.com/cferdinandi/gomakethings */
-var loadJS=function(e){"use strict";var t=window.document.getElementsByTagName("script")[0],r=window.document.createElement("script");return r.src=e,t.parentNode.insertBefore(r,t),r};

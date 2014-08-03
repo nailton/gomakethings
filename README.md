@@ -3,11 +3,13 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v6.4.1 - August 2, 2014
+	* Added SVG feature test for some specific styling.
 * v6.4.0 - August 1, 2014
 	* Converted to GulpJS.
 	* Switched to three number versioning.
 	* Inlined CSS for better performance.
-	* @TODO Converted icon font to SVGs.
+	* Converted icon font to SVGs.
 	* Deregister JetPack's devicepx script.
 * v6.3 - March 16, 2014
 	* Set `.text-tall` to same size on all screen sizes.

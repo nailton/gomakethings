@@ -1,5 +1,5 @@
 /**
- * gomakethings v6.4.0
+ * gomakethings v6.4.1
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  */
@@ -561,12 +561,12 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 	A placeholder for svg icon styles.
  * ============================================================= */
 /* Icon sizes */
-.icon {
+.svg .icon {
   display: inline-block;
   height: 1em;
   width: 1em; }
 
-.icon-large {
+.svg .icon-large {
   height: 2em;
   width: 2em; }
 
