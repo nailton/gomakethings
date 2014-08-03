@@ -3,8 +3,13 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v6.4.3 - August 2, 2014
+	* After much testing, removing inline CSS.
+* v6.4.2 - August 2, 2014
+	8 Added inline CSS back in.
 * v6.4.1 - August 2, 2014
 	* Added SVG feature test for some specific styling.
+	* Removed inline CSS. Was hurting time to first render.
 * v6.4.0 - August 1, 2014
 	* Converted to GulpJS.
 	* Switched to three number versioning.
