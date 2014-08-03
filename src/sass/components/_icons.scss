@@ -1,0 +1,40 @@
+/* =============================================================
+	ICONS
+	A placeholder for svg icon styles.
+ * ============================================================= */
+
+/* Icon sizes */
+
+.svg .icon {
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+}
+
+.svg .icon-large {
+	height: calc-em(32px);
+	width: calc-em(32px);
+
+	// @media (min-width: $bp-medium) {
+	// 	height: calc-em(48px);
+	// 	width: calc-em(48px);
+	// }
+}
+
+
+/* Icon colors */
+
+.icon-link { fill: $color-primary; }
+
+.icon-heart { fill: #880e14; }
+.icon-paws { fill: #6aa120; }
+.icon-smoothscroll { fill: $color-gray-dark; }
+.icon-jetpack,
+.icon-emseek { fill: darken( $color-gray-dark, 15% ); }
+.icon-petfinder { fill: #4b1f6f; }
+.icon-tonyluong,
+.icon-kraken,
+.icon-wpwebapps { fill: $color-black; }
+
+.icon-link:hover,
+a:hover .icon-link { fill: darken( $color-primary, 15% ) }

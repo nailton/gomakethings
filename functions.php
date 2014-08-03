@@ -7,9 +7,7 @@
 
 // Load theme scripts
 function kraken_load_theme_js() {
-	wp_register_script('feature-test-js', get_template_directory_uri() . '/js/feature-test.min.js', false, null, false);
-	wp_enqueue_script('feature-test-js');
-	wp_register_script('gomakethings-js', get_template_directory_uri() . '/js/gomakethings.min.js', false, null, true);
+	wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/gmt.min.08022014.js', false, null, true);
 	wp_enqueue_script('gomakethings-js');
 }
 add_action('wp_enqueue_scripts', 'kraken_load_theme_js');
@@ -22,7 +20,7 @@ function kraken_initialize_theme_js( $query ) {
 		echo
 			'<script>' .
 				'fluidvids.init({' .
-					'selector: "iframe",' .
+					'selector: ["iframe", "object"],' .
 					'players: ["www.youtube.com", "player.vimeo.com", "slideshare.net", "www.hulu.com"]' .
 				'});' .
 			'</script>';
@@ -71,6 +69,14 @@ function kraken_pretty_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'kraken_pretty_wp_title', 10, 2 );
+
+
+
+// Deregister JetPack's devicepx.js script
+function dequeue_devicepx() {
+    wp_dequeue_script( 'devicepx' );
+}
+add_action( 'wp_enqueue_scripts', 'dequeue_devicepx', 20 );
 
 
 

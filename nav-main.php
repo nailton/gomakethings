@@ -9,7 +9,10 @@
 
 <header class="container">
 	<nav class="nav-wrap">
-		<a class="logo" href="<?php echo site_url(); ?>/"><i class="icon-logo"></i> Go Make Things</a>
+		<a class="logo" href="<?php echo site_url(); ?>/">
+			<svg class="icon" role="presentation"><use xlink:href="#icon-logo"></use></svg>
+			Go Make Things
+		</a>
 		<ul class="nav">
 			<li <?php if (is_front_page() || is_single()) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/">Blog</a></li>
 			<li <?php if (is_page('about')) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/about/">About</a></li>
