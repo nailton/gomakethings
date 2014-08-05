@@ -29,7 +29,7 @@
 
 		</footer>
 
-		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/gmt.min.js"></script>
+		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/gmt.min.08052014.js"></script>
 		<script>
 			fluidvids.init({
 				selector: ['iframe', 'object'],
