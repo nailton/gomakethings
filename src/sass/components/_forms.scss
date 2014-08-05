@@ -1,8 +1,7 @@
-/* =============================================================
-	FORMS
-	Styling for form elements.
- * ============================================================= */
-/* @todo Integrate form styling with _config options */
+/**
+ * @Section Forms
+ */
+
 form,
 fieldset {
 	margin-bottom: $spacing;
@@ -90,11 +89,11 @@ select:focus {
 }
 
 .btn-search .icon {
-	fill: $color-gray-dark;
+	color: $color-gray-dark;
 }
 
 .btn-search:hover .icon {
-	fill: darken( $color-gray-dark, 15% );
+	color: darken( $color-gray-dark, 15% );
 }
 
 

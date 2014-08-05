@@ -13,8 +13,6 @@ var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var minify = require('gulp-minify-css');
 var karma = require('gulp-karma');
-var svgstore = require('gulp-svgstore');
-var svgmin = require('gulp-svgmin');
 var package = require('./package.json');
 
 var paths = {
@@ -26,10 +24,6 @@ var paths = {
 	styles : {
 		input : 'src/sass/**/*.scss',
 		output : 'dist/css/'
-	},
-	svgs : {
-		input : 'src/svg/*.svg',
-		output : 'dist/svg/'
 	},
 	static : 'src/static/**',
 	theme : {
@@ -107,17 +101,6 @@ gulp.task('styles', ['clean'], function() {
 		.pipe(gulp.dest(paths.styles.output));
 });
 
-gulp.task('svgs', ['clean'], function () {
-  return gulp.src(paths.svgs.input)
-        .pipe(svgmin())
-        .pipe(svgstore({
-            fileName: 'icons.svg',
-            prefix: 'icon-',
-            inlineSvg: true
-        }))
-        .pipe(gulp.dest(paths.svgs.output));
-});
-
 gulp.task('static', ['clean'], function() {
 	return gulp.src(paths.static)
 		.pipe(plumber())
@@ -160,7 +143,6 @@ gulp.task('default', [
 	'clean',
 	'scripts',
 	'styles',
-	'svgs',
 	'static',
 	'theme'
 ]);

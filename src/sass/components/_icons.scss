@@ -1,40 +1,97 @@
-/* =============================================================
-	ICONS
-	A placeholder for svg icon styles.
- * ============================================================= */
+/**
+ * @section Icons
+ */
 
-/* Icon sizes */
+/**
+ * Include the icon font family
+ */
 
-.svg .icon {
-	display: inline-block;
-	height: 1em;
-	width: 1em;
+@include font-face('icomoon', '../fonts/icomoon', normal, normal);
+
+
+/**
+ * Base class
+ */
+
+.icon {
+	font-family: 'icomoon';
+	font-style: normal;
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.svg .icon-large {
-	height: calc-em(32px);
-	width: calc-em(32px);
 
-	// @media (min-width: $bp-medium) {
-	// 	height: calc-em(48px);
-	// 	width: calc-em(48px);
-	// }
-}
+/**
+ * Icon content
+ */
+
+.font-face .icon-kraken:before { content: "\e600"; }
+.font-face .icon-petfinder:before { content: "\e601"; }
+.font-face .icon-tonyluong:before { content: "\e602"; }
+.font-face .icon-email:before { content: "\e603"; }
+.font-face .icon-emseek:before { content: "\e604"; }
+.font-face .icon-search:before { content: "\e605"; }
+.font-face .icon-paws:before { content: "\e606"; }
+.font-face .icon-jetpack:before { content: "\e607"; }
+.font-face .icon-smoothscroll:before { content: "\e608"; }
+.font-face .icon-logo:before { content: "\e609"; }
+.font-face .icon-heart:before { content: "\e60a"; }
+.font-face .icon-twitter:before { content: "\e60b"; }
+.font-face .icon-rss:before { content: "\e60c"; }
+.font-face .icon-github:before { content: "\e60d"; }
+.font-face .icon-wpwebapps:before { content: "\e60e"; }
 
 
-/* Icon colors */
+/**
+ * Icon colors
+ */
 
-.icon-link { fill: $color-primary; }
-
-.icon-heart { fill: #880e14; }
-.icon-paws { fill: #6aa120; }
-.icon-smoothscroll { fill: $color-gray-dark; }
-.icon-jetpack,
-.icon-emseek { fill: darken( $color-gray-dark, 15% ); }
-.icon-petfinder { fill: #4b1f6f; }
+.icon-heart { color: #880e14; }
+.icon-paws { color: #6aa120; }
+.icon-smoothscroll { color: $color-gray-dark; }
+.icon-emseek,
+.icon-jetpack { color: darken( $color-gray-dark, 15% ); }
+.icon-petfinder { color: #4b1f6f; }
 .icon-tonyluong,
 .icon-kraken,
-.icon-wpwebapps { fill: $color-black; }
+.icon-wpwebapps { color: $color-black; }
 
-.icon-link:hover,
-a:hover .icon-link { fill: darken( $color-primary, 15% ) }
+
+/**
+ * Icons in links
+ */
+
+a.icon-link-wrap:hover {
+    text-decoration: none;
+}
+
+a:hover .icon-link {
+    color: darken( $color-primary, 15% );
+}
+
+a:hover .icon-link-text {
+    text-decoration: underline;
+}
+
+
+/**
+ * Override color-styled icons
+ */
+
+.icon-inherit-color {
+    color: inherit;
+}
+
+
+/**
+ * Text that displays when @font-face is unsupported.
+ * Also provides assistance for screen readers.
+ */
+
+.font-face .icon-fallback-text {
+	position: absolute;
+	top: -9999em;
+	left: -9999em;
+}

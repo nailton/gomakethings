@@ -32,8 +32,8 @@
 		<link rel="alternate" type="application/rss+xml" title="<?php printf( __( '%s RSS Feed', 'kraken' ), get_bloginfo( 'name' ) ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<!-- Feature Test -->
-		<script><?php include_once( get_template_directory() . '/dist/js/detects.min.js' ); ?></script>
+		<!-- Browser Support Detection -->
+		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/detects.min.js"></script>
 
 		<!-- HTML5 Shim for IE 6-8 -->
 		<!--[if lt IE 9]>
@@ -41,16 +41,13 @@
 		<![endif]-->
 
 		<!-- Stylesheet -->
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/gmt.min.08022014.css">
+		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/gmt.min.css">
 
 		<?php wp_head(); ?>
 
 	</head>
 
 	<body>
-
-		<!-- SVG sprite -->
-		<div hidden><?php include_once( get_template_directory() . '/dist/svg/icons.svg' ); ?></div>
 
 		<!-- Old Browser Warning -->
 		<!--[if lt IE 9]>
