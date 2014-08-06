@@ -1,7 +1,6 @@
-/* =============================================================
-	TYPOGRAPHY
-	Sets font styles for entire site.
- * ============================================================= */
+/**
+ * @Section Typography
+ */
 
 body {
 	font-family: $font-primary;
@@ -27,16 +26,12 @@ p {
 	font-size: calc-em(15px);
 }
 
-.text-tall {
-	// font-size: calc-em(19px);
+.text-large {
 	font-size: calc-em(21px);
 	line-height: 1.4;
-	// @media (min-width: $bp-medium) {
-	// 	font-size: calc-em(21px);
-	// }
 }
 
-.text-venti {
+.text-xlarge {
 	font-size: calc-em(32px);
 	line-height: 1.2;
 }

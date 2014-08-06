@@ -1,5 +1,5 @@
 /**
- * gomakethings v6.4.3
+ * gomakethings v7.0.1
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  */
@@ -11,10 +11,9 @@
 	http://gomakethings.com
 
  * ============================================================= */
-/* =============================================================
-	CSS RESET
-	Meyer's CSS Reset, Normalized.css, and custom code.
- * ============================================================= */
+/**
+ * @section CSS Reset
+ */
 /* Mobile Screen Resizing */
 @-webkit-viewport {
   width: device-width;
@@ -104,10 +103,9 @@ a:focus, button:focus {
 a:hover, a:active {
   outline: 0; }
 
-/* =============================================================
-	THE GRID
-	Structure and layout.
- * ============================================================= */
+/**
+ * @Section The Grid
+ */
 /*  Mobile-first. Single-column layout by default
  *  Container sets the maximum page width. Adjust as needed. */
 .container {
@@ -186,10 +184,9 @@ a:hover, a:active {
     margin-left: 75%; } }
 
 /* Add clearfix */
-/* =============================================================
-	TYPOGRAPHY
-	Sets font styles for entire site.
- * ============================================================= */
+/**
+ * @Section Typography
+ */
 body {
   font-family: Georgia, Times, serif;
   font-size: 106.25%;
@@ -209,11 +206,11 @@ p {
 .text-small {
   font-size: 0.9375em; }
 
-.text-tall {
+.text-large {
   font-size: 1.3125em;
   line-height: 1.4; }
 
-.text-venti {
+.text-xlarge {
   font-size: 2em;
   line-height: 1.2; }
 
@@ -379,11 +376,9 @@ blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none; }
 
-/* =============================================================
-	CODE
-	Styling for code and preformatted text.
- * ============================================================= */
-/* @todo Add variables for code elements */
+/**
+ * @Section Code and Pre styling
+ */
 code, pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 0.8125em;
@@ -433,10 +428,9 @@ pre code {
   .token.entity {
     cursor: help; } }
 
-/* =============================================================
-	BUTTONS
-	Styling for CSS buttons.
- * ============================================================= */
+/**
+ * @Section Buttons
+ */
 .btn {
   display: inline-block;
   font-size: 0.9375em;
@@ -468,11 +462,9 @@ button, .btn {
 .btn:last-child, input.btn {
   margin-right: 0; }
 
-/* =============================================================
-	FORMS
-	Styling for form elements.
- * ============================================================= */
-/* @todo Integrate form styling with _config options */
+/**
+ * @Section Forms
+ */
 form, fieldset {
   margin-bottom: 1.5625em; }
 
@@ -540,10 +532,10 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
   margin-bottom: 0; }
 
 .btn-search .icon {
-  fill: #808080; }
+  color: #808080; }
 
 .btn-search:hover .icon {
-  fill: #5a5a5a; }
+  color: #5a5a5a; }
 
 /*  Inline Inputs */
 .input-inline {
@@ -556,55 +548,129 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
   padding: 0.0725em 0.3125em;
   font-size: 0.9375em; }
 
-/* =============================================================
-	ICONS
-	A placeholder for svg icon styles.
- * ============================================================= */
-/* Icon sizes */
-.svg .icon {
-  display: inline-block;
-  height: 1em;
-  width: 1em; }
+/**
+ * @section Icons
+ */
+/**
+ * Include the icon font family
+ */
+@font-face {
+  font-family: 'icomoon';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/icomoon.eot');
+  src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff') format('woff'), url('../fonts/icomoon.ttf') format('truetype'), url('../fonts/icomoon.svg#icomoon') format('svg'); }
 
-.svg .icon-large {
-  height: 2em;
-  width: 2em; }
+/**
+ * Base class
+ */
+.icon {
+  font-family: 'icomoon';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
-/* Icon colors */
-.icon-link {
-  fill: #0088cc; }
+/**
+ * Icon content
+ */
+.font-face .icon-kraken:before {
+  content: "\e600"; }
 
+.font-face .icon-petfinder:before {
+  content: "\e601"; }
+
+.font-face .icon-tonyluong:before {
+  content: "\e602"; }
+
+.font-face .icon-email:before {
+  content: "\e603"; }
+
+.font-face .icon-emseek:before {
+  content: "\e604"; }
+
+.font-face .icon-search:before {
+  content: "\e605"; }
+
+.font-face .icon-paws:before {
+  content: "\e606"; }
+
+.font-face .icon-jetpack:before {
+  content: "\e607"; }
+
+.font-face .icon-smoothscroll:before {
+  content: "\e608"; }
+
+.font-face .icon-logo:before {
+  content: "\e609"; }
+
+.font-face .icon-heart:before {
+  content: "\e60a"; }
+
+.font-face .icon-twitter:before {
+  content: "\e60b"; }
+
+.font-face .icon-rss:before {
+  content: "\e60c"; }
+
+.font-face .icon-github:before {
+  content: "\e60d"; }
+
+.font-face .icon-wpwebapps:before {
+  content: "\e60e"; }
+
+/**
+ * Icon colors
+ */
 .icon-heart {
-  fill: #880e14; }
+  color: #880e14; }
 
 .icon-paws {
-  fill: #6aa120; }
+  color: #6aa120; }
 
 .icon-smoothscroll {
-  fill: #808080; }
+  color: #808080; }
 
-.icon-jetpack, .icon-emseek {
-  fill: #5a5a5a; }
+.icon-emseek, .icon-jetpack {
+  color: #5a5a5a; }
 
 .icon-petfinder {
-  fill: #4b1f6f; }
+  color: #4b1f6f; }
 
 .icon-tonyluong, .icon-kraken, .icon-wpwebapps {
-  fill: #272727; }
+  color: #272727; }
 
-.icon-link:hover, a:hover .icon-link {
-  fill: #005580; }
+/**
+ * Icons in links
+ */
+a.icon-link-wrap:hover {
+  text-decoration: none; }
 
-/* =============================================================
+a:hover .icon-link {
+  color: #005580; }
 
-	Astro Basic Plus 4.1
-	Mobile-first navigation patterns by Chris Ferdinandi.
-	http://gomakethings.com
+a:hover .icon-link-text {
+  text-decoration: underline; }
 
-	Free to use under the MIT License.
-	http://gomakethings.com/mit/
+/**
+ * Override color-styled icons
+ */
+.icon-inherit-color {
+  color: inherit; }
 
- * ============================================================= */
+/**
+ * Text that displays when @font-face is unsupported.
+ * Also provides assistance for screen readers.
+ */
+.font-face .icon-fallback-text {
+  position: absolute;
+  top: -9999em;
+  left: -9999em; }
+
+/**
+ * @Section Navigation Menu
+ */
 /*  Center all navigation elements */
 .nav-wrap {
   text-align: center;
@@ -632,9 +698,6 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 
 .logo .icon {
   font-size: 0.8em; }
-
-.logo:hover .icon {
-  fill: #0088cc; }
 
 /*  Remove default list styling for navigation list */
 .nav {
@@ -676,16 +739,9 @@ input[type="file"]:focus, input[type="checkbox"]:focus, select:focus {
 
 /*  Hide the navigation toggle menu button by default.
  *  Only needed for expand-and-collapse option. */
-/* =============================================================
-
-	Tables v2.1
-	Simple table styling by Chris Ferdinandi.
-	http://gomakethings.com
-
-	Free to use under the MIT License.
-	http://gomakethings.com/mit/
-
- * ============================================================= */
+/**
+ * @Section Tables
+ */
 /*  Removes default browser settings
  *  and evens out inconsistencies. */
 table {
@@ -714,16 +770,9 @@ tbody tr:nth-child(even) {
 .table-condensed th, .table-condensed td {
   padding: 0.25em; }
 
-/* =============================================================
-
-	Snapshot v2.0
-	A collection of simple image styles, by Chris Ferdinandi
-	http://gomakethings.com
-
-	Licensed under the MIT License.
-	http://gomakethings.com/mit/
-
- * ============================================================= */
+/**
+ * @Section Image styles
+ */
 /*  Adds a border */
 .img-border {
   border: 0.0725em solid #cccccc; }
@@ -733,12 +782,9 @@ tbody tr:nth-child(even) {
 .img-circle, .avatar {
   border-radius: 50%; }
 
-/* =============================================================
-	WORDPRESS IMAGE CLASSES
-	Styling for the classes WordPress automatically applies to images.
-	These styles are NOT included in the Kraken boilerplate.
-	(You'll probably want to include these later in the stylesheet.)
- * ============================================================= */
+/**
+ * @Section WordPress Image Styles
+ */
 /*  Comment Avatar Styling
  *  Class automatically applied to comment avatars. */
 .avatar {
@@ -781,10 +827,9 @@ tbody tr:nth-child(even) {
     margin-left: 0;
     margin-right: 0; } }
 
-/* =============================================================
-	ALIGNMENT, SPACING & VISIBILITY
-	Override default alignment, spacing and visibilty.
- * ============================================================= */
+/**
+ * @Section Override default behaviors
+ */
 /*  Text alignment */
 .text-center {
   text-align: center; }
@@ -847,11 +892,9 @@ tbody tr:nth-child(even) {
 .group:after, .container:after, .row:after {
   clear: both; }
 
-/* =============================================================
-	PRINT STYLES
-	Styling for printed content. Adapted from HTML5BP.
-	http://html5boilerplate.com
- * ============================================================= */
+/**
+ * @Section Print Styles
+ */
 @media print {
   /*  Universal selector.
 	 *  Reset all content to transparent background,

@@ -1,13 +1,6 @@
-/* =============================================================
-
-	Astro Basic Plus 4.1
-	Mobile-first navigation patterns by Chris Ferdinandi.
-	http://gomakethings.com
-
-	Free to use under the MIT License.
-	http://gomakethings.com/mit/
-
- * ============================================================= */
+/**
+ * @Section Navigation Menu
+ */
 
 /*  Center all navigation elements */
 .nav-wrap {
@@ -39,10 +32,6 @@
 
 .logo .icon {
 	font-size: .8em;
-}
-
-.logo:hover .icon {
-	fill: $color-primary;
 }
 
 /*  Remove default list styling for navigation list */

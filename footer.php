@@ -14,22 +14,28 @@
 			<hr>
 
 			<p class="text-small space-bottom-small">
-				<a href="<?php echo site_url(); ?>/search/">
-					<svg class="icon icon-link" role="presentation"><use xlink:href="#icon-search"></use></svg>
-					Search
+				<a class="icon-link-wrap" href="<?php echo site_url(); ?>/search/">
+					<i class="icon icon-search icon-link"></i> <span class="icon-link-text">Search</span>
 				</a>
 				&nbsp;&nbsp;/&nbsp;&nbsp;
-				<a href="http://feeds.feedburner.com/GoMakeThings">
-					<svg class="icon icon-link" role="presentation"><use xlink:href="#icon-rss"></use></svg>
-					RSS Feed
+				<a class="icon-link-wrap" href="http://feeds.feedburner.com/GoMakeThings">
+					<i class="icon icon-rss icon-link"></i> <span class="icon-link-text">RSS Feed</span>
 				</a>
 			</p>
 			<p class="text-small space-bottom">
-				Made with <svg class="icon icon-heart" role="img" title="love"><use xlink:href="#icon-heart">love</use></svg> by Chris Ferdinandi.<br>
+				Made with <i class="icon icon-heart"></i><span class="icon-fallback-text">love</span> by Chris Ferdinandi.<br>
 				Copyright 2014 Go Make Things, LLC.
 			</p>
 
 		</footer>
+
+		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/gmt.min.08052014.js"></script>
+		<script>
+			fluidvids.init({
+				selector: ['iframe', 'object'],
+				players: ['www.youtube.com', 'player.vimeo.com', 'slideshare.net', 'www.hulu.com']
+			});
+		</script>
 
 		<?php wp_footer(); ?>
 

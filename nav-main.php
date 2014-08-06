@@ -10,7 +10,7 @@
 <header class="container">
 	<nav class="nav-wrap">
 		<a class="logo" href="<?php echo site_url(); ?>/">
-			<svg class="icon" role="presentation"><use xlink:href="#icon-logo"></use></svg>
+			<i class="icon icon-logo"></i>
 			Go Make Things
 		</a>
 		<ul class="nav">

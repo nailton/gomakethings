@@ -1,5 +1,5 @@
 /**
- * gomakethings v6.4.3
+ * gomakethings v7.0.1
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  */
