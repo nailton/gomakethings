@@ -7,7 +7,7 @@
 
 // Load theme scripts
 function kraken_load_theme_js() {
-	wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/gmt.min.js', false, null, true);
+	wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/gmt.min.08082014.js', false, null, true);
 	wp_enqueue_script('gomakethings-js');
 }
 // add_action('wp_enqueue_scripts', 'kraken_load_theme_js');

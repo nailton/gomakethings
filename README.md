@@ -3,9 +3,11 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
-* 7.0.1 - August 5, 2014
+* v7.0.2 - August 8, 2014
+	* Converted to CSSDoc.
+* v7.0.1 - August 5, 2014
 	* Fixed icon font detect.
-* 7.0.0 - August 5, 2014
+* v7.0.0 - August 5, 2014
 	* Reverted back to icon fonts for better mobile performance.
 	* Updated icon styles to be more OOCSS and have greater flexibility.
 	* Changed `.text-tall` and `.text-venti` to `.text-large` and `.text-xlarge`.
