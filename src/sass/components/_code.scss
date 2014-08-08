@@ -1,5 +1,5 @@
 /**
- * @Section Code and Pre styling
+ * @section Code and Pre styling
  */
 
 code,
@@ -11,7 +11,6 @@ pre {
 
 code {
 	color: $color-code;
-	// background-color: #f7f7f9;
 	background-color: lighten( $color-gray-light, 7% );
 	padding: calc-em(4px);
 }
@@ -20,7 +19,6 @@ pre {
 	display: block;
 	margin-bottom: $spacing;
 	line-height: 1.5;
-	// background-color: #f5f5f5;
 	background-color: lighten( $color-gray-light, 6% );
 	padding: calc-em(13px);
 	-moz-tab-size: 4;
@@ -38,7 +36,9 @@ pre code {
 	border: 0;
 }
 
-/* Prism Syntax highlighting */
+/**
+ * Prism Syntax highlighting
+ */
 @media screen {
 
 	.token.comment,

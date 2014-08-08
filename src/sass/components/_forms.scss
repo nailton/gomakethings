@@ -1,5 +1,5 @@
 /**
- * @Section Forms
+ * @section Forms
  */
 
 form,
@@ -15,7 +15,6 @@ label {
 	margin-bottom: calc-em(5px);
 }
 
-/* @todo Adjust form colors based on Sass variables */
 input,
 textarea,
 select, {
@@ -70,7 +69,9 @@ select:focus {
 }
 
 
-/*  Search */
+/**
+ * Search
+ */
 .input-search {
 	display: inline;
 	width: 85%;
@@ -97,7 +98,9 @@ select:focus {
 }
 
 
-/*  Inline Inputs */
+/**
+ * Inline Inputs
+ */
 .input-inline {
 	display: inline-block;
 	width: auto;
@@ -105,7 +108,9 @@ select:focus {
 }
 
 
-/*  Condensed Inputs */
+/**
+ * Condensed Inputs
+ */
 .input-condensed {
 	padding: calc-em(1px) calc-em(5px);
 	font-size: calc-em(15px);

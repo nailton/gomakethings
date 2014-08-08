@@ -1,17 +1,20 @@
 /**
- * @Section Navigation Menu
+ * @section Navigation Menu
  */
 
-/*  Center all navigation elements */
+/**
+ * Center all navigation elements
+ */
 .nav-wrap {
 	text-align: center;
 	padding-top: calc-em(16px);
 	padding-bottom: calc-em(8px);
 }
 
-/*  For text-based logo, override default link styling.
- *  If .logo and .nav don't align properly,
- *  adjust the .logo line-height. */
+/**
+ * For text-based logo, override default link styling.
+ * If .logo and .nav don't align properly, adjust the .logo line-height.
+ */
 .logo {
 	display: block;
 	font-size: calc-em(19px);
@@ -24,7 +27,9 @@
 	}
 }
 
-/*  For text-based logo, override default link hover styling */
+/**
+ * For text-based logo, override default link hover styling
+ */
 .logo:hover {
 	color: $color-primary;
 	text-decoration: none;
@@ -34,11 +39,12 @@
 	font-size: .8em;
 }
 
-/*  Remove default list styling for navigation list */
+/**
+ * Remove default list styling for navigation list
+ */
 .nav {
 	list-style: none;
 	font-size: calc-em(15px);
-	// font-size: calc-em(16px);
 	margin: 0;
 	padding: 0;
 	@media (min-width: $bp-small) {
@@ -46,8 +52,10 @@
 	}
 }
 
-/*  Display navigation items as inline-block elements.
- *  Add slight margin between each navigation item. */
+/**
+ * Display navigation items as inline-block elements.
+ * Add slight margin between each navigation item.
+ */
 .nav > li {
 	display: inline-block;
 	float: none;
@@ -55,82 +63,37 @@
 	margin-right: calc-em(8px);
 }
 
-/*  Remove margin-left on first navigation item */
+/**
+ * Remove margin-left on first navigation item
+ */
 .nav > li:first-child {
 	margin-left: 0;
 }
 
-/*  Remove margin-right on last navigation item */
+/**
+ * Remove margin-right on last navigation item
+ */
 .nav > li:last-child {
 	margin-right: 0;
 }
 
-/*  Active navigation link styling */
+/**
+ * Active navigation link styling
+ */
 .nav > li > a {
 	color: $color-gray-dark;
 }
 
-/*  Active navigation link styling */
+/**
+ * Active navigation link styling
+ */
 .nav > li > a:hover {
 	color: $color-primary;
 }
 
-/*  Active navigation link styling */
+/**
+ * Active navigation link styling
+ */
 .nav > .active > a {
 	color: $color-black
 }
-
-/*  Hide the navigation toggle menu button by default.
- *  Only needed for expand-and-collapse option. */
-// .nav-toggle {
-// 	display: none;
-// 	visibility: hidden;
-// }
-
-
-// /*  Expand-and-Collapse styling for smaller screens.
-//  *  Remove if not using.
-//  *  Change max-width to fit your project. */
-// @media (max-width: $bp-medium) {
-
-// 	/*  .js-astro prefix ensure content is only hidden when JavaScript is supported.
-// 	 *  This requires on the included js-accessibility.js-astro script. */
-
-// 	 /*	Align text to the left */
-// 	 .js-astro .nav-wrap {
-// 	 	text-align: left;
-// 	 }
-
-// 	/*  Display navigation toggle button if javascript is supported */
-// 	.js-astro .nav-toggle {
-// 		display: block;
-// 		visibility: visible;
-// 		float: right;
-// 	}
-
-// 	/*  Hide navigation items if javascript is supported */
-// 	.js-astro .nav-collapse {
-// 		max-height: 0;
-// 		overflow: hidden;
-// 		/*  CSS3 animation for when menu content expands */
-// 		transition: all 0.35s ease-in;
-// 	}
-
-// 	/*  When collapsed element has the .active class, show it
-// 	 *  Uses max-height instead of display: none to allow for
-// 	 *  CSS3 animations, which don't work on display values. */
-// 	.js-astro .nav-collapse.active {
-// 		max-height: 999em;
-// 	}
-
-// 	/*  Display navigation items as full-width, stacked blocks when javascript supported */
-// 	.js-astro .nav-collapse li {
-// 		display: block;
-// 		width: 100%;
-// 		margin-left: 0;
-// 		margin-right: 0;
-// 		padding-top: calc-em(4px);
-// 		padding-bottom: calc-em(4px);
-// 	}
-
-// }

@@ -1,9 +1,11 @@
 /**
- * @Section WordPress Image Styles
+ * @section WordPress Image Styles
  */
 
-/*  Comment Avatar Styling
- *  Class automatically applied to comment avatars. */
+/**
+ * Comment Avatar Styling
+ * Class automatically applied to comment avatars.
+ */
 .avatar {
 	float: left;
 	margin-right: calc-em(8px);
@@ -13,8 +15,10 @@
 	width: calc-em(60px);
 }
 
-/*  Display all images as centered block elements.
- *  Mobile-first default styling. */
+/**
+ * Display all images as centered block elements.
+ * Mobile-first default styling.
+ */
 .alignleft,
 .alignright,
 .aligncenter,
@@ -25,7 +29,9 @@
 	margin-right: auto;
 }
 
-/*  Image Caption Styling */
+/**
+ * Image Caption Styling
+ */
 .wp-caption-text {
 	font-size: calc-em(15px);
 	font-style: italic;
@@ -36,21 +42,25 @@
 
 @media (min-width: $bp-small) {
 
-	/*  On bigger screens, float .alignleft images
-	 *  to the left with a slight margin-right. */
+	/**
+	 * On bigger screens, float .alignleft images to the left with a slight margin-right.
+	 */
 	.alignleft {
 		float: left;
 		margin-right: calc-em(8px);
 	}
 
-	/*  On bigger screens, float .alignright images
-	 *  to the right with a slight margin-left. */
+	/**
+	 * On bigger screens, float .alignright images to the right with a slight margin-left.
+	 */
 	.alignright {
 		float: right;
 		margin-left: calc-em(8px);
 	}
 
-	/*  On bigger screens, remove left and right margins from .alignnone */
+	/**
+	 * On bigger screens, remove left and right margins from .alignnone.
+	 */
 	.alignnone {
 		margin-left: 0;
 		margin-right: 0;

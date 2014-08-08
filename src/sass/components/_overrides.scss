@@ -1,8 +1,10 @@
 /**
- * @Section Override default behaviors
+ * @section Override default behaviors
  */
 
-/*  Text alignment */
+/**
+ * Text alignment
+ */
 
 .text-center {
 	text-align: center;
@@ -17,7 +19,9 @@
 }
 
 
-/*  Floats */
+/**
+ * Floats
+ */
 
 .float-left {
 	float: left;
@@ -34,7 +38,9 @@
 }
 
 
-/*  Spacing */
+/**
+ * Spacing
+ */
 
 .no-space {
 	margin: 0;
@@ -69,7 +75,9 @@
 }
 
 
-/*  Screen Reader Text */
+/**
+ * Screen Reader Text
+ */
 
 .screen-reader {
 	position: absolute;
@@ -78,7 +86,9 @@
 }
 
 
-/*  Clearfix */
+/**
+ * Clearfix
+ */
 .group:before,
 .group:after {
 	display: table;

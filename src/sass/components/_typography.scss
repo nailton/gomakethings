@@ -1,5 +1,5 @@
 /**
- * @Section Typography
+ * @section Typography
  */
 
 body {
@@ -19,8 +19,9 @@ p {
 }
 
 
-/*  Sizes
- *  For smaller and larger text */
+/**
+ * Sizes: for smaller and larger text
+ */
 
 .text-small {
 	font-size: calc-em(15px);
@@ -37,16 +38,18 @@ p {
 }
 
 
-/*  Colors
- *  For alternate text colors */
+/**
+ * Colors: for alternate text colors
+ */
 
 .text-muted {
 	color: $color-gray-dark;
 }
 
 
-/*  Links
- *  Hyperlink styling */
+/**
+ * Links
+ */
 
 a {
 	color: $color-primary;
@@ -64,8 +67,10 @@ a img {
 	background: none;
 }
 
-/*  Prevents border/background on linked image hover.
- *  Adds slight opacity. */
+/**
+ * Prevents border/background on linked image hover.
+ * Adds slight opacity.
+ */
 a:hover img {
 	border: none;
 	background: none;
@@ -74,8 +79,9 @@ a:hover img {
 }
 
 
-/*  Lists
- *  Styling for lists */
+/**
+ * Lists
+ */
 
 ul,
 ol,
@@ -107,19 +113,20 @@ dt {
 	font-weight: bold;
 }
 
-/*  Removes list styling.
- *  For semantic reasons, should only
- *  be used on unordered lists. */
+/**
+ * Removes list styling.
+ * For semantic reasons, should only be used on unordered lists.
+ */
 .list-unstyled {
 	margin-left: 0;
 	list-style: none;
 }
 
 
-/*  Headings
- *  h1 through h6 styling
- *  Heading class lets you use one heading type for semantics
- *  but style it as another heading type. */
+/**
+ * Headings: h1 through h6 styling
+ * Heading classes lets you use one heading type for semantics but style it as another heading type.
+ */
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
@@ -134,9 +141,6 @@ h1,
 .h1 {
 	font-size: calc-em(24px);
 	padding-top: .5em;
-	// @media (min-width: $bp-medium) {
-	// 	font-size: calc-em(28px);
-	// }
 }
 
 h2,
@@ -181,9 +185,10 @@ h6 a:hover {
 }
 
 
-/*  Lines, Quotes and Emphasis */
+/**
+ * Lines
+ */
 
-/*  Lines */
 hr {
 	margin: calc-em(32px) auto;
 	border: 0;
@@ -204,17 +209,22 @@ hr {
 	content: "\2219 \2219 \2219 \2219 \2219";
 }
 
-/*  Bold */
+/**
+ * Bold & Italics
+ */
+
 strong {
 	font-weight: bold;
 }
 
-/*  Italics */
 em {
 	font-style: italic;
 }
 
-/*  Subscript & Superscript */
+/**
+ * Subscript & Superscript
+ */
+
 sub,
 sup {
 	position: relative;
@@ -233,7 +243,11 @@ sub {
 	bottom: calc-em(-4px);
 }
 
-/*  Highlighting colors */
+
+/**
+ * Highlighting colors
+ */
+
 ::selection {
 	color: $color-white;
 	background: $color-primary;
@@ -244,7 +258,11 @@ sub {
 	background: $color-primary;
 }
 
-/*  Blockquotes */
+
+/**
+ * Blockquotes
+ */
+
 blockquote {
 	border-left: calc-em(4px) solid $color-gray-light;
 	font-style: italic;
