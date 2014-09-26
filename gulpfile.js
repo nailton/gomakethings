@@ -50,16 +50,16 @@ var banner = {
 		' | <%= package.repository.url %>' +
 		' */\n',
 	theme :
-	'/**\n' +
-	' * Theme Name: <%= package.name %> v<%= package.version %>\n' +
-	' * Theme URI: <%= package.repository.url %>\n' +
-	' * Description: <%= package.description %>\n' +
-	' * Version: <%= package.version %>\n' +
-	' * Author: <%= package.author.name %>\n' +
-	' * Author URI: <%= package.author.url %>\n' +
-	' * License: <%= package.license %>\n' +
-	' * License URI: <%= package.author.url %>/mit/\n' +
-	' */'
+		'/**\n' +
+		' * Theme Name: <%= package.name %> v<%= package.version %>\n' +
+		' * Theme URI: <%= package.repository.url %>\n' +
+		' * Description: <%= package.description %>\n' +
+		' * Version: <%= package.version %>\n' +
+		' * Author: <%= package.author.name %>\n' +
+		' * Author URI: <%= package.author.url %>\n' +
+		' * License: <%= package.license %>\n' +
+		' * License URI: <%= package.author.url %>/mit/\n' +
+		' */'
 };
 
 gulp.task('scripts', ['clean'], function() {
