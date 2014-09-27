@@ -1,9 +1,9 @@
 <?php
 
-/* ======================================================================
-	Single.php
-	Template for individual blog posts.
- * ====================================================================== */
+/**
+ * single.php
+ * Template for individual blog posts.
+ */
 
 get_header(); ?>
 

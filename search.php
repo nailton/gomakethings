@@ -1,16 +1,16 @@
 <?php
 
-/* ======================================================================
-	search.php
-	Template for search results.
- * ====================================================================== */
+/**
+ * search.php
+ * Template for search results.
+ */
 
 get_header(); ?>
 
 
 <?php if (have_posts()) : ?>
 	<header>
-		<h1 class="text-muted space-bottom"><?php _e( 'Search results for', 'kraken' ); ?> "<?php the_search_query() ?>"</h1>
+		<h1 class="text-muted space-bottom"><?php _e( 'Search results for', 'keel' ); ?> "<?php the_search_query() ?>"</h1>
 	</header>
 
 	<?php while (have_posts()) : the_post(); ?>
@@ -25,9 +25,9 @@ get_header(); ?>
 <?php else : ?>
 	<article>
 		<header>
-			<h1><?php _e( 'No results found for', 'kraken' ); ?> "<?php the_search_query() ?>"</h1>
+			<h1><?php _e( 'No results found for', 'keel' ); ?> "<?php the_search_query() ?>"</h1>
 		</header>
-		<p><?php _e( 'Sorry, your search didn\'t turn up any results. Maybe try using different keywords?', 'kraken' ) ?></p>
+		<p><?php _e( 'Sorry, your search didn\'t turn up any results. Maybe try using different keywords?', 'keel' ) ?></p>
 
 		<?php get_search_form(); ?>
 	</article>

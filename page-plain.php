@@ -1,10 +1,10 @@
 <?php
 
-/* ======================================================================
-	Template Name: Plain
-	Template for pages with no heading or meta data.
-	(Good for when you want more control over a page layout.)
- * ====================================================================== */
+/**
+ * Template Name: Plain
+ * Template for pages with no heading or meta data. Only displays page content.
+ * Useful for styling the page via the WordPress editor.
+ */
 
 get_header(); ?>
 

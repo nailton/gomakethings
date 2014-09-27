@@ -27,36 +27,20 @@
  * Icon content
  */
 
-.font-face .icon-kraken:before { content: "\e600"; }
-.font-face .icon-petfinder:before { content: "\e601"; }
-.font-face .icon-tonyluong:before { content: "\e602"; }
-.font-face .icon-email:before { content: "\e603"; }
-.font-face .icon-emseek:before { content: "\e604"; }
-.font-face .icon-search:before { content: "\e605"; }
-.font-face .icon-paws:before { content: "\e606"; }
-.font-face .icon-jetpack:before { content: "\e607"; }
-.font-face .icon-smoothscroll:before { content: "\e608"; }
-.font-face .icon-logo:before { content: "\e609"; }
-.font-face .icon-heart:before { content: "\e60a"; }
-.font-face .icon-twitter:before { content: "\e60b"; }
-.font-face .icon-rss:before { content: "\e60c"; }
-.font-face .icon-github:before { content: "\e60d"; }
-.font-face .icon-wpwebapps:before { content: "\e60e"; }
+@each $icon, $character, $color in ($icons) {
+	.font-face .icon-#{$icon}:before { content: $character };
+}
 
 
 /**
  * Icon colors
  */
 
-.icon-heart { color: #880e14; }
-.icon-paws { color: #6aa120; }
-.icon-smoothscroll { color: $color-gray-dark; }
-.icon-emseek,
-.icon-jetpack { color: darken( $color-gray-dark, 15% ); }
-.icon-petfinder { color: #4b1f6f; }
-.icon-tonyluong,
-.icon-kraken,
-.icon-wpwebapps { color: $color-black; }
+@each $icon, $character, $color in ($icons) {
+	@if $color {
+		.icon-#{$icon} { color: $color };
+	}
+}
 
 
 /**

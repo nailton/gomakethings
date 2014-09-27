@@ -1,9 +1,9 @@
 <?php
 
-/* ======================================================================
-	archive.php
-	Template for posts by category, tag, author, date, etc.
- * ====================================================================== */
+/**
+ * archive.php
+ * Template for posts by category, tag, author, date, etc.
+ */
 
 get_header(); ?>
 
@@ -23,9 +23,9 @@ get_header(); ?>
 			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
 				<?php the_time('Y'); ?>...
 			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-				By <?php _e( 'Author Archive', 'kraken' ) ?>...
+				By <?php _e( 'Author Archive', 'keel' ) ?>...
 			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-				<?php _e( 'Blog Archive', 'kraken' ) ?>...
+				<?php _e( 'Blog Archive', 'keel' ) ?>...
 			<?php } ?>
 		</h1>
 	</header>

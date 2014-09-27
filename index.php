@@ -1,9 +1,9 @@
 <?php
 
-/* ======================================================================
-	index.php
-	Template for page that displays all of your posts.
- * ====================================================================== */
+/**
+ * index.php
+ * Template for page that displays all of your posts.
+ */
 
 get_header(); ?>
 

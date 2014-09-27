@@ -23,6 +23,10 @@ $color-code: #dd1144;
 $color-gray-dark: #808080;
 $color-gray-light: #e5e5e5;
 
+$color-petfinder: #4b1f6f;
+$color-paws: #6aa120;
+$color-heart: #880e14;
+
 
 // Font Stacks
 $font-primary: Georgia, Times, serif;
@@ -42,4 +46,38 @@ $bp-medium: 38em;
 $font-base: 106.25%;
 $spacing: 1.5625em;
 $container-max: 38em;
+$container-width: 88%;
+
+// Grid
 $grid-margins: 1.4%;
+$grid-sizes: ( // name: width
+	fourth: 25%,
+	third: 33.33333333333%,
+	half: 50%,
+	two-thirds: 66.666666666667%,
+	three-fourths: 75%
+);
+$grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
+	($bp-xsmall, ".row-start-xsmall", false),
+	($bp-small, ".row-start-small", false),
+	($bp-medium, null, true)
+);
+
+// Icons
+$icons: ( // name, character, color
+	("kraken", "\e600", $color-black),
+	("petfinder", "\e601", $color-petfinder),
+	("tonyluong", "\e602", $color-black),
+	("email", "\e603", null),
+	("emseek", "\e604", darken( $color-gray-dark, 15% )),
+	("search", "\e605", null),
+	("paws", "\e606", $color-paws),
+	("jetpack", "\e607", darken( $color-gray-dark, 15% )),
+	("smoothscroll", "\e608", $color-gray-dark),
+	("logo", "\e609", null),
+	("heart", "\e60a", $color-heart),
+	("twitter", "\e60b", null),
+	("rss", "\e60c", null),
+	("github", "\e60d", null),
+	("wpwebapps", "\e60e", $color-black)
+);

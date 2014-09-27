@@ -1,10 +1,9 @@
 <?php
 
-/* ======================================================================
-	searchform.php
-	Template for search form.
-	`.screen-reader` class hides label when used with Kraken boilerplate.
- * ====================================================================== */
+/**
+ * searchform.php
+ * Template for search form.
+ */
 
 ?>
 

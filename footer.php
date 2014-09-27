@@ -1,9 +1,9 @@
 <?php
 
-/* ======================================================================
-	footer.php
-	Template for footer content.
- * ====================================================================== */
+/**
+ * footer.php
+ * Template for footer content.
+ */
 
 ?>
 
@@ -28,14 +28,6 @@
 			</p>
 
 		</footer>
-
-		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/gmt.min.08052014.js"></script>
-		<script>
-			fluidvids.init({
-				selector: ['iframe', 'object'],
-				players: ['www.youtube.com', 'player.vimeo.com', 'slideshare.net', 'www.hulu.com']
-			});
-		</script>
 
 		<?php wp_footer(); ?>
 
