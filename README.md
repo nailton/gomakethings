@@ -7,6 +7,7 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 	* Converted to Keel for base template.
 	* Added comments back to site.
 	* Made various Sass/Gulp improvements.
+	* Added comment span honeypot.
 * v7.0.2 - August 8, 2014
 	* Converted to CSSDoc.
 * v7.0.1 - August 5, 2014
