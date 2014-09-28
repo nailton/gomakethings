@@ -39,8 +39,7 @@
 	<?php endif; ?>
 
 	<?php if ( is_single() ) : ?>
-		<?php // comments_template(); ?>
-		<p><em>Have something to say? Let me know on Twitter at <a href="http://twitter.com/ChrisFerdinandi">@ChrisFerdinandi</a>, or <a href="<?php echo site_url(); ?>/about/">send me an email</a>.</em></p>
+		<?php comments_template(); ?>
 	<?php endif; ?>
 
 	<?php if ( !keel_is_last_post($wp_query) ) : ?>

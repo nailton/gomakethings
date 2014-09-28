@@ -143,6 +143,8 @@
 
 		<<?php echo $tag ?> <?php if ( $depth > 1 ) { echo 'class="comment-nested"'; } ?> id="comment-<?php comment_ID() ?>">
 
+			<hr class="line-secondary no-space-bottom">
+
 			<article>
 
 				<?php if ($comment->comment_approved == '0') : // If the comment is held for moderation ?>
@@ -153,12 +155,14 @@
 					<figure>
 						<?php if ( $args['avatar_size'] !== 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 					</figure>
-					<h3 class="no-space">
+					<h3 class="text-left no-space">
 						<?php comment_author_link() ?>
 					</h3>
 					<aside>
-						<time datetime="<?php comment_date( 'Y-m-d' ); ?>" pubdate><?php comment_date('F jS, Y') ?></time>
-						<?php edit_comment_link('Edit', ' / ', ''); ?>
+						<p class="text-small text-muted">
+							<time datetime="<?php comment_date( 'Y-m-d' ); ?>" pubdate><?php comment_date('F jS, Y') ?></time>
+							<?php edit_comment_link('Edit', ' / ', ''); ?>
+						</p>
 					</aside>
 				</header>
 
@@ -194,7 +198,7 @@
 	function keel_comment_form() {
 
 		$commenter = wp_get_current_commenter();
-		global $user_identity;
+		global $post, $user_identity;
 
 		$must_log_in =
 			'<p>' .
@@ -218,26 +222,35 @@
 		$notes_after = '';
 
 		$field_author =
-			'<div>' .
-				'<label for="author">' . __( 'Name' ) . '</label>' .
-				'<input type="text" name="author" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '" required>' .
+			'<div class="row">' .
+				'<div class="grid-two-thirds float-center">' .
+					'<label for="author">' . __( 'Name' ) . '</label>' .
+					'<input type="text" name="author" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '" required>' .
+				'</div>' .
 			'</div>';
 
 		$field_email =
-			'<div>' .
-				'<label for="email">' . __( 'Email' ) . '</label>' .
-				'<input type="email" name="email" id="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" required>' .
+			'<div class="row">' .
+				'<div class="grid-two-thirds float-center">' .
+					'<label for="email">' . __( 'Email' ) . '</label>' .
+					'<input type="email" name="email" id="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" required>' .
+				'</div>' .
 			'</div>';
 
 		$field_url =
-			'<div>' .
-				'<label for="url">' . __( 'Website (optional)' ) . '</label>' .
-				'<input type="url" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '">' .
+			'<div class="row">' .
+				'<div class="grid-two-thirds float-center">' .
+					'<label for="url">' . __( 'Website (optional)' ) . '</label>' .
+					'<input type="url" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '">' .
+				'</div>' .
 			'</div>';
 
 		$field_comment =
 			'<div>' .
 				'<textarea name="comment" id="comment" required></textarea>' .
+			'</div>' .
+			'<div class="text-center">' .
+				'<p>Share links, code and more with <a href="http://en.support.wordpress.com/markdown-quick-reference/">Markdown</a>.</p>' .
 			'</div>';
 
 		$args = array(
@@ -290,6 +303,7 @@
 	 * @return integer Number of comments
 	 */
 	function keel_just_comments_count() {
+		global $post;
 		return count( get_comments( array( 'type' => 'comment', 'post_id' => $post->ID ) ) );
 	}
 
@@ -300,6 +314,7 @@
 	 * @return integer Number of trackbacks
 	 */
 	function keel_trackbacks_count() {
+		global $post;
 		return count( get_comments( array( 'type' => 'trackback', 'post_id' => $post->ID ) ) );
 	}
 
@@ -310,6 +325,7 @@
 	 * @return integer Number of pings
 	 */
 	function keel_pings_count() {
+		global $post;
 		return count( get_comments( array( 'type' => 'pingback', 'post_id' => $post->ID ) ) );
 	}
 
