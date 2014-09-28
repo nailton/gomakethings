@@ -1,4 +1,4 @@
-# Go Make Things
+# Go Make Things [![Build Status](https://travis-ci.org/cferdinandi/gomakethings.svg)](https://travis-ci.org/cferdinandi/gomakethings)
 The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomakethings.com)
 
 ## Changelog
