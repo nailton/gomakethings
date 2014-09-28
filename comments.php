@@ -14,14 +14,27 @@
 	}
 ?>
 
-<?php if ( have_comments() ) : // If there are comments ?>
+<h2 id="comments">
+	<?php
+		$comment_count = keel_just_comments_count();
+		if ( $comment_count === 0 ) {
+			_e( 'Comment', 'keel' );
+		} else if ( $comment_count === 1 ) {
+			_e( '1 Comment', 'keel' );
+		} else {
+			echo $comment_count . ' ' . __( 'Comments', 'keel' );
+		}
+	?>
+</h2>
+<p><a href="#respond">Leave a comment</a> or contact me on Twitter at <a href="http://twitter.com/ChrisFerdinandi">@ChrisFerdinandi</a>.</p>
 
-	<h2 id="comments"><?php comments_number( __( 'Comment', 'keel' ), __( '1 Comment', 'keel' ), __( '% Comments', 'keel' ) ); ?></h2>
+<?php if ( have_comments() ) : // If there are comments ?>
 
 	<?php
 		wp_list_comments( array(
 			'style' => 'div',
 			'avatar_size' => 120,
+			'type' => 'comment',
 			'callback' => 'keel_comment_layout' // Custom comment structure (in `functions.php`)
 		) );
 	?>
@@ -44,5 +57,7 @@
 
 
 <?php if ( comments_open() ) : // If comments are allowed ?>
+	<div class="text-center">
 	<?php keel_comment_form(); // Custom comment form (in `functions.php`) ?>
+	</div>
 <?php endif; // end if comments are open ?>
