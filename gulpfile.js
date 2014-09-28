@@ -21,7 +21,7 @@ var paths = {
 	output : 'dist/',
 	temp: 'src/temp/',
 	scripts : {
-		input : [ 'src/js/*' ],
+		input : [ 'src/js/' ],
 		output : 'dist/js/'
 	},
 	styles : {
@@ -72,7 +72,7 @@ var banner = {
 
 // Concatenate scripts in subfolders
 gulp.task('concatenate', function() {
-	return gulp.src(paths.scripts.input)
+	return gulp.src(paths.scripts.input + '*/')
 		.pipe(plumber())
 		.pipe(flatten())
 
@@ -89,8 +89,8 @@ gulp.task('concatenate', function() {
 // Lint and minify scripts
 gulp.task('scripts', ['clean', 'concatenate'], function() {
 	return gulp.src([
-			paths.scripts.input + '/../*.js',
-			paths.temp + '/*.js'
+			paths.scripts.input + '*.js',
+			paths.temp + '**/*.js'
 		])
 		.pipe(plumber())
 		.pipe(flatten())
