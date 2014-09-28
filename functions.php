@@ -10,7 +10,7 @@
 	 * Load theme scripts in the footer
 	 */
 	function keel_load_theme_js() {
-		wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/main.min.js', false, null, true);
+		wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/main.min.09282014.js', false, null, true);
 		wp_enqueue_script('gomakethings-js');
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_js');
