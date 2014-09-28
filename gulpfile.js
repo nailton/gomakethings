@@ -66,6 +66,7 @@ var banner = {
 		' * Author: <%= package.author.name %>\n' +
 		' * Author URI: <%= package.author.url %>\n' +
 		' * License: <%= package.license %>\n' +
+		' * License URI: <%= package.author.url %>/mit/\n' +
 		' */'
 };
 
@@ -123,19 +124,20 @@ gulp.task('static', ['clean'], function() {
 		.pipe(gulp.dest(paths.output));
 });
 
+// Create style.css with theme header
+gulp.task('theme', function () {
+	return gulp.src(paths.theme.input)
+		.pipe(plumber())
+		.pipe(header(banner.theme, { package : package }))
+		.pipe(gulp.dest(paths.theme.output));
+});
+
 // Lint scripts
 gulp.task('lint', function () {
 	return gulp.src(paths.scripts.input)
 		.pipe(plumber())
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'));
-});
-
-gulp.task('theme', function () {
-	return gulp.src(paths.theme.input)
-		.pipe(plumber())
-		.pipe(header(banner.theme, { package : package }))
-		.pipe(gulp.dest(paths.theme.output));
 });
 
 // Remove prexisting content from output and test folders
