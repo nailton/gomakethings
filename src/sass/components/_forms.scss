@@ -115,3 +115,14 @@ select:focus {
 	padding: calc-em(1px) calc-em(5px);
 	font-size: calc-em(15px);
 }
+
+
+// Hack for WP form button
+#submit {
+	@extend .btn;
+	@extend .input-inline;
+}
+
+.form-submit {
+	@extend .text-center;
+}
