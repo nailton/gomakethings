@@ -33,7 +33,7 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<!-- Browser Support Detection -->
-		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/detects.min.09282014.js"></script>
+		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/detects.10012014.js"></script>
 
 		<!-- HTML5 Shim for IE 6-8 -->
 		<!--[if lt IE 9]>
@@ -41,7 +41,7 @@
 		<![endif]-->
 
 		<!-- Stylesheet -->
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/main.min.09282014.css">
+		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/main.10012014.css">
 
 		<?php wp_head(); ?>
 

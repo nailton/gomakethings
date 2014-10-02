@@ -1,8 +1,8 @@
 /**
- * gomakethings v7.1.0
+ * gomakethings v7.2.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
- * 
+ *
  * Free to use under the MIT License.
  * http://gomakethings.com/mit/
  */
@@ -293,9 +293,6 @@ a:active {
 }
 
 /**
- * Add clearfix
- */
-/**
  * @section Typography
  */
 body {
@@ -309,6 +306,11 @@ body {
 @media (min-width: 38em) {
   body {
     line-height: 1.5625;
+  }
+}
+@media (min-width: 80em) {
+  body {
+    font-size: 125%;
   }
 }
 

@@ -58,6 +58,6 @@
 
 <?php if ( comments_open() ) : // If comments are allowed ?>
 	<div class="text-center">
-	<?php keel_comment_form(); // Custom comment form (in `functions.php`) ?>
+		<?php keel_comment_form(); // Custom comment form (in `functions.php`) ?>
 	</div>
 <?php endif; // end if comments are open ?>

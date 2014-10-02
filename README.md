@@ -3,6 +3,8 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v7.2.0 - October 1, 2014
+	* Increased font size on very large screens.
 * v7.1.0 - September 26, 2014
 	* Converted to Keel for base template.
 	* Added comments back to site.

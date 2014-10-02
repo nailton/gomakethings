@@ -38,12 +38,13 @@ $font-monospace: Menlo, Monaco, "Courier New", monospace;
 $bp-xsmall: 19em;
 $bp-small: 28em;
 $bp-medium: 38em;
-// $bp-large: 60em;
-// $bp-xlarge: 80em;
+$bp-large: 60em;
+$bp-xlarge: 80em;
 
 
 // Sizing
 $font-base: 106.25%;
+$font-xlarge-screens: 125%;
 $spacing: 1.5625em;
 $container-max: 38em;
 $container-width: 88%;
