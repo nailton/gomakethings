@@ -70,7 +70,7 @@ var banner = {
 		' */'
 };
 
-// Lint and minify scripts
+// Lint, minify, and concatenate scripts
 gulp.task('scripts', ['clean'], function() {
 
 	var jsTasks = lazypipe()
