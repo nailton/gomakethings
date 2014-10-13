@@ -7,7 +7,7 @@
 
 ?>
 
-		</section>
+		</main>
 
 		<footer class="container text-center">
 
