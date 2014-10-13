@@ -35,11 +35,6 @@
 		<!-- Browser Support Detection -->
 		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/detects.10012014.js"></script>
 
-		<!-- HTML5 Shim for IE 6-8 -->
-		<!--[if lt IE 9]>
-			<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/html5.min.js"></script>
-		<![endif]-->
-
 		<!-- Stylesheet -->
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/main.10012014.css">
 
@@ -61,4 +56,4 @@
 
 		<?php get_template_part( 'nav-main', 'Site Navigation' ); ?>
 
-		<section class="container">
+		<main class="container" id="main">

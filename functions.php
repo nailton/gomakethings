@@ -26,7 +26,7 @@
 				'<script>' .
 					'fluidvids.init({' .
 						'selector: ["iframe", "object"],' .
-						'players: ["www.youtube.com", "player.vimeo.com", "slideshare.net", "www.hulu.com"]' .
+						'players: ["www.youtube.com", "player.vimeo.com", "www.slideshare.net", "www.hulu.com"]' .
 					'});' .
 				'</script>';
 		}

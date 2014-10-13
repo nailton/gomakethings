@@ -3,6 +3,11 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v7.3.0 - October 13, 2014
+	* Updated Gulp tasks.
+	* Fixed skip link for better accessibility.
+	* Removed HTML5 shim.
+	* Added `<main>` HTML5 semantic element.
 * v7.2.0 - October 1, 2014
 	* Increased font size on very large screens.
 * v7.1.0 - September 26, 2014
