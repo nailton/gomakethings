@@ -33,10 +33,10 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<!-- Browser Support Detection -->
-		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/detects.10012014.js"></script>
+		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/detects.min.10122014.js"></script>
 
 		<!-- Stylesheet -->
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/main.10012014.css">
+		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/main.min.10122014.css">
 
 		<?php wp_head(); ?>
 
