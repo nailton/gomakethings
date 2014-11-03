@@ -53,7 +53,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: Georgia, Times, serif;
+  font-family: "PT Serif", Georgia, Times, serif;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
@@ -296,7 +296,7 @@ a:active {
  * @section Typography
  */
 body {
-  font-family: Georgia, Times, serif;
+  font-family: "PT Serif", Georgia, Times, serif;
   font-size: 106.25%;
   line-height: 1.5;
   color: #272727;
@@ -421,7 +421,6 @@ dt {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-weight: normal;
-  text-align: center;
   margin-bottom: 1em;
   padding-top: 1em;
   word-wrap: break-word;
@@ -485,16 +484,7 @@ hr {
 }
 
 .line-secondary {
-  margin: 0 auto 1.3125em;
-  border-top: none;
-  border-bottom: none;
-  text-align: center;
-}
-
-.line-secondary:before {
-  font-size: 2em;
-  color: #808080;
-  content: "\2219 \2219 \2219 \2219 \2219";
+  width: 50%;
 }
 
 /**
@@ -1308,7 +1298,7 @@ tbody tr:nth-child(even) {
 /**
  * Spam catcher
  */
-.bzzz {
+.tarpit {
   display: none;
   visibility: hidden;
 }

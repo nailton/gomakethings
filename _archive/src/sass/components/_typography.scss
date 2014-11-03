@@ -138,7 +138,7 @@ dt {
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	font-weight: normal;
-	text-align: center;
+	// text-align: center;
 	margin-bottom: 1em;
 	padding-top: 1em;
 	word-wrap: break-word;
@@ -204,16 +204,8 @@ hr {
 }
 
 .line-secondary {
-	margin: 0 auto calc-em(21px);
-	border-top: none;
-	border-bottom: none;
-	text-align: center;
-}
-
-.line-secondary:before {
-	font-size: calc-em(32px);
-	color: $color-gray-dark;
-	content: "\2219 \2219 \2219 \2219 \2219";
+	width: 50%;
+	// @extend .screen-reader;
 }
 
 /**

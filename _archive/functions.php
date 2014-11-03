@@ -7,21 +7,22 @@
 
 
 	/**
-	 * Load theme scripts in the footer
+	 * Load theme styles and scripts
 	 */
-	function keel_load_theme_js() {
-		wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/main.min.10122014.js', false, null, true);
-		wp_enqueue_script('gomakethings-js');
+	function keel_load_theme_files() {
+		wp_enqueue_script( 'keel-detects', get_template_directory_uri() . '/dist/js/detects.js', false, null, false ); // Feature detection
+		wp_enqueue_style( 'keel-styles', get_template_directory_uri() . '/dist/css/main.css', false, null, null ); // Styles
+		wp_enqueue_script( 'keel-scripts', get_template_directory_uri() . '/dist/js/main.js', false, null, true ); // Scripts
 	}
-	add_action('wp_enqueue_scripts', 'keel_load_theme_js');
+	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
 
 
 	/**
 	 * Include script inits in the footer
 	 */
-	function keel_initialize_theme_js( $query ) {
-		if ( is_front_page() || is_single() || is_search() || is_archive() ) {
+	function keel_initialize_theme_scripts( $query ) {
+		if ( !is_page() ) {
 			echo
 				'<script>' .
 					'fluidvids.init({' .
@@ -31,7 +32,45 @@
 				'</script>';
 		}
 	}
-	add_action('wp_footer', 'keel_initialize_theme_js', 30);
+	add_action('wp_footer', 'keel_initialize_theme_scripts', 30);
+
+
+
+	/**
+	 * Override default the_excerpt length
+	 *
+	 */
+	/**
+	 * Override default the_excerpt length
+	 * @param  number $length Default length
+	 * @return number         New length
+	 */
+	function keel_excerpt_length( $length ) {
+		return 35;
+	}
+	add_filter( 'excerpt_length', 'keel_excerpt_length', 999 );
+
+
+
+	/**
+	 * Override default the_excerpt read more string
+	 * @param  string $more Default read more string
+	 * @return string       New read more string
+	 */
+	function keel_excerpt_more( $more ) {
+		return '... <a href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'keel') . '</a>';
+	}
+	add_filter( 'excerpt_more', 'keel_excerpt_more' );
+
+
+
+	/**
+	 * Remove max post limit
+	 */
+	// function keel_get_all_posts( $query ) {
+	// 	$query->set( 'posts_per_page', '-1' );
+	// }
+	// add_action( 'pre_get_posts', 'keel_get_all_posts' );
 
 
 
@@ -143,7 +182,7 @@
 
 		<<?php echo $tag ?> <?php if ( $depth > 1 ) { echo 'class="comment-nested"'; } ?> id="comment-<?php comment_ID() ?>">
 
-			<hr class="line-secondary no-space-bottom">
+			<hr class="line-secondary">
 
 			<article>
 

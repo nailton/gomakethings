@@ -23,7 +23,8 @@
 				</a>
 			</p>
 			<p class="text-small space-bottom">
-				Made with <i class="icon icon-heart"></i><span class="icon-fallback-text">love</span> by Chris Ferdinandi.<br>
+				<!-- Made with <i class="icon icon-heart"></i><span class="icon-fallback-text">love</span> by Chris Ferdinandi.<br> -->
+				Made with <3 by Chris Ferdinandi.<br>
 				Copyright 2014 Go Make Things, LLC.
 			</p>
 

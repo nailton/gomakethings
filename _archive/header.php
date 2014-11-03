@@ -32,12 +32,6 @@
 		<link rel="alternate" type="application/rss+xml" title="<?php printf( __( '%s RSS Feed', 'keel' ), get_bloginfo( 'name' ) ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<!-- Browser Support Detection -->
-		<script src="<?php bloginfo('stylesheet_directory'); ?>/dist/js/detects.min.10122014.js"></script>
-
-		<!-- Stylesheet -->
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/dist/css/main.min.10122014.css">
-
 		<?php wp_head(); ?>
 
 	</head>
