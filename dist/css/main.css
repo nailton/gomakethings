@@ -1,10 +1,7 @@
 /**
- * gomakethings v8.0.0
+ * gomakethings v8.0.1
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
- * 
- * Free to use under the MIT License.
- * http://gomakethings.com/mit/
  */
 
 /**
@@ -1036,6 +1033,13 @@ tbody tr:nth-child(even) {
     font-size: 1.3125em;
   }
 }
+/**
+ * Text colors
+ */
+.text-muted {
+  color: #808080;
+}
+
 /**
  * Text alignment
  */

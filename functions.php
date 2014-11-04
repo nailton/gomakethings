@@ -10,11 +10,10 @@
 	 * Load theme scripts in the footer
 	 */
 	function keel_load_theme_files() {
-		wp_enqueue_script( 'keel-theme-detects', get_template_directory_uri() . '/dist/js/detects.min.11042014.js', null, null, false );
-		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.11042014.css', null, null, 'all' );
-
-		// loaded async with loadJS
-		// wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.js', null, null, true );
+		// Injected inline into <head> for better performance
+		// wp_enqueue_script( 'keel-theme-detects', get_template_directory_uri() . '/dist/js/detects.js', null, null, false );
+		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.11042014.2.css', null, null, 'all' );
+		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.11042014.2.js', null, null, true );
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
@@ -26,13 +25,9 @@
 	function keel_initialize_theme_detects() {
 		?>
 			<script>
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.js' ); ?>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadCSS.min.js' ); ?>
-				if ( detectSvg.supports ) {
-					document.documentElement.className += (document.documentElement.className ? ' ' : '') + 'svg';
-				}
-				if ( detectFontFace.supports.fontFace ) {
-					loadCSS( 'http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' );
-				}
+				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
 			</script>
 		<?php
 	}
@@ -45,11 +40,12 @@
 	 */
 	function keel_initialize_theme_scripts() {
 		?>
+			<noscript><link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'></noscript>
 			<script>
-				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadJS.min.js' ); ?>
-				if ( !!document.querySelector && !!window.addEventListener ) {
-					loadJS( '<?php echo get_template_directory_uri(); ?>/dist/js/main.min.11042014.js' );
-				}
+				fluidvids.init({
+					selector: ["iframe", "object"],
+					players: ["www.youtube.com", "player.vimeo.com", "www.slideshare.net", "www.hulu.com"]
+				});
 			</script>
 		<?php
 	}
@@ -296,6 +292,7 @@
 		$field_comment =
 			'<div>' .
 				'<textarea name="comment" id="comment" required></textarea>' .
+				'<p>Share links, code and more with <a href="http://en.support.wordpress.com/markdown-quick-reference/">Markdown</a>.</p>' .
 			'</div>';
 
 		$args = array(

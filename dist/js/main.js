@@ -1,10 +1,7 @@
 /**
- * gomakethings v8.0.0
+ * gomakethings v8.0.1
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
- * 
- * Free to use under the MIT License.
- * http://gomakethings.com/mit/
  */
 
 /*! fluidvids.js v2.4.1 | (c) 2014 @toddmotto | https://github.com/toddmotto/fluidvids */
@@ -639,3 +636,11 @@ if (Prism.languages.markup) {
 		'php': /\{\{\{PHP[0-9]+\}\}\}/g
 	});
 };
+/**
+ * Initialize scripts
+ */
+
+fluidvids.init({
+  selector: ["iframe", "object"],
+  players: ["www.youtube.com", "player.vimeo.com", "www.slideshare.net", "www.hulu.com"]
+});
