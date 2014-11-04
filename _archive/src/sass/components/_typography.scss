@@ -1,0 +1,283 @@
+/**
+ * @section Typography
+ */
+
+body {
+	font-family: $font-primary;
+	font-size: $font-base;
+	line-height: 1.5;
+	color: $color-black;
+	background: $color-white;
+	border-top: calc-em(8px) solid $color-gray-light;
+
+	@media (min-width: $bp-medium) {
+		line-height: 1.5625;
+	}
+
+	@if $font-base != $font-xlarge-screens {
+		@media (min-width: $bp-xlarge) {
+			font-size: $font-xlarge-screens;
+		}
+	}
+}
+
+p {
+	margin-bottom: $spacing;
+}
+
+
+/**
+ * Sizes: for smaller and larger text
+ */
+
+.text-small {
+	font-size: calc-em(15px);
+}
+
+.text-large {
+	font-size: calc-em(21px);
+	line-height: 1.4;
+}
+
+.text-xlarge {
+	font-size: calc-em(32px);
+	line-height: 1.2;
+}
+
+
+/**
+ * Colors: for alternate text colors
+ */
+
+.text-muted {
+	color: $color-gray-dark;
+}
+
+
+/**
+ * Links
+ */
+
+a {
+	color: $color-primary;
+	text-decoration: none;
+	word-wrap: break-word;
+}
+
+a:hover {
+	color: darken( $color-primary, 15% );
+	text-decoration: underline;
+}
+
+a img {
+	border: none;
+	background: none;
+}
+
+/**
+ * Prevents border/background on linked image hover.
+ * Adds slight opacity.
+ */
+a:hover img {
+	border: none;
+	background: none;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+
+/**
+ * Lists
+ */
+
+ul,
+ol,
+dl {
+	margin-bottom: $spacing;
+	margin-left: calc-em(32px);
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin-bottom: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+dl {
+	margin-left: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+
+/**
+ * Removes list styling.
+ * For semantic reasons, should only be used on unordered lists.
+ */
+.list-unstyled {
+	margin-left: 0;
+	list-style: none;
+}
+
+
+/**
+ * Headings: h1 through h6 styling
+ * Heading classes lets you use one heading type for semantics but style it as another heading type.
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+	font-weight: normal;
+	// text-align: center;
+	margin-bottom: 1em;
+	padding-top: 1em;
+	word-wrap: break-word;
+}
+
+h1,
+.h1 {
+	font-size: calc-em(24px);
+	padding-top: .5em;
+}
+
+h2,
+.h2 {
+	font-size: calc-em(21px);
+}
+
+h3,
+.h3 {
+	font-size: calc-em(19px);
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+	font-size: calc-em(15px);
+	font-style: italic;
+}
+
+h4,
+.h4 {
+	text-transform: uppercase;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	color: $color-black;
+	text-decoration: none;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+	color: $color-primary;
+	text-decoration: none;
+}
+
+
+/**
+ * Lines
+ */
+
+hr {
+	margin: calc-em(32px) auto;
+	border: 0;
+	border-top: calc-em(1px) solid $color-gray-light;
+	border-bottom: 0 solid $color-white;
+}
+
+.line-secondary {
+	width: 50%;
+	// @extend .screen-reader;
+}
+
+/**
+ * Bold & Italics
+ */
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+/**
+ * Subscript & Superscript
+ */
+
+sub,
+sup {
+	position: relative;
+	font-size: 85%;
+	font-weight: bold;
+	line-height: 0;
+	vertical-align: baseline;
+	margin-left: calc-em(4px);
+}
+
+sup {
+	top: calc-em(-8px);
+}
+
+sub {
+	bottom: calc-em(-4px);
+}
+
+
+/**
+ * Highlighting colors
+ */
+
+::selection {
+	color: $color-white;
+	background: $color-primary;
+}
+
+::-moz-selection {
+	color: $color-white;
+	background: $color-primary;
+}
+
+
+/**
+ * Blockquotes
+ */
+
+blockquote {
+	border-left: calc-em(4px) solid $color-gray-light;
+	font-style: italic;
+	margin-bottom: $spacing;
+	padding-left: $spacing;
+	padding-right: $spacing;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}

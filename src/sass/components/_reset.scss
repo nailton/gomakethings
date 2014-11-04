@@ -1,9 +1,13 @@
 /**
  * @section CSS Reset
+ * Meyer's CSS Reset, Normalized.css, and custom code.
+ * @link http://meyerweb.com/eric/tools/css/reset/
+ * @link http://necolas.github.io/normalize.css/
  */
 
 /**
- * Mobile Screen Resizing
+ * Mobile screen resizing
+ * @link http://dev.w3.org/csswg/css-device-adapt/
  */
 @-webkit-viewport { width: device-width; zoom: 1.0; }
    @-moz-viewport { width: device-width; zoom: 1.0; }
@@ -38,7 +42,7 @@ time, mark, audio, video {
 
 /**
  * Add box sizing to everything
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * @link http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  */
 *,
 *:before,
@@ -49,8 +53,19 @@ time, mark, audio, video {
 /**
  * Set display type for HTML5 semantic elements
  */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+ article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ main,
+ menu,
+ nav,
+ section,
+ summary {
 	display: block;
 }
 
@@ -92,6 +107,7 @@ video {
 
 /**
  * Prevent iframe, object, and embed elements from spilling outside of the page on smaller screens.
+ * height: auto causes iframes to smush, so it's omitted here.
  */
 iframe,
 object,
@@ -100,10 +116,8 @@ embed {
 }
 
 /**
- * Address [hidden] styling not present in IE 8/9.
  * Hide the template element in IE, Safari, and Firefox < 22.
  */
-[hidden],
 template {
 	display: none;
 	visibility: hidden;

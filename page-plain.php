@@ -11,8 +11,14 @@ get_header(); ?>
 
 <?php if (have_posts()) : ?>
 
-	<?php while (have_posts()) : the_post(); ?>
-		<?php get_template_part( 'content', 'Post Content' ); ?>
+	<?php
+		// Start the loop
+		while (have_posts()) : the_post();
+	?>
+		<?php
+			// Insert the post content
+			get_template_part( 'content', 'Post Content' );
+		?>
 	<?php endwhile; ?>
 
 <?php endif; ?>

@@ -10,11 +10,17 @@ get_header(); ?>
 
 <?php if (have_posts()) : ?>
 	<header>
-		<h1 class="text-muted space-bottom"><?php _e( 'Search results for', 'keel' ); ?> "<?php the_search_query() ?>"</h1>
+		<h1 class="margin-bottom-large"><?php _e( 'Search results for', 'keel' ); ?> "<?php the_search_query() ?>"</h1>
 	</header>
 
-	<?php while (have_posts()) : the_post(); ?>
-		<?php get_template_part( 'content', 'Post Content' ); ?>
+	<?php
+		// Start the loop
+		while (have_posts()) : the_post();
+	?>
+		<?php
+			// Insert the post content
+			get_template_part( 'content', 'Post Content' );
+		?>
 	<?php endwhile; ?>
 
 
@@ -22,14 +28,20 @@ get_header(); ?>
 	<?php get_template_part( 'nav-page', 'Page Navigation' ); ?>
 
 
-<?php else : ?>
+<?php
+	// If no search results are found
+	else :
+?>
 	<article>
 		<header>
 			<h1><?php _e( 'No results found for', 'keel' ); ?> "<?php the_search_query() ?>"</h1>
 		</header>
 		<p><?php _e( 'Sorry, your search didn\'t turn up any results. Maybe try using different keywords?', 'keel' ) ?></p>
 
-		<?php get_search_form(); ?>
+		<?php
+			// Include search form
+			get_search_form();
+		?>
 	</article>
 <?php endif; ?>
 

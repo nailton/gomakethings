@@ -1,10 +1,13 @@
 /**
- * @section Print Styles
+ * @section Print
+ * Styling for printed content. Adapted from HTML5BP.
+ * @link http://html5boilerplate.com
  */
 
 @media print {
 
 	/**
+	 * Universal selector.
 	 * Reset all content to transparent background, black color, and remove box and text shadows.
 	 */
 	* {
@@ -23,8 +26,9 @@
 
 	/**
 	 * Underline all links
-	 * */
-	a, a:visited {
+	 */
+	a,
+	a:visited {
 		text-decoration: underline;
 	}
 
@@ -45,7 +49,8 @@
 	/**
 	 * Specifies the minimum number of lines to print at the top and bottom of a page.
 	 */
-	p, h1, h2, h3 {
+	p,
+	h1, h2, h3 {
 		orphans: 3;
 		widows: 3;
 	}
@@ -61,7 +66,8 @@
 	 * Change border color on blockquotes and preformatted text.
 	 * Avoid page breaks inside the content
 	 */
-	pre, blockquote {
+	pre,
+	blockquote {
 		border-color: #999;
 		page-break-inside: avoid;
 	}
@@ -76,7 +82,8 @@
 	/**
 	 * Avoid inserting a page break inside table rows and images
 	 */
-	tr, img {
+	tr,
+	img {
 		page-break-inside: avoid;
 	}
 

@@ -1,5 +1,6 @@
 /**
  * @section Forms
+ * Styling for form elements.
  */
 
 form,
@@ -17,7 +18,7 @@ label {
 
 input,
 textarea,
-select, {
+select {
 	display: block;
 	width: 100%;
 	font: inherit;
@@ -27,13 +28,14 @@ select, {
 	padding: calc-em(5px);
 	border: calc-em(1px) solid lighten( $color-gray-dark, 22% );
 	border-radius: calc-em(1px);
+
 	@media (min-width: $bp-medium) {
 		line-height: 1.5625;
 	}
 }
 
 form button,
-form .btn {
+form .button {
 	margin-bottom: calc-em(19px);
 }
 
@@ -70,14 +72,38 @@ select:focus {
 
 
 /**
+ * Inline inputs
+ */
+.input-inline {
+	display: inline-block;
+	width: auto;
+	vertical-align: middle;
+}
+
+
+// /**
+//  * Condensed inputs
+//  */
+// .input-condensed {
+// 	padding: calc-em(1px) calc-em(5px);
+// 	font-size: calc-em(15px);
+// }
+
+
+/**
  * Search
  */
+
 .input-search {
-	display: inline;
 	width: 85%;
 	padding-left: calc-em(15px);
 	padding-right: calc-em(40px);
 	border-radius: calc-em(21px);
+	transition: width 300ms ease-in;
+
+	@media (min-width: $bp-medium) {
+		width: 65%;
+	}
 }
 
 .btn-search {
@@ -89,31 +115,16 @@ select:focus {
 	margin-bottom: 0;
 }
 
-.btn-search .icon {
-	color: $color-gray-dark;
-}
-
-.btn-search:hover .icon {
+.btn-search:hover {
 	color: darken( $color-gray-dark, 15% );
 }
 
-
-/**
- * Inline Inputs
- */
-.input-inline {
-	display: inline-block;
-	width: auto;
-	vertical-align: middle;
+.btn-search .icon {
+	fill: $color-gray-dark;
 }
 
-
-/**
- * Condensed Inputs
- */
-.input-condensed {
-	padding: calc-em(1px) calc-em(5px);
-	font-size: calc-em(15px);
+.btn-search:hover .icon {
+	fill: darken( $color-gray-dark, 15% );
 }
 
 
@@ -123,6 +134,8 @@ select:focus {
 	@extend .input-inline;
 }
 
-.form-submit {
-	@extend .text-center;
+
+// Spam blocker
+.tarpit {
+	@extend [hidden];
 }

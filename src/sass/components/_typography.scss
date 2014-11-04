@@ -1,10 +1,11 @@
 /**
  * @section Typography
+ * Sets font styles for entire site
  */
 
 body {
 	font-family: $font-primary;
-	font-size: $font-base;
+	font-size: $font-size-base;
 	line-height: 1.5;
 	color: $color-black;
 	background: $color-white;
@@ -14,9 +15,9 @@ body {
 		line-height: 1.5625;
 	}
 
-	@if $font-base != $font-xlarge-screens {
+	@if $font-size-base != $font-size-xlarge-screens {
 		@media (min-width: $bp-xlarge) {
-			font-size: $font-xlarge-screens;
+			font-size: $font-size-xlarge-screens;
 		}
 	}
 }
@@ -27,44 +28,19 @@ p {
 
 
 /**
- * Sizes: for smaller and larger text
+ * Hyperlink styling
  */
 
-.text-small {
-	font-size: calc-em(15px);
-}
-
-.text-large {
-	font-size: calc-em(21px);
-	line-height: 1.4;
-}
-
-.text-xlarge {
-	font-size: calc-em(32px);
-	line-height: 1.2;
-}
-
-
-/**
- * Colors: for alternate text colors
- */
-
-.text-muted {
-	color: $color-gray-dark;
-}
-
-
-/**
- * Links
- */
-
-a {
+a,
+a:visited {
 	color: $color-primary;
 	text-decoration: none;
 	word-wrap: break-word;
 }
 
-a:hover {
+a:hover,
+a:focus,
+a:active {
 	color: darken( $color-primary, 15% );
 	text-decoration: underline;
 }
@@ -87,7 +63,7 @@ a:hover img {
 
 
 /**
- * Lists
+ * List styling
  */
 
 ul,
@@ -102,14 +78,6 @@ ul ol,
 ol ol,
 ol ul {
 	margin-bottom: 0;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
 }
 
 dl {
@@ -129,16 +97,32 @@ dt {
 	list-style: none;
 }
 
+/**
+ * Display lists on a single line.
+ */
+
+.list-inline {
+  list-style: none;
+  margin-left: calc-em(-8px);
+  margin-right: calc-em(-8px);
+  padding: 0;
+}
+
+.list-inline > li {
+  display: inline-block;
+  margin-left: calc-em(8px);
+  margin-right: calc-em(8px);
+}
+
 
 /**
- * Headings: h1 through h6 styling
- * Heading classes lets you use one heading type for semantics but style it as another heading type.
+ * Heading styling for h1 through h6 elements.
+ * Heading class lets you use one heading type for semantics, but style it as another heading type.
  */
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
-	font-weight: normal;
-	text-align: center;
+	font-weight: bold;
 	margin-bottom: 1em;
 	padding-top: 1em;
 	word-wrap: break-word;
@@ -148,6 +132,10 @@ h1,
 .h1 {
 	font-size: calc-em(24px);
 	padding-top: .5em;
+
+	// @media (min-width: $bp-medium) {
+	// 	font-size: calc-em(28px);
+	// }
 }
 
 h2,
@@ -162,8 +150,7 @@ h3,
 
 h4, h5, h6,
 .h4, .h5, .h6 {
-	font-size: calc-em(15px);
-	font-style: italic;
+	font-size: calc-em(16px);
 }
 
 h4,
@@ -171,29 +158,23 @@ h4,
 	text-transform: uppercase;
 }
 
+/**
+ * Heading link styling
+ */
+
 h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+h1 a:visited {
 	color: $color-black;
-	text-decoration: none;
 }
 
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover {
+h1 a:hover {
 	color: $color-primary;
 	text-decoration: none;
 }
 
 
 /**
- * Lines
+ * Lines, Quotes and Emphasis
  */
 
 hr {
@@ -204,21 +185,8 @@ hr {
 }
 
 .line-secondary {
-	margin: 0 auto calc-em(21px);
-	border-top: none;
-	border-bottom: none;
-	text-align: center;
+	width: 50%;
 }
-
-.line-secondary:before {
-	font-size: calc-em(32px);
-	color: $color-gray-dark;
-	content: "\2219 \2219 \2219 \2219 \2219";
-}
-
-/**
- * Bold & Italics
- */
 
 strong {
 	font-weight: bold;
@@ -227,10 +195,6 @@ strong {
 em {
 	font-style: italic;
 }
-
-/**
- * Subscript & Superscript
- */
 
 sub,
 sup {
@@ -250,21 +214,13 @@ sub {
 	bottom: calc-em(-4px);
 }
 
-
 /**
  * Highlighting colors
  */
-
 ::selection {
 	color: $color-white;
 	background: $color-primary;
 }
-
-::-moz-selection {
-	color: $color-white;
-	background: $color-primary;
-}
-
 
 /**
  * Blockquotes
@@ -272,7 +228,6 @@ sub {
 
 blockquote {
 	border-left: calc-em(4px) solid $color-gray-light;
-	font-style: italic;
 	margin-bottom: $spacing;
 	padding-left: $spacing;
 	padding-right: $spacing;

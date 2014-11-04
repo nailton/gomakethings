@@ -3,6 +3,18 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v8.0.0 - November 4, 2014
+	* Updated base theme to Keel.
+	* Updated to Kraken 5.
+	* Switched to left-aligned layout.
+	* Changed default font to PT Serif.
+	* Switched to navbar style navigation on bigger screens.
+	* Converted icons to SVG.
+	* Updated feature detection scripts for better extensibility.
+	* Conditionally load main.js using loadJS after passing mustard test.
+	* Conditionally load Google web fonts using loadCSS only if @font-face supported.
+	* Added width-adjustment and animation to search field on larger screens.
+	* Updated screenshot to HDPI.
 * v7.3.0 - October 13, 2014
 	* Updated Gulp tasks.
 	* Fixed skip link for better accessibility.

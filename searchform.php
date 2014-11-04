@@ -7,15 +7,13 @@
 
 ?>
 
-<article class="row">
-	<div class="grid-two-thirds float-center">
-		<form method="get" class="text-center no-space-bottom" id="searchform" action="<?php echo esc_url( home_url('/') ); ?>" >
-			<label class="screen-reader" for="s">Search this site:</label>
-			<input type="text" class="input-search" id="s" name="s" placeholder="Search this site..." value="<?php get_search_query(); ?>">
-			<button type="submit" class="btn-search" id="searchsubmit">
-				<i class="icon icon-search"></i>
-				<span class="icon-fallback-text">Search</span>
-			</button>
-		</form>
-	</div>
-</article>
+<form method="get" id="searchform" action="<?php echo esc_url( home_url('/') ); ?>" >
+	<label class="screen-reader" for="search"><?php _e( 'Search this site:', 'keel' ) ?></label>
+	<input type="text" class="input-inline input-search no-margin-bottom" id="search" name="s" placeholder="<?php _e( 'Search this site...', 'keel' ) ?>" value="<?php get_search_query(); ?>">
+	<button type="submit" class="btn-search" id="searchsubmit">
+		<svg class="icon">
+		    <use xlink:href="#icon-search"></use>
+		</svg>
+		<span class="icon-fallback-text"><?php _e( 'Search', 'keel' ) ?></span>
+	</button>
+</form>

@@ -1,0 +1,97 @@
+/**
+ * Center all navigation elements
+ */
+.nav-wrap {
+	@extend .clearfix;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	text-align: center;
+
+	@media (min-width: $bp-medium) {
+		text-align: left;
+	}
+}
+
+/**
+ * For text-based logo, override default link styling.
+ * If .logo and .nav don't align properly,
+ * adjust the .logo line-height.
+ */
+a.logo {
+	display: inline-block;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.2;
+	color: $color-black;
+	margin-bottom: calc-em(5px);
+	text-decoration: none;
+
+	@media (min-width: $bp-medium) {
+		float: left;
+		margin-bottom: 0;
+	}
+}
+
+/**
+ * For text-based logo, override default link hover styling
+ */
+a.logo:hover {
+	color: $color-primary;
+	text-decoration: none;
+}
+
+/**
+ * Reduce logo icon size
+ */
+.logo .icon {
+	height: 0.8em;
+	width: 0.8em;
+}
+
+/**
+ * Remove default list styling for navigation list
+ */
+.nav {
+	list-style: none;
+	font-size: calc-em(15px);
+	margin: 0 calc-em(-8px);
+	padding: 0;
+
+	@media (min-width: $bp-small) {
+		font-size: calc-em(16px);
+	}
+
+	@media (min-width: $bp-medium) {
+		text-align: right;
+	}
+}
+
+/**
+ * Display navigation items as inline-block elements.
+ * Add slight margin between each navigation item.
+ */
+.nav li {
+	display: inline-block;
+	float: none;
+	margin-left: calc-em(8px);
+	margin-right: calc-em(8px);
+}
+
+/**
+ * Active link styling
+ */
+.nav .active a {
+	color: $color-black;
+}
+
+/**
+ * Override default link colors
+ */
+
+.nav a {
+	color: $color-gray-dark;
+}
+
+.nav a:hover {
+	color: $color-primary;
+}

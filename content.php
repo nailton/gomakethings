@@ -9,40 +9,67 @@
 
 <article>
 
+	<?php
+		/**
+		 * Headers
+		 * Unlinked h1 for pages and invidual blog posts.
+		 * Linked h1 for collections of posts.
+		 */
+	?>
 	<header>
+		<?php
+			/**
+			 * Add meta data for blog posts.
+			 * 1. Published date
+			 * 2. Author
+			 * 3. Number of comments
+			 * 4. Quick edit link
+			 */
+			if ( !is_page() ) :
+		?>
+			<aside class="text-muted">
+				<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'F j, Y' ) ?></time>
+				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
+			</aside>
+		<?php endif; ?>
 		<?php if ( is_single() ) : ?>
-			<h1 class="no-space-bottom"><?php the_title(); ?></h1>
+			<h1 class="no-padding-top"><?php the_title(); ?></h1>
 		<?php elseif ( is_page() ) : ?>
 			<?php if ( !is_page_template( 'page-plain.php' ) ) : ?>
 				<h1><?php the_title(); ?></h1>
 			<?php endif; ?>
 		<?php else : ?>
-			<h1 class="no-space-bottom"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-		<?php endif; ?>
-		<?php if ( !is_page() ) : ?>
-			<aside>
-				<p class="text-muted text-small text-center">
-					<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'F j, Y' ) ?></time> <!-- / -->
-					<!-- <a href="<?php comments_link(); ?>">
-						<?php comments_number( __( 'Comment', 'keel' ), __( '1 Comment', 'keel' ), __( '% Comments', 'keel' ) ); ?>
-					</a> -->
-					<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
-				</p>
-			</aside>
+			<h1 class="no-padding-top"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 		<?php endif; ?>
 	</header>
 
-	<?php the_content( '<p>' . __( 'Read More...', 'keel' ) . '</p>' ); ?>
+	<?php
+		// The page or post content
+		// if ( is_singular() ) {
+			the_content( '<p>' . __( 'Read More...', 'keel' ) . '</p>' );
+		// } else {
+		// 	the_excerpt();
+		// }
+	?>
 
 	<?php if ( is_page() ) : ?>
-		<?php edit_post_link( __( 'Edit', 'keel' ), '<p>', '</p>' ); ?>
+		<?php
+			// Add link to edit pages
+			edit_post_link( __( 'Edit', 'keel' ), '<p>', '</p>' );
+		?>
 	<?php endif; ?>
 
 	<?php if ( is_single() ) : ?>
-		<?php comments_template(); ?>
+		<?php
+			// Add comments template to blog posts
+			comments_template();
+		?>
 	<?php endif; ?>
 
-	<?php if ( !keel_is_last_post($wp_query) ) : ?>
+	<?php
+		// If this is not the last post on the page, insert a divider
+		if ( !keel_is_last_post($wp_query) ) :
+	?>
 	    <hr class="line-secondary">
 	<?php endif; ?>
 

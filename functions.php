@@ -9,29 +9,51 @@
 	/**
 	 * Load theme scripts in the footer
 	 */
-	function keel_load_theme_js() {
-		wp_register_script('gomakethings-js', get_template_directory_uri() . '/dist/js/main.min.10122014.js', false, null, true);
-		wp_enqueue_script('gomakethings-js');
+	function keel_load_theme_files() {
+		wp_enqueue_script( 'keel-theme-detects', get_template_directory_uri() . '/dist/js/detects.min.11042014.js', null, null, false );
+		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.11042014.css', null, null, 'all' );
+
+		// loaded async with loadJS
+		// wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.js', null, null, true );
 	}
-	add_action('wp_enqueue_scripts', 'keel_load_theme_js');
+	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
+
+
+
+	/**
+	 * Include feature detect inits in the header
+	 */
+	function keel_initialize_theme_detects() {
+		?>
+			<script>
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadCSS.min.js' ); ?>
+				if ( detectSvg.supports ) {
+					document.documentElement.className += (document.documentElement.className ? ' ' : '') + 'svg';
+				}
+				if ( detectFontFace.supports.fontFace ) {
+					loadCSS( 'http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' );
+				}
+			</script>
+		<?php
+	}
+	add_action('wp_head', 'keel_initialize_theme_detects', 30);
 
 
 
 	/**
 	 * Include script inits in the footer
 	 */
-	function keel_initialize_theme_js( $query ) {
-		if ( is_front_page() || is_single() || is_search() || is_archive() ) {
-			echo
-				'<script>' .
-					'fluidvids.init({' .
-						'selector: ["iframe", "object"],' .
-						'players: ["www.youtube.com", "player.vimeo.com", "www.slideshare.net", "www.hulu.com"]' .
-					'});' .
-				'</script>';
-		}
+	function keel_initialize_theme_scripts() {
+		?>
+			<script>
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadJS.min.js' ); ?>
+				if ( !!document.querySelector && !!window.addEventListener ) {
+					loadJS( '<?php echo get_template_directory_uri(); ?>/dist/js/main.min.11042014.js' );
+				}
+			</script>
+		<?php
 	}
-	add_action('wp_footer', 'keel_initialize_theme_js', 30);
+	add_action('wp_footer', 'keel_initialize_theme_scripts', 30);
 
 
 
@@ -54,7 +76,7 @@
 		global $post;
 		$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 		$form =
-			'<form class="text-center" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><p>' . __( 'This is a password protected post.', 'keel' ) . '</p><label class="screen-reader" for="' . $label . '">' . __( 'Password', 'keel' ) . '</label><input id="' . $label . '" name="post_password" type="password"><input class="input-inline btn" type="submit" name="Submit" value="' . __( 'Submit', 'keel' ) . '"></form>';
+			'<form class="text-center" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post"><p>' . __( 'This is a password protected post.', 'keel' ) . '</p><label class="screen-reader" for="' . $label . '">' . __( 'Password', 'keel' ) . '</label><input id="' . $label . '" name="post_password" type="password"><input type="submit" name="Submit" value="' . __( 'Submit', 'keel' ) . '"></form>';
 		return $form;
 	}
 	add_filter( 'the_password_form', 'keel_post_password_form' );
@@ -88,12 +110,40 @@
 
 
 	/**
+	 * Override default the_excerpt length
+	 *
+	 */
+	/**
+	 * Override default the_excerpt length
+	 * @param  number $length Default length
+	 * @return number         New length
+	 */
+	function keel_excerpt_length( $length ) {
+		return 35;
+	}
+	add_filter( 'excerpt_length', 'keel_excerpt_length', 999 );
+
+
+
+	/**
+	 * Override default the_excerpt read more string
+	 * @param  string $more Default read more string
+	 * @return string       New read more string
+	 */
+	function keel_excerpt_more( $more ) {
+		return '... <a href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'keel') . '</a>';
+	}
+	add_filter( 'excerpt_more', 'keel_excerpt_more' );
+
+
+
+	/**
 	 * Sets max allowed content width
 	 * Deliberately large to prevent pixelation from content stretching
 	 * @link http://codex.wordpress.org/Content_Width
 	 */
 	if ( !isset( $content_width ) ) {
-		$content_width = 1240;
+		$content_width = 960;
 	}
 
 
@@ -143,7 +193,7 @@
 
 		<<?php echo $tag ?> <?php if ( $depth > 1 ) { echo 'class="comment-nested"'; } ?> id="comment-<?php comment_ID() ?>">
 
-			<hr class="line-secondary no-space-bottom">
+			<hr class="line-secondary">
 
 			<article>
 
@@ -151,18 +201,16 @@
 					<p><em><?php _e( 'Your comment is being held for moderation.', 'keel' ) ?></em></p>
 				<?php endif; ?>
 
-				<header class="space-bottom-small group">
+				<header class="margin-bottom-small clearfix">
 					<figure>
 						<?php if ( $args['avatar_size'] !== 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 					</figure>
-					<h3 class="text-left no-space">
+					<h3 class="no-margin no-padding">
 						<?php comment_author_link() ?>
 					</h3>
 					<aside>
-						<p class="text-small text-muted">
-							<time datetime="<?php comment_date( 'Y-m-d' ); ?>" pubdate><?php comment_date('F jS, Y') ?></time>
-							<?php edit_comment_link('Edit', ' / ', ''); ?>
-						</p>
+						<time datetime="<?php comment_date( 'Y-m-d' ); ?>" pubdate><?php comment_date('F jS, Y') ?></time>
+						<?php edit_comment_link('Edit', ' / ', ''); ?>
 					</aside>
 				</header>
 
@@ -198,7 +246,7 @@
 	function keel_comment_form() {
 
 		$commenter = wp_get_current_commenter();
-		global $post, $user_identity;
+		global $user_identity;
 
 		$must_log_in =
 			'<p>' .
@@ -223,7 +271,7 @@
 
 		$field_author =
 			'<div class="row">' .
-				'<div class="grid-two-thirds float-center">' .
+				'<div class="grid-two-thirds">' .
 					'<label for="author">' . __( 'Name' ) . '</label>' .
 					'<input type="text" name="author" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '" required>' .
 				'</div>' .
@@ -231,7 +279,7 @@
 
 		$field_email =
 			'<div class="row">' .
-				'<div class="grid-two-thirds float-center">' .
+				'<div class="grid-two-thirds">' .
 					'<label for="email">' . __( 'Email' ) . '</label>' .
 					'<input type="email" name="email" id="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" required>' .
 				'</div>' .
@@ -239,7 +287,7 @@
 
 		$field_url =
 			'<div class="row">' .
-				'<div class="grid-two-thirds float-center">' .
+				'<div class="grid-two-thirds">' .
 					'<label for="url">' . __( 'Website (optional)' ) . '</label>' .
 					'<input type="url" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '">' .
 				'</div>' .
@@ -248,9 +296,6 @@
 		$field_comment =
 			'<div>' .
 				'<textarea name="comment" id="comment" required></textarea>' .
-			'</div>' .
-			'<div class="text-center">' .
-				'<p>Share links, code and more with <a href="http://en.support.wordpress.com/markdown-quick-reference/">Markdown</a>.</p>' .
 			'</div>';
 
 		$args = array(
@@ -292,7 +337,7 @@
 	 * Deregister JetPack's devicepx.js script
 	 */
 	function keel_dequeue_devicepx() {
-		wp_dequeue_script( 'devicepx' );
+	    wp_dequeue_script( 'devicepx' );
 	}
 	add_action( 'wp_enqueue_scripts', 'keel_dequeue_devicepx', 20 );
 
@@ -337,6 +382,7 @@
 	 */
 	function keel_is_paginated() {
 		global $wp_query;
+
 		if ( $wp_query->max_num_pages > 1 ) {
 			return true;
 		} else {

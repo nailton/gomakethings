@@ -1,13 +1,13 @@
 /**
  * @section Grid
- * Structure and layout.
+ * Structure and layout
  */
 
 /**
  * Base grid styles: single column
  */
 .container {
-	max-width: $container-max;
+	max-width: $container-max-width;
 	width: $container-width;
 	margin-left: auto;
 	margin-right: auto;
@@ -32,12 +32,12 @@
 }
 
 
-/**
- * Reverses order of grid for content choreography
- */
-.grid-flip {
-	float: right;
-}
+// /**
+// * Reverses order of grid for content choreography
+// */
+// .grid-flip {
+// 	float: right;
+// }
 
 
 /**
@@ -61,17 +61,21 @@
 }
 
 /**
- * Image gallery
+ * Dynamic grid
  */
-.grid-img {
-	@media (min-width: $bp-small)  { width: 50%; }
-	@media (min-width: $bp-medium) { width: 33.33333333333%; }
-	// @media (min-width: $bp-large)  { width: 25%; }
-}
-
+ @each $namespace, $breakpoint, $width in ($grid-dynamic){
+ 	#{$namespace} {
+ 		@extend %grid-base;
+ 	}
+ 	@media (min-width: $breakpoint) {
+ 		#{$namespace} {
+ 			width: $width;
+ 		}
+ 	}
+ }
 
 // Add clearfix
 .container,
 .row {
-	@extend .group;
+	@extend .clearfix;
 }

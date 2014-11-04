@@ -2,7 +2,7 @@
 
 /**
  * index.php
- * Template for page that displays all of your posts.
+ * Template for the page that displays all of your posts.
  */
 
 get_header(); ?>
@@ -10,17 +10,28 @@ get_header(); ?>
 
 <?php if (have_posts()) : ?>
 
-	<?php while (have_posts()) : the_post(); ?>
-		<?php get_template_part( 'content', 'Post Content' ); ?>
+	<?php
+		// Start the loop
+		while (have_posts()) : the_post();
+	?>
+		<?php
+			// Insert the post content
+			get_template_part( 'content', 'Post Content' );
+		?>
 	<?php endwhile; ?>
 
 
-	<!-- Previous/Next page navigation -->
-	<?php get_template_part( 'nav-page', 'Page Navigation' ); ?>
+	<?php
+		// Previous/next page navigation
+		get_template_part( 'nav-page', 'Page Navigation' );
+	?>
 
 
 <?php else : ?>
-	<?php get_template_part( 'no-posts', 'No Posts Template' ); ?>
+	<?php
+		// If no content, include the "No post found" template
+		get_template_part( 'no-posts', 'No Posts Template' );
+	?>
 <?php endif; ?>
 
 

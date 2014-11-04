@@ -1,9 +1,5 @@
-/**
- * @section Tables
- */
-
-/**
- * Removes default browser settings and evens out inconsistencies. */
+/*  Removes default browser settings
+ *  and evens out inconsistencies. */
 table {
 	width: 100%;
 	max-width: 100%;
@@ -18,34 +14,22 @@ td {
 	padding: calc-em(8px);
 }
 
-/**
- * Adds header styling
- */
 th {
 	background-color: lighten( $color-gray-light, 5% );
 	font-weight: bold;
 	vertical-align: bottom;
 }
 
-/**
- * Adds body styling
- */
 td {
 	border-top: calc-em(1px) solid lighten( $color-gray-light, 3% );
 	vertical-align: top;
 }
 
-/**
- * Adds zebra striping
- */
 tbody tr:nth-child(even) {
 	background-color: lighten( $color-gray-light, 7% );
 }
 
-/**
- * Decreases table spacing
- */
-.table-condensed th,
-.table-condensed td, {
-	padding: calc-em(4px);
-}
+// .table-condensed th,
+// .table-condensed td, {
+// 	padding: calc-em(4px);
+// }

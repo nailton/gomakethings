@@ -3,6 +3,8 @@
 /**
  * nav-main.php
  * Template for site navigation.
+ * You may wish to use `wp_nav_menu()` here, or alternatively, hand-code your navigation.
+ * http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
 
 ?>
@@ -10,18 +12,25 @@
 <header class="container">
 	<nav class="nav-wrap">
 		<a class="logo" href="<?php echo site_url(); ?>/">
-			<i class="icon icon-logo"></i>
-			Go Make Things
+			<svg class="icon">
+			    <use xlink:href="#icon-logo"></use>&nbsp;
+			</svg>
+			<?php _e( 'Go Make Things', 'keel' ); ?>
 		</a>
 		<ul class="nav">
-			<li <?php if (is_front_page() || is_single()) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/">Blog</a></li>
-			<li <?php if (is_page('about')) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/about/">About</a></li>
-			<li <?php if (is_page('projects') || ( isset( $post ) && $post->post_parent == '4493' ) ) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/projects/">Projects</a></li>
-			<!-- <li <?php if (is_page('freebies')) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/freebies/">Freebies</a></li> -->
-			<li <?php if (is_page('talks')) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/talks/">Talks</a></li>
-			<!-- <li <?php if (is_page('search')) { echo 'class="active"'; }?>><a href="<?php echo site_url(); ?>/search/">Search</a></li>
-			<li><a href="http://feeds.feedburner.com/GoMakeThings">RSS</a></li> -->
+			<li <?php if (is_front_page() || is_single()) { echo 'class="active"'; }?>>
+				<a href="<?php echo site_url(); ?>/"><?php _e( 'Blog', 'keel' ); ?></a>
+			</li>
+			<li <?php if (is_page('about')) { echo 'class="active"'; }?>>
+				<a href="<?php echo site_url(); ?>/about/"><?php _e( 'About', 'keel' ); ?></a>
+			</li>
+			<li <?php if (is_page('projects') || ( isset( $post ) && $post->post_parent == '4493' ) ) { echo 'class="active"'; }?>>
+				<a href="<?php echo site_url(); ?>/projects/"><?php _e( 'Projects', 'keel' ); ?></a>
+			</li>
+			<li <?php if (is_page('talks')) { echo 'class="active"'; }?>>
+				<a href="<?php echo site_url(); ?>/talks/"><?php _e( 'Talks', 'keel' ); ?></a>
+			</li>
 		</ul>
 	</nav>
-	<hr class="no-space-top">
+	<hr class="no-margin-top">
 </header>

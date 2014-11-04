@@ -1,11 +1,12 @@
 /**
- * @section Code and Pre styling
+ * @section Code
+ * Styling for code and preformatted text.
  */
 
 code,
 pre {
 	font-family: $font-monospace;
-	font-size: calc-em(13px);
+	font-size: calc-em(14px);
 	border-radius: calc-em(1px);
 }
 
@@ -21,9 +22,7 @@ pre {
 	line-height: 1.5;
 	background-color: lighten( $color-gray-light, 6% );
 	padding: calc-em(13px);
-	-moz-tab-size: 4;
-	  -o-tab-size: 4;
-		 tab-size: 4;
+	tab-size: 4;
 	white-space: pre-wrap;
 	word-break: break-all;
 }
@@ -34,63 +33,4 @@ pre code {
 	color: inherit;
 	background-color: transparent;
 	border: 0;
-}
-
-/**
- * Prism Syntax highlighting
- */
-@media screen {
-
-	.token.comment,
-	.token.prolog,
-	.token.doctype,
-	.token.cdata {
-		color: slategray;
-	}
-
-	.token.punctuation {
-		color: #999;
-	}
-
-	.token.property,
-	.token.tag,
-	.token.boolean,
-	.token.number {
-		color: #905;
-	}
-
-	.token.selector,
-	.token.attr-name,
-	.token.string {
-		color: #690;
-	}
-
-	.token.operator,
-	.token.entity,
-	.token.url,
-	.language-css .token.string,
-	.style .token.string {
-		color: #a67f59;
-	}
-
-	.token.atrule,
-	.token.attr-value,
-	.token.keyword {
-		color: #07a;
-	}
-
-
-	.token.regex,
-	.token.important {
-		color: #e90;
-	}
-
-	.token.important {
-		font-weight: bold;
-	}
-
-	.token.entity {
-		cursor: help;
-	}
-
 }
