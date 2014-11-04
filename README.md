@@ -3,6 +3,8 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v8.0.1 - November 4, 2014
+	* Made several performance updates.
 * v8.0.0 - November 4, 2014
 	* Updated base theme to Keel.
 	* Updated to Kraken 5.
