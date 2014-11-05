@@ -88,15 +88,11 @@ var banner = {
 		' * <%= package.name %> v<%= package.version %>\n' +
 		' * <%= package.description %>, by <%= package.author.name %>.\n' +
 		' * <%= package.repository.url %>\n' +
-		' * \n' +
-		' * Free to use under the MIT License.\n' +
-		' * http://gomakethings.com/mit/\n' +
 		' */\n\n',
 	min :
 		'/**' +
 		' <%= package.name %> v<%= package.version %>, by Chris Ferdinandi' +
 		' | <%= package.repository.url %>' +
-		' | Licensed under MIT: http://gomakethings.com/mit/' +
 		' */\n',
 	theme :
 		'/**\n' +
@@ -123,7 +119,6 @@ gulp.task('build:scripts', ['clean:dist'], function() {
 		.pipe(gulp.dest, paths.scripts.output)
 		.pipe(rename, { suffix: '.min' })
 		.pipe(uglify)
-		.pipe(header, banner.min, { package : package })
 		.pipe(gulp.dest, paths.scripts.output);
 
 	return gulp.src(paths.scripts.input)
@@ -150,7 +145,6 @@ gulp.task('build:styles', ['clean:dist'], function() {
 		.pipe(gulp.dest(paths.styles.output))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minify())
-		.pipe(header(banner.min, { package : package }))
 		.pipe(gulp.dest(paths.styles.output));
 });
 

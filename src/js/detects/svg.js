@@ -1,28 +1,14 @@
-/**
- * Detect SVG support
- */
-(function (root, factory) {
-	if ( typeof define === 'function' && define.amd ) {
-		define('detectSvg', factory(root));
-	} else if ( typeof exports === 'object' ) {
-		module.exports = factory(root);
-	} else {
-		root.detectSvg = factory(root);
-	}
-})(window || this, function (root) {
+;(function (window, document, undefined) {
 
 	'use strict';
 
-	// Create exports variable
-	var exports = {};
-
 	// SVG feature detection
-	exports.supports = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
+	var supports = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
 
-	//
-	// Public APIs
-	//
+	// If SVG is supported, add `.svg` class to <html> element
+	if ( supports ) {
+		document.documentElement.className += (document.documentElement.className ? ' ' : '') + 'svg';
+	}
 
-	return exports;
 
-});
+})(window, document);
