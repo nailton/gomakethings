@@ -3,6 +3,8 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v8.0.3 - November 5, 2014
+	* Added fix for WordPress subscribe to comments form styling.
 * v8.0.2 - November 4, 2014
 	* Switched to external SVG file.
 	* Added SVG4Everybody for IE support.
