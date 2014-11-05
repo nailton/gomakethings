@@ -3,6 +3,12 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v8.0.2 - November 4, 2014
+	* Switched to external SVG file.
+	* Added SVG4Everybody for IE support.
+	* Reconfigured inline vs. externally loaded JS.
+	* Added temp fix for `jetpack.css` bug.
+	* Added shortcode for in-Editor access to current theme directory.
 * v8.0.1 - November 4, 2014
 	* Made several performance updates.
 * v8.0.0 - November 4, 2014
