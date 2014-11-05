@@ -13,7 +13,7 @@
 	<nav class="nav-wrap">
 		<a class="logo" href="<?php echo site_url(); ?>/">
 			<svg class="icon">
-			    <use xlink:href="#icon-logo"></use>&nbsp;
+			    <use xlink:href="<?php echo get_template_directory_uri(); ?>/dist/svg/icons.svg#icon-logo"></use>&nbsp;
 			</svg>
 			<?php _e( 'Go Make Things', 'keel' ); ?>
 		</a>

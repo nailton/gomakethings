@@ -12,8 +12,8 @@
 	function keel_load_theme_files() {
 		// Injected inline into <head> for better performance
 		// wp_enqueue_script( 'keel-theme-detects', get_template_directory_uri() . '/dist/js/detects.js', null, null, false );
-		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.11042014.2.css', null, null, 'all' );
-		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.11042014.2.js', null, null, true );
+		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.11042014.3.css', null, null, 'all' );
+		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.11042014.3.js', null, null, true );
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
@@ -61,6 +61,17 @@
 		return get_search_form();
 	}
 	add_shortcode( 'searchform', 'keel_wpsearch' );
+
+
+
+	/**
+	 * Add a shortcode for the current theme directory
+	 * @return string Current theme directory
+	 */
+	function keel_get_theme_directory_uri() {
+		return get_template_directory_uri();
+	}
+	add_shortcode( 'themeuri', 'keel_get_theme_directory_uri' );
 
 
 
@@ -204,7 +215,7 @@
 					<h3 class="no-margin no-padding">
 						<?php comment_author_link() ?>
 					</h3>
-					<aside>
+					<aside class="text-muted">
 						<time datetime="<?php comment_date( 'Y-m-d' ); ?>" pubdate><?php comment_date('F jS, Y') ?></time>
 						<?php edit_comment_link('Edit', ' / ', ''); ?>
 					</aside>
@@ -337,6 +348,14 @@
 	    wp_dequeue_script( 'devicepx' );
 	}
 	add_action( 'wp_enqueue_scripts', 'keel_dequeue_devicepx', 20 );
+
+
+
+	/**
+	 * Remove Jetpack front-end styles
+	 * @todo Remove once Jetpack glitch fixed
+	 */
+	add_filter( 'jetpack_implode_frontend_css', '__return_false' );
 
 
 

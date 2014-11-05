@@ -33,10 +33,6 @@
 	</head>
 
 	<body>
-		<div hidden>
-			<?php echo file_get_contents( get_template_directory_uri() . '/dist/svg/icons.svg' ); ?>
-			<?php if ( is_page('projects') ) { echo file_get_contents( get_template_directory_uri() . '/dist/svg/portfolio.svg' ); }; ?>
-		</div>
 
 		<!-- Old Browser Warning -->
 		<!--[if lt IE 9]>

@@ -16,14 +16,14 @@
 			<p class="text-small margin-bottom-small">
 				<a class="icon-link-wrap" href="<?php echo site_url(); ?>/search/">
 					<svg class="icon">
-						<use xlink:href="#icon-search"></use>&nbsp;
+						<use xlink:href="<?php echo get_template_directory_uri(); ?>/dist/svg/icons.svg#icon-search"></use>&nbsp;
 					</svg>
 					Search
 				</a>
 				&nbsp;&nbsp;/&nbsp;&nbsp;
 				<a class="icon-link-wrap" href="http://feeds.feedburner.com/GoMakeThings">
 					<svg class="icon">
-						<use xlink:href="#icon-rss"></use>&nbsp;
+						<use xlink:href="<?php echo get_template_directory_uri(); ?>/dist/svg/icons.svg#icon-rss"></use>&nbsp;
 					</svg>
 					RSS Feed
 				</a>
