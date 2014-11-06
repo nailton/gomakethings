@@ -25,7 +25,10 @@
 				<a href="<?php echo site_url(); ?>/about/"><?php _e( 'About', 'keel' ); ?></a>
 			</li>
 			<li <?php if (is_page('projects') || ( isset( $post ) && $post->post_parent == '4493' ) ) { echo 'class="active"'; }?>>
-				<a href="<?php echo site_url(); ?>/projects/"><?php _e( 'Projects', 'keel' ); ?></a>
+				<a href="<?php echo site_url(); ?>/projects/"><?php _e( 'Work', 'keel' ); ?></a>
+			</li>
+			<li <?php if (is_page('code')) { echo 'class="active"'; } ?>>
+				<a href="<?php echo site_url(); ?>/code/"><?php _e( 'Code', 'keel' ); ?></a>
 			</li>
 			<li <?php if (is_page('talks')) { echo 'class="active"'; }?>>
 				<a href="<?php echo site_url(); ?>/talks/"><?php _e( 'Talks', 'keel' ); ?></a>

@@ -3,6 +3,10 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v8.0.4 - November 5, 2014
+	* Added new section for open source code.
+	* Updated talks and client projects pages.
+	* Removed unused SVGs and classes.
 * v8.0.3 - November 5, 2014
 	* Added fix for WordPress subscribe to comments form styling.
 * v8.0.2 - November 4, 2014
