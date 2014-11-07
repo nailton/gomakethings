@@ -3,6 +3,8 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v8.0.5 - November 6, 2014
+	* Added missing icons.
 * v8.0.4 - November 5, 2014
 	* Added new section for open source code.
 	* Updated talks and client projects pages.
