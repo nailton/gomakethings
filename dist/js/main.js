@@ -1,5 +1,5 @@
 /**
- * gomakethings v8.0.4
+ * gomakethings v8.0.5
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  */
