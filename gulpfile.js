@@ -303,7 +303,7 @@ gulp.task('tests', [
 // Compile files, generate docs, and run unit tests (default)
 gulp.task('default', [
 	'compile',
-	'docs',
+	// 'docs',
 	'tests'
 ]);
 
