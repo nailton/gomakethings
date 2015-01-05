@@ -1,7 +1,10 @@
 /**
- * gomakethings v8.0.5
+ * gomakethings v8.1.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
+ * 
+ * Free to use under the MIT License.
+ * http://gomakethings.com/mit/
  */
 
 /**
@@ -39,7 +42,8 @@
  */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+a,
+.link-block-styled, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -154,7 +158,7 @@ img {
 /**
  * Address outline inconsistency between Chrome and other browsers.
  */
-a:focus,
+a:focus, .link-block-styled:focus,
 button:focus {
   outline: thin dotted;
   outline: 0.3125em auto -webkit-focus-ring-color;
@@ -164,8 +168,9 @@ button:focus {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-a:hover,
-a:active {
+a:hover, .link-block-styled:hover, .link-block:hover .link-block-styled,
+a:active,
+.link-block-styled:active {
   outline: 0;
 }
 
@@ -239,21 +244,24 @@ p {
 /**
  * Hyperlink styling
  */
-a,
-a:visited {
+a, .link-block-styled,
+a:visited,
+.link-block-styled:visited {
   color: #0088cc;
   text-decoration: none;
   word-wrap: break-word;
 }
 
-a:hover,
+a:hover, .link-block-styled:hover, .link-block:hover .link-block-styled,
 a:focus,
-a:active {
+.link-block-styled:focus,
+a:active,
+.link-block-styled:active {
   color: #005580;
   text-decoration: underline;
 }
 
-a img {
+a img, .link-block-styled img {
   border: none;
   background: none;
 }
@@ -262,11 +270,22 @@ a img {
  * Prevents border/background on linked image hover.
  * Adds slight opacity.
  */
-a:hover img {
+a:hover img, .link-block-styled:hover img, .link-block:hover .link-block-styled img {
   border: none;
   background: none;
   opacity: 0.8;
   filter: alpha(opacity=80);
+}
+
+/**
+ * Creates block-level links
+ */
+a.link-block, .link-block.link-block-styled {
+  color: #272727;
+  display: block;
+}
+a.link-block:hover, .link-block.link-block-styled:hover, .link-block:hover .link-block.link-block-styled {
+  text-decoration: none;
 }
 
 /**
@@ -360,12 +379,13 @@ h4,
 /**
  * Heading link styling
  */
-h1 a,
-h1 a:visited {
+h1 a, h1 .link-block-styled,
+h1 a:visited,
+h1 .link-block-styled:visited {
   color: #272727;
 }
 
-h1 a:hover {
+h1 a:hover, h1 .link-block-styled:hover, h1 .link-block:hover .link-block-styled, .link-block:hover h1 .link-block-styled {
   color: #0088cc;
   text-decoration: none;
 }
@@ -427,6 +447,7 @@ sub {
  */
 blockquote {
   border-left: 0.25em solid #e5e5e5;
+  font-style: italic;
   margin-bottom: 1.5625em;
   padding-left: 1.5625em;
   padding-right: 1.5625em;
@@ -557,19 +578,27 @@ pre code {
 .btn:visited,
 #submit:visited,
 a .btn:visited,
+.link-block-styled .btn:visited,
 a #submit:visited,
+.link-block-styled #submit:visited,
 .btn:hover,
 #submit:hover,
 a .btn:hover,
+.link-block-styled .btn:hover,
 a #submit:hover,
+.link-block-styled #submit:hover,
 .btn:focus,
 #submit:focus,
 a .btn:focus,
+.link-block-styled .btn:focus,
 a #submit:focus,
+.link-block-styled #submit:focus,
 .btn:active,
 #submit:active,
 a .btn:active,
+.link-block-styled .btn:active,
 a #submit:active,
+.link-block-styled #submit:active,
 .btn.active,
 .active#submit {
   color: #ffffff;
@@ -577,15 +606,21 @@ a #submit:active,
 
 .btn:hover, #submit:hover,
 a .btn:hover,
+.link-block-styled .btn:hover,
 a #submit:hover,
+.link-block-styled #submit:hover,
 .btn:focus,
 #submit:focus,
 a .btn:focus,
+.link-block-styled .btn:focus,
 a #submit:focus,
+.link-block-styled #submit:focus,
 .btn:active,
 #submit:active,
 a .btn:active,
+.link-block-styled .btn:active,
 a #submit:active,
+.link-block-styled #submit:active,
 .btn.active,
 .active#submit {
   background-color: #005580;
@@ -802,7 +837,7 @@ select:focus {
   fill: #6aa120;
 }
 
-a:hover .icon-link {
+a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link-block-styled .icon-link {
   fill: #005580;
 }
 
@@ -900,7 +935,7 @@ a:hover .icon-link {
  * If .logo and .nav don't align properly,
  * adjust the .logo line-height.
  */
-a.logo {
+a.logo, .logo.link-block-styled {
   display: inline-block;
   font-size: 1.2em;
   font-weight: bold;
@@ -910,7 +945,7 @@ a.logo {
   text-decoration: none;
 }
 @media (min-width: 38em) {
-  a.logo {
+  a.logo, .logo.link-block-styled {
     float: left;
     margin-bottom: 0;
   }
@@ -919,7 +954,7 @@ a.logo {
 /**
  * For text-based logo, override default link hover styling
  */
-a.logo:hover {
+a.logo:hover, .logo.link-block-styled:hover, .link-block:hover .logo.link-block-styled {
   color: #0088cc;
   text-decoration: none;
 }
@@ -966,18 +1001,18 @@ a.logo:hover {
 /**
  * Active link styling
  */
-.nav .active a {
+.nav .active a, .nav .active .link-block-styled {
   color: #272727;
 }
 
 /**
  * Override default link colors
  */
-.nav a {
+.nav a, .nav .link-block-styled {
   color: #808080;
 }
 
-.nav a:hover {
+.nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled {
   color: #0088cc;
 }
 
@@ -1208,22 +1243,23 @@ tbody tr:nth-child(even) {
   /**
    * Underline all links
    */
-  a,
-  a:visited {
+  a, .link-block-styled,
+  a:visited,
+  .link-block-styled:visited {
     text-decoration: underline;
   }
 
   /**
    * Show URL after links
    */
-  a[href]:after {
+  a[href]:after, [href].link-block-styled:after {
     content: " (" attr(href) ")";
   }
 
   /**
    * Don't show URL for internal links
    */
-  a[href^="#"]:after {
+  a[href^="#"]:after, [href^="#"].link-block-styled:after {
     content: "";
   }
 

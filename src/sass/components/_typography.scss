@@ -63,6 +63,28 @@ a:hover img {
 
 
 /**
+ * Creates block-level links
+ */
+
+a.link-block {
+	color: $color-black;
+	display: block;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.link-block-styled {
+	@extend a;
+
+	.link-block:hover & {
+		@extend a:hover;
+	}
+}
+
+
+/**
  * List styling
  */
 
@@ -228,6 +250,7 @@ sub {
 
 blockquote {
 	border-left: calc-em(4px) solid $color-gray-light;
+	font-style: italic;
 	margin-bottom: $spacing;
 	padding-left: $spacing;
 	padding-right: $spacing;
