@@ -1,7 +1,10 @@
 /**
- * gomakethings v8.0.5
+ * gomakethings v8.1.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
+ * 
+ * Free to use under the MIT License.
+ * http://gomakethings.com/mit/
  */
 
 /*! fluidvids.js v2.4.1 | (c) 2014 @toddmotto | https://github.com/toddmotto/fluidvids */

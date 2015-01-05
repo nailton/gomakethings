@@ -12,8 +12,8 @@
 	function keel_load_theme_files() {
 		// Injected inline into <head> for better performance
 		// wp_enqueue_script( 'keel-theme-detects', get_template_directory_uri() . '/dist/js/detects.js', null, null, false );
-		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.11062014.css', null, null, 'all' );
-		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.11062014.js', null, null, true );
+		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.01042015.css', null, null, 'all' );
+		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.01042015.js', null, null, true );
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
@@ -116,10 +116,6 @@
 
 
 
-	/**
-	 * Override default the_excerpt length
-	 *
-	 */
 	/**
 	 * Override default the_excerpt length
 	 * @param  number $length Default length
@@ -345,7 +341,7 @@
 	 * Deregister JetPack's devicepx.js script
 	 */
 	function keel_dequeue_devicepx() {
-	    wp_dequeue_script( 'devicepx' );
+		wp_dequeue_script( 'devicepx' );
 	}
 	add_action( 'wp_enqueue_scripts', 'keel_dequeue_devicepx', 20 );
 
@@ -356,6 +352,21 @@
 	 * @todo Remove once Jetpack glitch fixed
 	 */
 	add_filter( 'jetpack_implode_frontend_css', '__return_false' );
+
+
+
+	/**
+	 * Remove empty paragraphs created by wpautop()
+	 * @author Ryan Hamilton
+	 * @link https://gist.github.com/Fantikerz/5557617
+	 */
+	function keel_remove_empty_p( $content ) {
+		$content = force_balance_tags( $content );
+		$content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+		$content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+		return $content;
+	}
+	add_filter('the_content', 'keel_remove_empty_p', 20, 1);
 
 
 

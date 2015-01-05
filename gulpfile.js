@@ -88,11 +88,15 @@ var banner = {
 		' * <%= package.name %> v<%= package.version %>\n' +
 		' * <%= package.description %>, by <%= package.author.name %>.\n' +
 		' * <%= package.repository.url %>\n' +
+		' * \n' +
+		' * Free to use under the MIT License.\n' +
+		' * http://gomakethings.com/mit/\n' +
 		' */\n\n',
 	min :
 		'/**' +
 		' <%= package.name %> v<%= package.version %>, by Chris Ferdinandi' +
 		' | <%= package.repository.url %>' +
+		' | Licensed under MIT: http://gomakethings.com/mit/' +
 		' */\n',
 	theme :
 		'/**\n' +
@@ -119,6 +123,7 @@ gulp.task('build:scripts', ['clean:dist'], function() {
 		.pipe(gulp.dest, paths.scripts.output)
 		.pipe(rename, { suffix: '.min' })
 		.pipe(uglify)
+		.pipe(header, banner.min, { package : package })
 		.pipe(gulp.dest, paths.scripts.output);
 
 	return gulp.src(paths.scripts.input)
@@ -145,6 +150,7 @@ gulp.task('build:styles', ['clean:dist'], function() {
 		.pipe(gulp.dest(paths.styles.output))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minify())
+		.pipe(header(banner.min, { package : package }))
 		.pipe(gulp.dest(paths.styles.output));
 });
 
@@ -215,7 +221,7 @@ gulp.task('test:scripts', function() {
 });
 
 // Generate documentation
-gulp.task('build:docs', ['default', 'clean:docs'], function() {
+gulp.task('build:docs', ['compile', 'clean:docs'], function() {
 	return gulp.src(paths.docs.input)
 		.pipe(plumber())
 		.pipe(fileinclude({
@@ -233,7 +239,7 @@ gulp.task('build:docs', ['default', 'clean:docs'], function() {
 });
 
 // Copy distribution files to docs
-gulp.task('copy:dist', ['default', 'clean:docs'], function() {
+gulp.task('copy:dist', ['compile', 'clean:docs'], function() {
 	return gulp.src(paths.output + '/**')
 		.pipe(plumber())
 		.pipe(gulp.dest(paths.docs.output + '/dist'));
@@ -251,45 +257,17 @@ gulp.task('clean:docs', function () {
 	return del.sync(paths.docs.output);
 });
 
-// Watch for changes to files
-gulp.task('listen', function () {
-	watch(paths.input, function (files) {
-		gulp.start('default');
-	});
-});
-
-// Watch for changes to files and docs
-gulp.task('listen:docs', function () {
-	watch(paths.input, function (files) {
-		gulp.start('docs');
-	});
-});
-
 // Spin up livereload server and listen for file changes
-gulp.task('server', function () {
+gulp.task('listen', function () {
 	livereload.listen();
-	watch(paths.input, function (files) {
+	gulp.watch(paths.input).on('change', function(file) {
 		gulp.start('default');
 		gulp.start('refresh');
 	});
 });
 
-// Spin up livereload server and listen for file and documentation changes
-gulp.task('server:docs', function () {
-	livereload.listen();
-	watch(paths.input, function (files) {
-		gulp.start('docs');
-		gulp.start('refresh:docs');
-	});
-});
-
 // Run livereload after file change
-gulp.task('refresh', ['default'], function () {
-	livereload.changed();
-});
-
-// Run livereload after file or documentation change
-gulp.task('refresh:docs', ['docs'], function () {
+gulp.task('refresh', ['compile', 'docs'], function () {
 	livereload.changed();
 });
 
@@ -298,8 +276,8 @@ gulp.task('refresh:docs', ['docs'], function () {
  * Task Runners
  */
 
-// Compile files (default)
-gulp.task('default', [
+// Compile files
+gulp.task('compile', [
 	'lint:scripts',
 	'clean:dist',
 	'copy:static',
@@ -307,38 +285,30 @@ gulp.task('default', [
 	'build:svgs',
 	'build:styles',
 	'build:theme',
-	'test:scripts'
 ]);
 
-// Compile files and generate documentation
+// Generate documentation
 gulp.task('docs', [
-	'default',
 	'clean:docs',
 	'build:docs',
 	'copy:dist',
 	'copy:assets'
 ]);
 
-// Compile files when something changes
+// Generate documentation
+gulp.task('tests', [
+	'test:scripts'
+]);
+
+// Compile files, generate docs, and run unit tests (default)
+gulp.task('default', [
+	'compile',
+	// 'docs',
+	'tests'
+]);
+
+// Compile files, generate docs, and run unit tests when something changes
 gulp.task('watch', [
 	'listen',
 	'default'
-]);
-
-// Compile files and generate docs when something changes
-gulp.task('watch:docs', [
-	'listen:docs',
-	'docs'
-]);
-
-// Compile files and livereload pages when something changes
-gulp.task('reload', [
-	'server',
-	'default'
-]);
-
-// Compile files, generate docs, and livereload pages when something changes
-gulp.task('reload:docs', [
-	'server:docs',
-	'docs'
 ]);

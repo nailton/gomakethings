@@ -3,6 +3,10 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v8.1.0 - January 4, 2015
+	* Added italics to blockquotes.
+	* Added method to stop `wpautop` from adding empty `<p>` tags.
+	* Added block-level links.
 * v8.0.5 - November 6, 2014
 	* Added missing icons.
 * v8.0.4 - November 5, 2014
