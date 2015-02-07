@@ -19,7 +19,7 @@
 		</a>
 		<ul class="nav">
 			<li <?php if (is_front_page() || is_single()) { echo 'class="active"'; }?>>
-				<a href="<?php echo site_url(); ?>/"><?php _e( 'Blog', 'keel' ); ?></a>
+				<a href="<?php echo site_url(); ?>/blog/"><?php _e( 'Blog', 'keel' ); ?></a>
 			</li>
 			<li <?php if (is_page('about')) { echo 'class="active"'; }?>>
 				<a href="<?php echo site_url(); ?>/about/"><?php _e( 'About', 'keel' ); ?></a>
