@@ -1,5 +1,5 @@
 /**
- * gomakethings v8.1.0
+ * gomakethings v9.0.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -188,6 +188,10 @@ a:active,
   margin-right: auto;
 }
 
+.container-large {
+  max-width: 60em;
+}
+
 .row {
   margin-left: -1.4%;
   margin-right: -1.4%;
@@ -198,6 +202,13 @@ a:active,
   width: 100%;
   padding-left: 1.4%;
   padding-right: 1.4%;
+}
+
+/**
+* Reverses order of grid for content choreography
+*/
+.grid-flip {
+  float: right;
 }
 
 /**
@@ -999,21 +1010,23 @@ a.logo:hover, .logo.link-block-styled:hover, .link-block:hover .logo.link-block-
 }
 
 /**
- * Active link styling
- */
-.nav .active a, .nav .active .link-block-styled {
-  color: #272727;
-}
-
-/**
  * Override default link colors
  */
 .nav a, .nav .link-block-styled {
   color: #808080;
 }
 
-.nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled {
-  color: #0088cc;
+/**
+ * Active link styling
+ */
+.nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled,
+.nav a:active,
+.nav .link-block-styled:active,
+.nav .active a,
+.nav .active .link-block-styled {
+  border-bottom: 0.125em solid #fa7176;
+  color: #272727;
+  text-decoration: none;
 }
 
 /*  Removes default browser settings
@@ -1082,6 +1095,11 @@ tbody tr:nth-child(even) {
   text-align: center;
 }
 
+@media (min-width: 38em) {
+  .text-right-large {
+    text-align: right;
+  }
+}
 /**
  * Margins
  */

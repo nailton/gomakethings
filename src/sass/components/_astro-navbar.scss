@@ -78,13 +78,6 @@ a.logo:hover {
 }
 
 /**
- * Active link styling
- */
-.nav .active a {
-	color: $color-black;
-}
-
-/**
  * Override default link colors
  */
 
@@ -92,6 +85,17 @@ a.logo:hover {
 	color: $color-gray-dark;
 }
 
-.nav a:hover {
-	color: $color-primary;
+// .nav a:hover {
+// 	color: $color-primary;
+// }
+
+/**
+ * Active link styling
+ */
+.nav a:hover,
+.nav a:active,
+.nav .active a {
+	border-bottom: calc-em(2px) solid $color-secondary;
+	color: $color-black;
+	text-decoration: none;
 }

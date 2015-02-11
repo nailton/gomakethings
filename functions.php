@@ -465,3 +465,6 @@
 			return null;
 		};
 	}
+
+
+	require_once( dirname( __FILE__) . '/includes/keel-set-page-width.php' );

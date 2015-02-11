@@ -1,5 +1,5 @@
 /**
- * gomakethings v8.1.0
+ * gomakethings v9.0.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -7,6 +7,350 @@
  * http://gomakethings.com/mit/
  */
 
+/*
+ * classList.js: Cross-browser full element.classList implementation.
+ * 2014-01-31
+ *
+ * By Eli Grey, http://eligrey.com
+ * Public Domain.
+ * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+ */
+
+/*global self, document, DOMException */
+
+/*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
+
+if ("document" in self && !("classList" in document.createElement("_"))) {
+
+	(function (view) {
+
+		"use strict";
+
+		if (!('Element' in view)) return;
+
+		var
+			classListProp = "classList",
+			protoProp = "prototype",
+			elemCtrProto = view.Element[protoProp],
+			objCtr = Object,
+			strTrim = String[protoProp].trim || function () {
+				return this.replace(/^\s+|\s+$/g, "");
+			},
+			arrIndexOf = Array[protoProp].indexOf || function (item) {
+				var
+					i = 0,
+					len = this.length;
+				for (; i < len; i++) {
+					if (i in this && this[i] === item) {
+						return i;
+					}
+				}
+				return -1;
+			},
+			// Vendors: please allow content code to instantiate DOMExceptions
+			DOMEx = function (type, message) {
+				this.name = type;
+				this.code = DOMException[type];
+				this.message = message;
+			},
+			checkTokenAndGetIndex = function (classList, token) {
+				if (token === "") {
+					throw new DOMEx(
+						"SYNTAX_ERR",
+						"An invalid or illegal string was specified"
+					);
+				}
+				if (/\s/.test(token)) {
+					throw new DOMEx(
+						"INVALID_CHARACTER_ERR",
+						"String contains an invalid character"
+					);
+				}
+				return arrIndexOf.call(classList, token);
+			},
+			ClassList = function (elem) {
+				var
+					trimmedClasses = strTrim.call(elem.getAttribute("class") || ""),
+					classes = trimmedClasses ? trimmedClasses.split(/\s+/) : [],
+					i = 0,
+					len = classes.length;
+				for (; i < len; i++) {
+					this.push(classes[i]);
+				}
+				this._updateClassName = function () {
+					elem.setAttribute("class", this.toString());
+				};
+			},
+			classListProto = ClassList[protoProp] = [],
+			classListGetter = function () {
+				return new ClassList(this);
+			};
+		// Most DOMException implementations don't allow calling DOMException's toString()
+		// on non-DOMExceptions. Error's toString() is sufficient here.
+		DOMEx[protoProp] = Error[protoProp];
+		classListProto.item = function (i) {
+			return this[i] || null;
+		};
+		classListProto.contains = function (token) {
+			token += "";
+			return checkTokenAndGetIndex(this, token) !== -1;
+		};
+		classListProto.add = function () {
+			var
+				tokens = arguments,
+				i = 0,
+				l = tokens.length,
+				token,
+				updated = false;
+			do {
+				token = tokens[i] + "";
+				if (checkTokenAndGetIndex(this, token) === -1) {
+					this.push(token);
+					updated = true;
+				}
+			}
+			while (++i < l);
+
+			if (updated) {
+				this._updateClassName();
+			}
+		};
+		classListProto.remove = function () {
+			var
+				tokens = arguments,
+				i = 0,
+				l = tokens.length,
+				token,
+				updated = false;
+			do {
+				token = tokens[i] + "";
+				var index = checkTokenAndGetIndex(this, token);
+				if (index !== -1) {
+					this.splice(index, 1);
+					updated = true;
+				}
+			}
+			while (++i < l);
+
+			if (updated) {
+				this._updateClassName();
+			}
+		};
+		classListProto.toggle = function (token, force) {
+			token += "";
+
+			var
+				result = this.contains(token),
+				method = result ? force !== true && "remove" : force !== false && "add";
+
+			if (method) {
+				this[method](token);
+			}
+
+			return !result;
+		};
+		classListProto.toString = function () {
+			return this.join(" ");
+		};
+
+		if (objCtr.defineProperty) {
+			var classListPropDesc = {
+				get: classListGetter,
+				enumerable: true,
+				configurable: true
+			};
+			try {
+				objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+			} catch (ex) { // IE 8 doesn't support enumerable:true
+				if (ex.number === -0x7FF5EC54) {
+					classListPropDesc.enumerable = false;
+					objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+				}
+			}
+		} else if (objCtr[protoProp].__defineGetter__) {
+			elemCtrProto.__defineGetter__(classListProp, classListGetter);
+		}
+
+	}(self));
+
+}
+(function (root, factory) {
+	if ( typeof define === 'function' && define.amd ) {
+		define('astro', factory(root));
+	} else if ( typeof exports === 'object' ) {
+		module.exports = factory(root);
+	} else {
+		root.astro = factory(root);
+	}
+})(window || this, function (root) {
+
+	'use strict';
+
+	//
+	// Variables
+	//
+
+	var astro = {}; // Object for public APIs
+	var supports = !!document.querySelector && !!root.addEventListener; // Feature test
+	var settings;
+
+	// Default settings
+	var defaults = {
+		toggleActiveClass: 'active',
+		navActiveClass: 'active',
+		initClass: 'js-astro',
+		callbackBefore: function () {},
+		callbackAfter: function () {}
+	};
+
+
+	//
+	// Methods
+	//
+
+	/**
+	 * A simple forEach() implementation for Arrays, Objects and NodeLists
+	 * @private
+	 * @param {Array|Object|NodeList} collection Collection of items to iterate
+	 * @param {Function} callback Callback function for each iteration
+	 * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
+	 */
+	var forEach = function (collection, callback, scope) {
+		if (Object.prototype.toString.call(collection) === '[object Object]') {
+			for (var prop in collection) {
+				if (Object.prototype.hasOwnProperty.call(collection, prop)) {
+					callback.call(scope, collection[prop], prop, collection);
+				}
+			}
+		} else {
+			for (var i = 0, len = collection.length; i < len; i++) {
+				callback.call(scope, collection[i], i, collection);
+			}
+		}
+	};
+
+	/**
+	 * Merge defaults with user options
+	 * @private
+	 * @param {Object} defaults Default settings
+	 * @param {Object} options User options
+	 * @returns {Object} Merged values of defaults and options
+	 */
+	var extend = function ( defaults, options ) {
+		var extended = {};
+		forEach(defaults, function (value, prop) {
+			extended[prop] = defaults[prop];
+		});
+		forEach(options, function (value, prop) {
+			extended[prop] = options[prop];
+		});
+		return extended;
+	};
+
+	/**
+	 * Get the closest matching element up the DOM tree
+	 * @param {Element} elem Starting element
+	 * @param {String} selector Selector to match against (class, ID, or data attribute)
+	 * @return {Boolean|Element} Returns false if not match found
+	 */
+	var getClosest = function (elem, selector) {
+		var firstChar = selector.charAt(0);
+		for ( ; elem && elem !== document; elem = elem.parentNode ) {
+			if ( firstChar === '.' ) {
+				if ( elem.classList.contains( selector.substr(1) ) ) {
+					return elem;
+				}
+			} else if ( firstChar === '#' ) {
+				if ( elem.id === selector.substr(1) ) {
+					return elem;
+				}
+			} else if ( firstChar === '[' ) {
+				if ( elem.hasAttribute( selector.substr(1, selector.length - 2) ) ) {
+					return elem;
+				}
+			}
+		}
+		return false;
+	};
+
+	/**
+	 * Show and hide navigation menu
+	 * @public
+	 * @param  {Element} toggle Element that triggered the toggle
+	 * @param  {String} navID The ID of the navigation element to toggle
+	 * @param  {Object} settings
+	 * @param  {Event} event
+	 */
+	astro.toggleNav = function ( toggle, navID, options, event ) {
+
+		// Selectors and variables
+		var settings = extend( settings || defaults, options || {} );  // Merge user options with defaults
+		var nav = document.querySelector(navID);
+
+		settings.callbackBefore( toggle, navID ); // Run callbacks before toggling nav
+		toggle.classList.toggle( settings.toggleActiveClass ); // Toggle the '.active' class on the toggle element
+		nav.classList.toggle( settings.navActiveClass ); // Toggle the '.active' class on the menu
+		settings.callbackAfter( toggle, navID ); // Run callbacks after toggling nav
+
+	};
+
+	/**
+	 * Handle click event methods
+	 * @private
+	 */
+	var eventHandler = function (event) {
+		var toggle = getClosest(event.target, '[data-nav-toggle]');
+		if ( toggle ) {
+			// Prevent default click event
+			if ( toggle.tagName.toLowerCase() === 'a') {
+				event.preventDefault();
+			}
+			// Toggle nav
+			astro.toggleNav( toggle, toggle.getAttribute('data-nav-toggle'), settings );
+		}
+	};
+
+	/**
+	 * Destroy the current initialization.
+	 * @public
+	 */
+	astro.destroy = function () {
+		if ( !settings ) return;
+		document.documentElement.classList.remove( settings.initClass );
+		document.removeEventListener('click', eventHandler, false);
+		settings = null;
+	};
+
+	/**
+	 * Initialize Astro
+	 * @public
+	 * @param {Object} options User settings
+	 */
+	astro.init = function ( options ) {
+
+		// feature test
+		if ( !supports ) return;
+
+		// Destroy any existing initializations
+		astro.destroy();
+
+		// Selectors and variables
+		settings = extend( defaults, options || {} ); // Merge user options with defaults
+
+		// Listeners and methods
+		document.documentElement.classList.add( settings.initClass ); // Add class to HTML element to activate conditional CSS
+		document.addEventListener('click', eventHandler, false); // Listen for click events and run event handler
+
+	};
+
+
+	//
+	// Public APIs
+	//
+
+	return astro;
+
+});
 /*! fluidvids.js v2.4.1 | (c) 2014 @toddmotto | https://github.com/toddmotto/fluidvids */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {

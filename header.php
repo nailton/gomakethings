@@ -19,10 +19,11 @@
 
 		<!-- Icons: place in the root directory -->
 		<!-- https://github.com/audreyr/favicon-cheat-sheet -->
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico" />
 		<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon-144.png">
 		<meta name="msapplication-TileColor" content="#0088cc">
 		<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon-ms.png">
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico">
 
 		<!-- Feeds & Pings -->
 		<link rel="alternate" type="application/rss+xml" title="<?php printf( __( '%s RSS Feed', 'keel' ), get_bloginfo( 'name' ) ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>">
@@ -49,4 +50,4 @@
 			get_template_part( 'nav-main', 'Site Navigation' );
 		?>
 
-		<main class="container" id="main">
+		<main class="container <?php global $post; if ( get_post_meta( $post->ID, 'keel_page_full_width_checkbox', true ) === 'on' ) echo 'container-large'; ?>" id="main">

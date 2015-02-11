@@ -14,34 +14,35 @@
 		 * Headers
 		 * Unlinked h1 for pages and invidual blog posts.
 		 * Linked h1 for collections of posts.
+		 * None added for page-plain.php templates
 		 */
+		if ( !is_page_template( 'page-plain.php' ) ) :
 	?>
-	<header>
-		<?php
-			/**
-			 * Add meta data for blog posts.
-			 * 1. Published date
-			 * 2. Author
-			 * 3. Number of comments
-			 * 4. Quick edit link
-			 */
-			if ( !is_page() ) :
-		?>
-			<aside class="text-muted">
-				<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'F j, Y' ) ?></time>
-				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
-			</aside>
-		<?php endif; ?>
-		<?php if ( is_single() ) : ?>
-			<h1 class="no-padding-top"><?php the_title(); ?></h1>
-		<?php elseif ( is_page() ) : ?>
-			<?php if ( !is_page_template( 'page-plain.php' ) ) : ?>
-				<h1><?php the_title(); ?></h1>
+		<header>
+			<?php
+				/**
+				 * Add meta data for blog posts.
+				 * 1. Published date
+				 * 2. Author
+				 * 3. Number of comments
+				 * 4. Quick edit link
+				 */
+				if ( !is_page() ) :
+			?>
+				<aside class="text-muted">
+					<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'F j, Y' ) ?></time>
+					<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
+				</aside>
 			<?php endif; ?>
-		<?php else : ?>
-			<h1 class="no-padding-top"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-		<?php endif; ?>
-	</header>
+			<?php if ( is_single() ) : ?>
+				<h1 class="no-padding-top"><?php the_title(); ?></h1>
+			<?php elseif ( is_page() ) : ?>
+					<h1><?php the_title(); ?></h1>
+			<?php else : ?>
+				<h1 class="no-padding-top"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+			<?php endif; ?>
+		</header>
+	<?php endif; ?>
 
 	<?php
 		// The page or post content

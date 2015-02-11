@@ -9,7 +9,7 @@
 
 ?>
 
-<header class="container">
+<header class="container container-large margin-bottom-large">
 	<nav class="nav-wrap">
 		<a class="logo" href="<?php echo site_url(); ?>/">
 			<svg class="icon">
@@ -18,7 +18,7 @@
 			<?php _e( 'Go Make Things', 'keel' ); ?>
 		</a>
 		<ul class="nav">
-			<li <?php if (is_front_page() || is_single()) { echo 'class="active"'; }?>>
+			<li <?php if (is_home() || is_single()) { echo 'class="active"'; }?>>
 				<a href="<?php echo site_url(); ?>/blog/"><?php _e( 'Blog', 'keel' ); ?></a>
 			</li>
 			<li <?php if (is_page('about')) { echo 'class="active"'; }?>>
@@ -35,5 +35,4 @@
 			</li>
 		</ul>
 	</nav>
-	<hr class="no-margin-top">
 </header>

@@ -4,6 +4,13 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 ## Changelog
 
 * v9.0.0 - TBD (In Development)
+	* Removed `.container` class on the `<main>` element for `page-plain.php` templates.
+	* Removed `hr` from navigation in header.
+	* Added generous bottom margin to navigation in header.
+	* Added `.container-large` modifier class for wider layouts.
+	* Updated navigation active class logic.
+	* Update active class navigation styling.
+	* Added custom metabox to control page width.
 * v8.1.0 - January 4, 2015
 	* Added italics to blockquotes.
 	* Added method to stop `wpautop` from adding empty `<p>` tags.
