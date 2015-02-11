@@ -32,6 +32,7 @@ var minify = require('gulp-minify-css');
 // SVGs
 var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
+var cheerio = require('gulp-cheerio');
 
 // Docs
 var markdown = require('gulp-markdown');
@@ -155,29 +156,42 @@ gulp.task('build:styles', ['clean:dist'], function() {
 });
 
 // Generate SVG sprites
+// Generate SVG sprites
 gulp.task('build:svgs', ['clean:dist'], function () {
-	return gulp.src(paths.svgs.input)
-		.pipe(plumber())
-		.pipe(tap(function (file, t) {
-			if ( file.isDirectory() ) {
-				var name = file.relative + '.svg';
-				return gulp.src(file.path + '/*.svg')
-					.pipe(svgmin())
-					.pipe(svgstore({
-						fileName: name,
-						prefix: 'icon-',
-						inlineSvg: true
-					}))
-					.pipe(gulp.dest(paths.svgs.output));
-			}
-		}))
-		.pipe(svgmin())
-		.pipe(svgstore({
-			fileName: 'icons.svg',
-			prefix: 'icon-',
-			inlineSvg: true
-		}))
-		.pipe(gulp.dest(paths.svgs.output));
+    return gulp.src(paths.svgs.input)
+        .pipe(plumber())
+        .pipe(tap(function (file, t) {
+            if ( file.isDirectory() ) {
+                var name = file.relative + '.svg';
+                return gulp.src(file.path + '/*.svg')
+                    .pipe(svgmin())
+                    .pipe(cheerio({
+                        run: function ($) {
+                            $('[fill]').removeAttr('fill');
+                        },
+                        parserOptions: { xmlMode: true }
+                    }))
+                    .pipe(svgstore({
+                        fileName: name,
+                        prefix: 'icon-',
+                        inlineSvg: true
+                    }))
+                    .pipe(gulp.dest(paths.svgs.output));
+            }
+        }))
+        .pipe(svgmin())
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(svgstore({
+            fileName: 'icons.svg',
+            prefix: 'icon-',
+            inlineSvg: true
+        }))
+        .pipe(gulp.dest(paths.svgs.output));
 });
 
 // Create style.css with theme header
