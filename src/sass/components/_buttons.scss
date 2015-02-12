@@ -4,16 +4,16 @@
  */
 
 .btn {
-	display: inline-block;
-	font-size: calc-em(15px);
-	padding: calc-em(8px) calc-em(11px);
-	line-height: 1.2;
-	font-weight: normal;
 	background-color: $color-primary;
 	border: calc-em(1px) solid $color-primary;
 	border-radius: calc-em(1px);
+	display: inline-block;
+	font-size: calc-em(15px);
+	font-weight: normal;
+	line-height: 1.2;
 	margin-right: calc-em(5px);
 	margin-bottom: calc-em(5px);
+	padding: calc-em(8px) calc-em(11px);
 }
 
 .btn,

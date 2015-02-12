@@ -69,10 +69,7 @@ a:hover img {
 a.link-block {
 	color: $color-black;
 	display: block;
-
-	&:hover {
-		text-decoration: none;
-	}
+	text-decoration: none;
 }
 
 .link-block-styled {

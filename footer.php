@@ -17,7 +17,7 @@
 				<div class="grid-half grid-flip text-right-large">
 					<ul class="list-inline text-small margin-bottom-small">
 						<li>
-							<a class="icon-link-wrap" href="<?php echo site_url(); ?>/search/">
+							<a href="<?php echo site_url(); ?>/search/">
 								<svg class="icon">
 									<use xlink:href="<?php echo get_template_directory_uri(); ?>/dist/svg/icons.svg#icon-search"></use>&nbsp;
 								</svg>
@@ -25,7 +25,7 @@
 							</a>
 						</li>
 						<li>
-							<a class="icon-link-wrap" href="http://feeds.feedburner.com/GoMakeThings">
+							<a href="http://feeds.feedburner.com/GoMakeThings">
 								<svg class="icon">
 									<use xlink:href="<?php echo get_template_directory_uri(); ?>/dist/svg/icons.svg#icon-rss"></use>&nbsp;
 								</svg>

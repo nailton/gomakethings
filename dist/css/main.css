@@ -294,8 +294,6 @@ a:hover img, .link-block-styled:hover img, .link-block:hover .link-block-styled 
 a.link-block, .link-block.link-block-styled {
   color: #272727;
   display: block;
-}
-a.link-block:hover, .link-block.link-block-styled:hover, .link-block:hover .link-block.link-block-styled {
   text-decoration: none;
 }
 
@@ -573,16 +571,16 @@ pre code {
  * Styling for CSS buttons.
  */
 .btn, #submit {
-  display: inline-block;
-  font-size: 0.9375em;
-  padding: 0.5em 0.6875em;
-  line-height: 1.2;
-  font-weight: normal;
   background-color: #0088cc;
   border: 0.0725em solid #0088cc;
   border-radius: 0.0725em;
+  display: inline-block;
+  font-size: 0.9375em;
+  font-weight: normal;
+  line-height: 1.2;
   margin-right: 0.3125em;
   margin-bottom: 0.3125em;
+  padding: 0.5em 0.6875em;
 }
 
 .btn, #submit,
