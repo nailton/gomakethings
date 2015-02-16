@@ -19,10 +19,11 @@
 
 		<!-- Icons: place in the root directory -->
 		<!-- https://github.com/audreyr/favicon-cheat-sheet -->
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico" />
 		<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon-144.png">
 		<meta name="msapplication-TileColor" content="#0088cc">
 		<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon-ms.png">
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico">
 
 		<!-- Feeds & Pings -->
 		<link rel="alternate" type="application/rss+xml" title="<?php printf( __( '%s RSS Feed', 'keel' ), get_bloginfo( 'name' ) ); ?>" href="<?php bloginfo( 'rss2_url' ); ?>">
@@ -33,6 +34,18 @@
 	</head>
 
 	<body>
+
+		<div hidden>
+			<?php
+				echo file_get_contents( get_template_directory_uri() . '/dist/svg/icons.svg' );
+				if ( is_front_page() ) {
+					echo file_get_contents( get_template_directory_uri() . '/dist/svg/landing.svg' );
+				}
+				if ( is_page('projects') ) {
+					echo file_get_contents( get_template_directory_uri() . '/dist/svg/portfolio.svg' );
+				}
+			?>
+		</div>
 
 		<!-- Old Browser Warning -->
 		<!--[if lt IE 9]>
@@ -49,4 +62,4 @@
 			get_template_part( 'nav-main', 'Site Navigation' );
 		?>
 
-		<main class="container" id="main">
+		<main id="main">

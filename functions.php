@@ -10,10 +10,8 @@
 	 * Load theme scripts in the footer
 	 */
 	function keel_load_theme_files() {
-		// Injected inline into <head> for better performance
-		// wp_enqueue_script( 'keel-theme-detects', get_template_directory_uri() . '/dist/js/detects.js', null, null, false );
 		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.css', null, null, 'all' );
-		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.js', null, null, true );
+		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.02162015.js', null, null, true );
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
@@ -26,7 +24,6 @@
 		?>
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.js' ); ?>
-				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadCSS.min.js' ); ?>
 				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
 			</script>
 		<?php
@@ -42,6 +39,7 @@
 		?>
 			<noscript><link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'></noscript>
 			<script>
+				astro.init();
 				fluidvids.init({
 					selector: ["iframe", "object"],
 					players: ["www.youtube.com", "player.vimeo.com", "www.slideshare.net", "www.hulu.com"]
@@ -72,6 +70,17 @@
 		return get_template_directory_uri();
 	}
 	add_shortcode( 'themeuri', 'keel_get_theme_directory_uri' );
+
+
+
+	/**
+	 * Add a shortcode for the base URL
+	 * @return string Site base URL
+	 */
+	function keel_get_site_url() {
+		return site_url();
+	}
+	add_shortcode( 'siteurl', 'keel_get_site_url' );
 
 
 
@@ -172,6 +181,14 @@
 	 * @link http://codex.wordpress.org/Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
+
+
+
+	/**
+	 * Adds support for custom header images
+	 * @link http://codex.wordpress.org/Custom_Headers
+	 */
+	add_theme_support( 'custom-header' );
 
 
 
@@ -371,6 +388,14 @@
 
 
 	/**
+	 * Add new allowed tags
+	 */
+	$allowedposttags['svg']['class'] = true;
+	$allowedposttags['use']['xlink:href'] = true;
+
+
+
+	/**
 	 * Get number of comments (without trackbacks or pings)
 	 * @return integer Number of comments
 	 */
@@ -465,3 +490,7 @@
 			return null;
 		};
 	}
+
+
+	require_once( dirname( __FILE__) . '/includes/keel-theme-options.php' );
+	require_once( dirname( __FILE__) . '/includes/keel-set-page-width.php' );
