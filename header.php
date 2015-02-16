@@ -35,6 +35,18 @@
 
 	<body>
 
+		<div hidden>
+			<?php
+				echo file_get_contents( get_template_directory_uri() . '/dist/svg/icons.svg' );
+				if ( is_front_page() ) {
+					echo file_get_contents( get_template_directory_uri() . '/dist/svg/landing.svg' );
+				}
+				if ( is_page('projects') ) {
+					echo file_get_contents( get_template_directory_uri() . '/dist/svg/portfolio.svg' );
+				}
+			?>
+		</div>
+
 		<!-- Old Browser Warning -->
 		<!--[if lt IE 9]>
 			<aside class="container">
@@ -50,4 +62,4 @@
 			get_template_part( 'nav-main', 'Site Navigation' );
 		?>
 
-		<main class="container <?php global $post; if ( get_post_meta( $post->ID, 'keel_page_full_width_checkbox', true ) === 'on' ) echo 'container-large'; ?>" id="main">
+		<main id="main">

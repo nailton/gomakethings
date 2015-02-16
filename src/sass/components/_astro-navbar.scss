@@ -10,6 +10,12 @@
 	@media (min-width: $bp-medium) {
 		text-align: left;
 	}
+
+	@media (max-width: $bp-medium) {
+		.js-astro & {
+			text-align: left;
+		}
+	}
 }
 
 /**
@@ -29,6 +35,12 @@ a.logo {
 	@media (min-width: $bp-medium) {
 		float: left;
 		margin-bottom: 0;
+	}
+
+	@media (max-width: $bp-medium) {
+		.js-astro & {
+			float: left;
+		}
 	}
 }
 
@@ -64,6 +76,12 @@ a.logo:hover {
 	@media (min-width: $bp-medium) {
 		text-align: right;
 	}
+
+	@media (max-width: $bp-medium) {
+		.js-astro & {
+			text-align: left;
+		}
+	}
 }
 
 /**
@@ -75,6 +93,15 @@ a.logo:hover {
 	float: none;
 	margin-left: calc-em(8px);
 	margin-right: calc-em(8px);
+
+	@media (max-width: $bp-medium) {
+		.js-astro & {
+			display: block;
+			width: 100%;
+			padding-top: calc-em(4px);
+			padding-bottom: calc-em(4px);
+		}
+	}
 }
 
 /**
@@ -85,17 +112,61 @@ a.logo:hover {
 	color: $color-gray-dark;
 }
 
-// .nav a:hover {
-// 	color: $color-primary;
-// }
-
 /**
  * Active link styling
  */
 .nav a:hover,
 .nav a:active,
+.nav a:focus,
 .nav .active a {
 	border-bottom: calc-em(2px) solid $color-secondary;
 	color: $color-black;
 	text-decoration: none;
+}
+
+/**
+ * Small screen navigation toggle
+ */
+.nav-toggle {
+	@extend [hidden];
+	color: $color-gray-dark;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color-primary;
+		text-decoration: none;
+	}
+
+	@media (max-width: $bp-medium) {
+		.js-astro & {
+			display: block;
+			visibility: visible;
+			float: right;
+		}
+	}
+
+	.nav-toggle-icon {
+		display: inline-block;
+		font-weight: bold;
+		transition-duration: 150ms;
+		transition-property: transform;
+	}
+
+	&.active .nav-toggle-icon{
+		transform: rotate(45deg);
+	}
+}
+
+@media (max-width: $bp-medium) {
+	.js-astro .nav-menu {
+		clear: left;
+		display: none;
+		padding-top: calc-em(8px);
+		width: 100%;
+
+		&.active {
+			display: block;
+		}
+	}
 }

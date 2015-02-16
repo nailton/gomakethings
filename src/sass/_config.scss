@@ -10,7 +10,10 @@
 // Colors
 $color-primary: #0088cc;
 $color-secondary: #fa7176;
+$color-tertiary: #343d4d;
+$color-accent: #feca41;
 $color-black: #272727;
+$color-black-dark: #000000;
 $color-white: #ffffff;
 
 // $color-success: #377f31; // Green
@@ -23,7 +26,6 @@ $color-gray-light: #e5e5e5;
 
 $color-petfinder: #4b1f6f;
 $color-paws: #6aa120;
-// $color-heart: #880e14;
 
 
 // Font Stacks
@@ -85,6 +87,8 @@ $grid-dynamic: (
 	// (".grid-dynamic", $bp-xsmall, map-get($grid-sizes, half))
 	// (".grid-dynamic", $bp-small, map-get($grid-sizes, third))
 	// (".grid-dynamic", $bp-medium, map-get($grid-sizes, fourth))
+	(".grid-dynamic", $bp-small, map-get($grid-sizes, half))
+	(".grid-dynamic", $bp-large, 25%)
 );
 
 

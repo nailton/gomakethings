@@ -18,18 +18,12 @@
 					<ul class="list-inline text-small margin-bottom-small">
 						<li>
 							<a href="<?php echo site_url(); ?>/search/">
-								<svg class="icon">
-									<use xlink:href="<?php echo get_template_directory_uri(); ?>/dist/svg/icons.svg#icon-search"></use>&nbsp;
-								</svg>
-								Search
+								<svg class="icon margin-right"><use xlink:href="#icon-search"></use></svg>Search
 							</a>
 						</li>
 						<li>
 							<a href="http://feeds.feedburner.com/GoMakeThings">
-								<svg class="icon">
-									<use xlink:href="<?php echo get_template_directory_uri(); ?>/dist/svg/icons.svg#icon-rss"></use>&nbsp;
-								</svg>
-								RSS Feed
+								<svg class="icon margin-right"><use xlink:href="#icon-rss"></use></svg>RSS Feed
 							</a>
 						</li>
 					</ul>

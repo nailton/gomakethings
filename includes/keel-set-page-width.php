@@ -5,28 +5,38 @@
 	 */
 
 	// Create a metabox
-	function keel_page_full_width_box() {
-		add_meta_box( 'keel_page_full_width_checkbox', 'Set page to full width', 'keel_page_full_width_checkbox', 'page', 'side', 'default');
+	function keel_set_page_width_box() {
+		add_meta_box( 'keel_set_page_width_checkbox', 'Set page width', 'keel_set_page_width_checkbox', 'page', 'side', 'default');
 	}
-	add_action('add_meta_boxes', 'keel_page_full_width_box');
+	add_action('add_meta_boxes', 'keel_set_page_width_box');
 
 
 	// Add checkbox to the metabox
-	function keel_page_full_width_checkbox() {
+	function keel_set_page_width_checkbox() {
 
 		global $post;
 
 		// Get checkedbox value
-		$full_width = get_post_meta( $post->ID, 'keel_page_full_width_checkbox', true );
+		$page_width = get_post_meta( $post->ID, 'keel_page_width', true );
 
 		?>
 
-			<fieldset id="keel-page-full-width-box">
+			<fieldset id="keel-set-page-width-box">
 				<div>
 					<p>
 						<label>
-							<input type="checkbox" name="keel-page-full-width-checkbox" value="page-full-width" <?php checked( $full_width, 'on' ); ?>>
-							Set page to full width
+							<input type="radio" name="keel-set-page-width-checkbox" value="default" <?php checked( $page_width, '' ); ?>>
+							Default
+						</label>
+						<br>
+						<label>
+							<input type="radio" name="keel-set-page-width-checkbox" value="wide" <?php checked( $page_width, 'wide' ); ?>>
+							Wide
+						</label>
+						<br>
+						<label>
+							<input type="radio" name="keel-set-page-width-checkbox" value="diy" <?php checked( $page_width, 'diy' ); ?>>
+							DIY
 						</label>
 					</p>
 				</div>
@@ -35,15 +45,15 @@
 		<?php
 
 		// Security field
-		wp_nonce_field( 'keel-page-full-width-nonce', 'keel-page-full-width-process' );
+		wp_nonce_field( 'keel-set-page-width-nonce', 'keel-set-page-width-process' );
 
 	}
 
 	// Save checkbox data
-	function keel_save_page_full_width_checkbox( $post_id, $post ) {
+	function keel_save_page_set_width_checkbox( $post_id, $post ) {
 
 		// Verify data came from edit screen
-		if ( !wp_verify_nonce( $_POST['keel-page-full-width-process'], 'keel-page-full-width-nonce' ) ) {
+		if ( !wp_verify_nonce( $_POST['keel-set-page-width-process'], 'keel-set-page-width-nonce' ) ) {
 			return $post->ID;
 		}
 
@@ -52,15 +62,15 @@
 			return $post->ID;
 		}
 
-		// Retrieve checkbox state
-		if ( isset( $_POST['keel-page-full-width-checkbox'] ) ) {
-			$full_width = 'on';
+		// Update data in database
+		$width = $_POST['keel-set-page-width-checkbox'];
+		if ( isset( $width ) ) {
+			if ( $width === 'default' ) { delete_post_meta( $post->ID, 'keel_page_width' ); }
+			if ( $width === 'wide' ) { update_post_meta( $post->ID, 'keel_page_width', 'wide' ); }
+			if ( $width === 'diy' ) { update_post_meta( $post->ID, 'keel_page_width', 'diy' ); }
 		} else {
-			$full_width = 'off';
+			delete_post_meta( $post->ID, 'keel_page_width' );
 		}
 
-		// Update data in database
-		update_post_meta( $post->ID, 'keel_page_full_width_checkbox', $full_width );
-
 	}
-	add_action('save_post', 'keel_save_page_full_width_checkbox', 1, 2);
+	add_action('save_post', 'keel_save_page_set_width_checkbox', 1, 2);

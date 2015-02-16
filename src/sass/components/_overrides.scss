@@ -15,11 +15,18 @@
 .text-large {
 	font-size: calc-em(19px);
 	line-height: 1.4;
+
+	@media (min-width: $bp-medium) {
+		font-size: calc-em(21px);
+	}
 }
 
-@media (min-width: $bp-medium) {
-	.text-large {
-		font-size: calc-em(21px);
+.text-xlarge {
+	font-size: calc-em(24px);
+	line-height: 1.4;
+
+	@media (min-width: $bp-medium) {
+		font-size: calc-em(28px);
 	}
 }
 
@@ -107,6 +114,10 @@
 	margin-bottom: calc-em(32px);
 }
 
+.margin-right {
+	margin-right: calc-em(4px);
+}
+
 
 /**
  * Padding
@@ -136,6 +147,10 @@
 	padding-top: calc-em(32px);
 }
 
+.padding-top-xlarge {
+	padding-top: calc-em(48px);
+}
+
 .padding-bottom {
 	padding-bottom: $spacing;
 }
@@ -146,6 +161,10 @@
 
 .padding-bottom-large {
 	padding-bottom: calc-em(32px);
+}
+
+.padding-bottom-xlarge {
+	padding-bottom: calc-em(48px);
 }
 
 

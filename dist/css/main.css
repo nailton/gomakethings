@@ -197,7 +197,7 @@ a:active,
   margin-right: -1.4%;
 }
 
-.grid-third, .grid-half, .grid-two-thirds {
+.grid-third, .grid-half, .grid-two-thirds, .grid-dynamic {
   float: left;
   width: 100%;
   padding-left: 1.4%;
@@ -230,6 +230,16 @@ a:active,
 /**
  * Dynamic grid
  */
+@media (min-width: 28em) {
+  .grid-dynamic {
+    width: 50%;
+  }
+}
+@media (min-width: 60em) {
+  .grid-dynamic {
+    width: 25%;
+  }
+}
 /**
  * @section Typography
  * Sets font styles for entire site
@@ -571,8 +581,8 @@ pre code {
  * Styling for CSS buttons.
  */
 .btn, #submit {
-  background-color: #0088cc;
-  border: 0.0725em solid #0088cc;
+  background-color: transparent;
+  border: 0.125em solid #fa7176;
   border-radius: 0.0725em;
   display: inline-block;
   font-size: 0.9375em;
@@ -610,7 +620,7 @@ a #submit:active,
 .link-block-styled #submit:active,
 .btn.active,
 .active#submit {
-  color: #ffffff;
+  color: #f7272f;
 }
 
 .btn:hover, #submit:hover,
@@ -632,8 +642,9 @@ a #submit:active,
 .link-block-styled #submit:active,
 .btn.active,
 .active#submit {
-  background-color: #005580;
-  border-color: #005580;
+  background-color: #f7272f;
+  border-color: #f7272f;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -827,6 +838,16 @@ select:focus {
   width: 2em;
 }
 
+.svg .icon-xlarge {
+  height: 3em;
+  width: 3em;
+}
+
+.svg .icon-xxlarge {
+  height: 5em;
+  width: 5em;
+}
+
 /**
  * Icon colors
  */
@@ -836,6 +857,18 @@ select:focus {
 
 .icon-gray {
   fill: #808080;
+}
+
+.icon-primary {
+  fill: #0088cc;
+}
+
+.icon-secondary {
+  fill: #f94f55;
+}
+
+.icon-accent {
+  fill: #feca41;
 }
 
 .icon-petfinder {
@@ -926,6 +959,21 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 
 /**
+ * @section Hero
+ * Hero image for landing page
+ */
+.bg {
+  background-color: #343d4d;
+  color: #ffffff;
+}
+
+.bg-hero {
+  background-position: bottom center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+/**
  * Center all navigation elements
  */
 .nav-wrap {
@@ -935,6 +983,11 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 @media (min-width: 38em) {
   .nav-wrap {
+    text-align: left;
+  }
+}
+@media (max-width: 38em) {
+  .js-astro .nav-wrap {
     text-align: left;
   }
 }
@@ -957,6 +1010,11 @@ a.logo, .logo.link-block-styled {
   a.logo, .logo.link-block-styled {
     float: left;
     margin-bottom: 0;
+  }
+}
+@media (max-width: 38em) {
+  .js-astro a.logo, .js-astro .logo.link-block-styled {
+    float: left;
   }
 }
 
@@ -995,6 +1053,11 @@ a.logo:hover, .logo.link-block-styled:hover, .link-block:hover .logo.link-block-
     text-align: right;
   }
 }
+@media (max-width: 38em) {
+  .js-astro .nav {
+    text-align: left;
+  }
+}
 
 /**
  * Display navigation items as inline-block elements.
@@ -1005,6 +1068,14 @@ a.logo:hover, .logo.link-block-styled:hover, .link-block:hover .logo.link-block-
   float: none;
   margin-left: 0.5em;
   margin-right: 0.5em;
+}
+@media (max-width: 38em) {
+  .js-astro .nav li {
+    display: block;
+    width: 100%;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
 }
 
 /**
@@ -1020,6 +1091,8 @@ a.logo:hover, .logo.link-block-styled:hover, .link-block:hover .logo.link-block-
 .nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled,
 .nav a:active,
 .nav .link-block-styled:active,
+.nav a:focus,
+.nav .link-block-styled:focus,
 .nav .active a,
 .nav .active .link-block-styled {
   border-bottom: 0.125em solid #fa7176;
@@ -1027,6 +1100,48 @@ a.logo:hover, .logo.link-block-styled:hover, .link-block:hover .logo.link-block-
   text-decoration: none;
 }
 
+/**
+ * Small screen navigation toggle
+ */
+.nav-toggle {
+  color: #808080;
+}
+.nav-toggle:hover, .nav-toggle:active, .nav-toggle:focus {
+  color: #0088cc;
+  text-decoration: none;
+}
+@media (max-width: 38em) {
+  .js-astro .nav-toggle {
+    display: block;
+    visibility: visible;
+    float: right;
+  }
+}
+.nav-toggle .nav-toggle-icon {
+  display: inline-block;
+  font-weight: bold;
+  -webkit-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+}
+.nav-toggle.active .nav-toggle-icon {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 38em) {
+  .js-astro .nav-menu {
+    clear: left;
+    display: none;
+    padding-top: 0.5em;
+    width: 100%;
+  }
+  .js-astro .nav-menu.active {
+    display: block;
+  }
+}
 /*  Removes default browser settings
  *  and evens out inconsistencies. */
 table {
@@ -1073,12 +1188,22 @@ tbody tr:nth-child(even) {
   font-size: 1.1875em;
   line-height: 1.4;
 }
-
 @media (min-width: 38em) {
   .text-large {
     font-size: 1.3125em;
   }
 }
+
+.text-xlarge {
+  font-size: 1.5em;
+  line-height: 1.4;
+}
+@media (min-width: 38em) {
+  .text-xlarge {
+    font-size: 1.75em;
+  }
+}
+
 /**
  * Text colors
  */
@@ -1129,6 +1254,10 @@ tbody tr:nth-child(even) {
   margin-bottom: 2em;
 }
 
+.margin-right {
+  margin-right: 0.25em;
+}
+
 /**
  * Padding
  */
@@ -1156,6 +1285,10 @@ tbody tr:nth-child(even) {
   padding-top: 2em;
 }
 
+.padding-top-xlarge {
+  padding-top: 3em;
+}
+
 .padding-bottom {
   padding-bottom: 1.5625em;
 }
@@ -1166,6 +1299,10 @@ tbody tr:nth-child(even) {
 
 .padding-bottom-large {
   padding-bottom: 2em;
+}
+
+.padding-bottom-xlarge {
+  padding-bottom: 3em;
 }
 
 /**
@@ -1207,7 +1344,7 @@ tbody tr:nth-child(even) {
  * @affected IE 8/9/10
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
-[hidden], .tarpit {
+[hidden], .tarpit, .nav-toggle {
   display: none;
   visibility: hidden;
 }

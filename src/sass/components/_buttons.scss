@@ -4,8 +4,8 @@
  */
 
 .btn {
-	background-color: $color-primary;
-	border: calc-em(1px) solid $color-primary;
+	background-color: transparent;
+	border: calc-em(2px) solid $color-secondary;
 	border-radius: calc-em(1px);
 	display: inline-block;
 	font-size: calc-em(15px);
@@ -26,7 +26,7 @@ a .btn:focus,
 .btn:active,
 a .btn:active,
 .btn.active {
-	color: $color-white;
+	color: darken( $color-secondary, 15% );
 }
 
 .btn:hover,
@@ -36,14 +36,15 @@ a .btn:focus,
 .btn:active,
 a .btn:active,
 .btn.active {
-	background-color: darken( $color-primary, 15% );
-	border-color: darken( $color-primary, 15% );
+	background-color: darken( $color-secondary, 15% );
+	border-color: darken( $color-secondary, 15% );
+	color: $color-white;
 	text-decoration: none;
 }
 
 // .btn-secondary {
-// 	background-color: $color-gray-dark;
-// 	border-color: $color-gray-dark;
+// 	border-color: $color-white;
+// 	color: $color-white;
 // }
 
 // .btn-secondary:hover,
@@ -53,8 +54,9 @@ a .btn:active,
 // .btn-secondary:active,
 // a .btn-secondary:active,
 // .btn-secondary.active {
-// 	background-color: darken( $color-gray-dark, 15% );
-// 	border-color: darken( $color-gray-dark, 15% );
+// 	background-color: $color-white;
+// 	border-color: $color-white;
+// 	color: $color-black-dark;
 // }
 
 .btn:active,

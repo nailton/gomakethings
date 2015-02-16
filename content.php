@@ -7,7 +7,25 @@
 
 ?>
 
-<article>
+<?php
+	/**
+	 * Landing Page Hero Content
+	 */
+	if ( is_front_page() ) :
+?>
+	<?php
+		$theme_options = keel_get_theme_options();
+		$keel_hero_image = get_header_image();
+		if ( !empty( $theme_options['landing_hero_text'] ) ) :
+	?>
+		<section class="bg bg-hero margin-bottom" <?php if ( !empty( $keel_hero_image ) ) { echo 'style="background-image: url(' . $keel_hero_image . ');"'; } ?>>
+			<?php echo stripslashes( $theme_options['landing_hero_text'] ); ?>
+		</section>
+	<?php endif; ?>
+<?php endif; ?>
+
+
+<article class="container <?php if ( get_post_meta( $post->ID, 'keel_page_width', true ) === 'wide' ) { echo 'container-large'; } ?>" >
 
 	<?php
 		/**
