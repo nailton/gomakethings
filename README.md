@@ -3,6 +3,8 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v9.0.1 - February 16, 2015
+	* Added improved SVG detection (check against Opera Mini).
 * v9.0.0 - February 16, 2015
 	* Removed `.container` class on the `<main>` element for `page-plain.php` templates.
 	* Removed `hr` from navigation in header.
