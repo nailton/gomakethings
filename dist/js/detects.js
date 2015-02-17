@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.0.0
+ * gomakethings v9.0.1
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -57,8 +57,11 @@ function loadCSS( href, before, media ){
 	// SVG feature detection
 	var supports = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
 
+	// Check against Opera Mini (throws a false positive)
+	var whitelist = navigator.userAgent.indexOf('Opera Mini') === -1;
+
 	// If SVG is supported, add `.svg` class to <html> element
-	if ( supports ) {
+	if ( supports && whitelist ) {
 		document.documentElement.className += (document.documentElement.className ? ' ' : '') + 'svg';
 	}
 
