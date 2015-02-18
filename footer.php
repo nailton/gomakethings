@@ -7,6 +7,7 @@
 
 ?>
 
+			</div><!-- /.container -->
 		</main><!-- /#main -->
 
 		<footer class="container container-large">

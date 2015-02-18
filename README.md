@@ -3,6 +3,8 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v9.0.2 - February 17, 2015
+	* Updated page structure for better content wrapping.
 * v9.0.1 - February 16, 2015
 	* Added improved SVG detection (check against Opera Mini).
 * v9.0.0 - February 16, 2015

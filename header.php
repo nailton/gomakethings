@@ -62,4 +62,31 @@
 			get_template_part( 'nav-main', 'Site Navigation' );
 		?>
 
+		<?php
+			// Get page width
+			if ( is_page() ) {
+				global $post;
+				$container = ( get_post_meta( $post->ID, 'keel_page_width', true ) === 'wide' ? 'container-large' : '' );
+			}
+		?>
+
 		<main id="main">
+
+			<?php
+				/**
+				 * Landing Page Hero Content
+				 */
+				if ( is_front_page() ) :
+			?>
+				<?php
+					$theme_options = keel_get_theme_options();
+					$keel_hero_image = get_header_image();
+					if ( !empty( $theme_options['landing_hero_text'] ) ) :
+				?>
+					<header class="bg bg-hero margin-bottom" <?php if ( !empty( $keel_hero_image ) ) { echo 'style="background-image: url(' . $keel_hero_image . ');"'; } ?>>
+						<?php echo stripslashes( $theme_options['landing_hero_text'] ); ?>
+					</header>
+				<?php endif; ?>
+			<?php endif; ?>
+
+			<div class="container <?php echo $container; ?>">
