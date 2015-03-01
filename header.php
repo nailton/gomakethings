@@ -78,15 +78,12 @@
 				 */
 				if ( is_front_page() ) :
 			?>
-				<?php
-					$theme_options = keel_get_theme_options();
-					$keel_hero_image = get_header_image();
-					if ( !empty( $theme_options['landing_hero_text'] ) ) :
-				?>
-					<header class="bg bg-hero margin-bottom" <?php if ( !empty( $keel_hero_image ) ) { echo 'style="background-image: url(' . $keel_hero_image . ');"'; } ?>>
-						<?php echo stripslashes( $theme_options['landing_hero_text'] ); ?>
-					</header>
-				<?php endif; ?>
+				<header class="bg bg-hero margin-bottom">
+					<?php
+						$theme_options = keel_get_theme_options();
+						echo stripslashes( $theme_options['landing_hero_text'] );
+					?>
+				</header>
 			<?php endif; ?>
 
 			<div class="container <?php echo $container; ?>">

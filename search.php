@@ -9,8 +9,9 @@ get_header(); ?>
 
 
 <?php if (have_posts()) : ?>
-	<header>
-		<h1 class="margin-bottom-large"><?php _e( 'Search results for', 'keel' ); ?> "<?php the_search_query() ?>"</h1>
+	<header class="margin-bottom-large">
+		<h1 class="margin-bottom-small"><?php _e( 'Search results for', 'keel' ); ?> "<?php the_search_query() ?>"</h1>
+		<?php get_search_form(); ?>
 	</header>
 
 	<?php

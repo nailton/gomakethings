@@ -10,8 +10,10 @@
 	 * Load theme scripts in the footer
 	 */
 	function keel_load_theme_files() {
-		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.02172015.css', null, null, 'all' );
-		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.02172015.js', null, null, true );
+		$keel_theme = wp_get_theme();
+		// Inlining critical CSS for better performance
+		// wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.css', null, null, 'all' );
+		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.' . $keel_theme->get( 'Version' ) . '.js', null, null, true );
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
@@ -21,11 +23,16 @@
 	 * Include feature detect inits in the header
 	 */
 	function keel_initialize_theme_detects() {
+		$keel_theme = wp_get_theme();
 		?>
 			<script>
-				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.js' ); ?>
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
 				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
+				loadCSS('<?php echo get_template_directory_uri() . "/dist/css/main.min." . $keel_theme->get( "Version" ) . ".css"; ?>');
 			</script>
+			<style>
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/css/critical.min.' . $keel_theme->get( 'Version' ) . '.css' ); ?>
+			</style>
 		<?php
 	}
 	add_action('wp_head', 'keel_initialize_theme_detects', 30);
@@ -36,8 +43,12 @@
 	 * Include script inits in the footer
 	 */
 	function keel_initialize_theme_scripts() {
+		$keel_theme = wp_get_theme();
 		?>
-			<noscript><link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'></noscript>
+			<noscript>
+				<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+				<link href='<?php echo get_template_directory_uri() . "/dist/css/main.min." . $keel_theme->get( "Version" ) . ".css"; ?>' rel='stylesheet' type='text/css'>
+			</noscript>
 			<script>
 				astro.init();
 				fluidvids.init({
@@ -81,6 +92,20 @@
 		return site_url();
 	}
 	add_shortcode( 'siteurl', 'keel_get_site_url' );
+
+
+
+	/**
+	 * Replace RSS links with Feedburner url
+	 * @link http://codex.wordpress.org/Using_FeedBurner
+	 */
+	function keel_custom_rss_feed( $output, $feed ) {
+		if ( strpos( $output, 'comments' ) ) {
+			return $output;
+		}
+		return esc_url( 'http://feeds.feedburner.com/GoMakeThings' );
+	}
+	add_action( 'feed_link', 'keel_custom_rss_feed', 10, 2 );
 
 
 
@@ -188,7 +213,7 @@
 	 * Adds support for custom header images
 	 * @link http://codex.wordpress.org/Custom_Headers
 	 */
-	add_theme_support( 'custom-header' );
+	// add_theme_support( 'custom-header' );
 
 
 

@@ -475,102 +475,10 @@ q:after {
 }
 
 /**
- * @section Code
- * Styling for code and preformatted text.
- */
-code,
-pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 0.875em;
-  border-radius: 0.0725em;
-}
-
-code {
-  color: #dd1144;
-  background-color: #f7f7f7;
-  padding: 0.25em;
-}
-
-pre {
-  display: block;
-  margin-bottom: 1.5625em;
-  line-height: 1.5;
-  background-color: #f4f4f4;
-  padding: 0.8125em;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-pre code {
-  font-size: 1em;
-  padding: 0;
-  color: inherit;
-  background-color: transparent;
-  border: 0;
-}
-
-/**
- * @section Prism syntax highlighting
- */
-@media screen {
-  .token.comment,
-  .token.prolog,
-  .token.doctype,
-  .token.cdata {
-    color: slategray;
-  }
-
-  .token.punctuation {
-    color: #999;
-  }
-
-  .token.property,
-  .token.tag,
-  .token.boolean,
-  .token.number {
-    color: #905;
-  }
-
-  .token.selector,
-  .token.attr-name,
-  .token.string {
-    color: #690;
-  }
-
-  .token.operator,
-  .token.entity,
-  .token.url,
-  .language-css .token.string,
-  .style .token.string {
-    color: #a67f59;
-  }
-
-  .token.atrule,
-  .token.attr-value,
-  .token.keyword {
-    color: #07a;
-  }
-
-  .token.regex,
-  .token.important {
-    color: #e90;
-  }
-
-  .token.important {
-    font-weight: bold;
-  }
-
-  .token.entity {
-    cursor: help;
-  }
-}
-/**
  * @section Buttons
  * Styling for CSS buttons.
  */
-.btn, #submit {
+.btn {
   background-color: transparent;
   border: 0.125em solid #fa7176;
   border-radius: 0.0725em;
@@ -583,72 +491,48 @@ pre code {
   padding: 0.5em 0.6875em;
 }
 
-.btn, #submit,
+.btn,
 .btn:visited,
-#submit:visited,
 a .btn:visited,
 .link-block-styled .btn:visited,
-a #submit:visited,
-.link-block-styled #submit:visited,
 .btn:hover,
-#submit:hover,
 a .btn:hover,
 .link-block-styled .btn:hover,
-a #submit:hover,
-.link-block-styled #submit:hover,
 .btn:focus,
-#submit:focus,
 a .btn:focus,
 .link-block-styled .btn:focus,
-a #submit:focus,
-.link-block-styled #submit:focus,
 .btn:active,
-#submit:active,
 a .btn:active,
 .link-block-styled .btn:active,
-a #submit:active,
-.link-block-styled #submit:active,
-.btn.active,
-.active#submit {
+.btn.active {
   color: #f7272f;
 }
 
-.btn:hover, #submit:hover,
+.btn:hover,
 a .btn:hover,
 .link-block-styled .btn:hover,
-a #submit:hover,
-.link-block-styled #submit:hover,
 .btn:focus,
-#submit:focus,
 a .btn:focus,
 .link-block-styled .btn:focus,
-a #submit:focus,
-.link-block-styled #submit:focus,
 .btn:active,
-#submit:active,
 a .btn:active,
 .link-block-styled .btn:active,
-a #submit:active,
-.link-block-styled #submit:active,
-.btn.active,
-.active#submit {
+.btn.active {
   background-color: #f7272f;
   border-color: #f7272f;
   color: #ffffff;
   text-decoration: none;
 }
 
-.btn:active, #submit:active,
-.btn.active,
-.active#submit {
+.btn:active,
+.btn.active {
   -webkit-box-shadow: inset 0 0.15625em 0.25em rgba(0, 0, 0, 0.15), 0 0.0725em 0.15625em rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 0.15625em 0.25em rgba(0, 0, 0, 0.15), 0 0.0725em 0.15625em rgba(0, 0, 0, 0.05);
   outline: 0;
 }
 
 button,
-.btn,
-#submit {
+.btn {
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
@@ -660,139 +544,9 @@ button,
   -webkit-appearance: none;
 }
 
-.btn:last-child, #submit:last-child,
-input.btn,
-input#submit {
+.btn:last-child,
+input.btn {
   margin-right: 0;
-}
-
-/**
- * @section Forms
- * Styling for form elements.
- */
-form,
-fieldset {
-  margin-bottom: 1.5625em;
-}
-
-legend,
-label {
-  display: block;
-  font-weight: normal;
-  padding: 0;
-  margin-bottom: 0.3125em;
-}
-
-input,
-textarea,
-select {
-  display: block;
-  width: 100%;
-  font: inherit;
-  line-height: 1.5;
-  color: #555555;
-  margin-bottom: 1.1875em;
-  padding: 0.3125em;
-  border: 0.0725em solid #b8b8b8;
-  border-radius: 0.0725em;
-}
-@media (min-width: 38em) {
-  input,
-  textarea,
-  select {
-    line-height: 1.5625;
-  }
-}
-
-form button,
-form .button {
-  margin-bottom: 1.1875em;
-}
-
-textarea {
-  height: 12em;
-}
-
-input[type="image"],
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 0;
-  margin-bottom: 0.3125em;
-  cursor: pointer;
-}
-
-input:focus,
-textarea:focus {
-  border-color: rgba(82, 168, 236, 0.8);
-  -webkit-box-shadow: inset 0 0.0725em 0.0725em rgba(0, 0, 0, 0.075), 0 0 0.5em rgba(82, 168, 236, 0.6);
-  box-shadow: inset 0 0.0725em 0.0725em rgba(0, 0, 0, 0.075), 0 0 0.5em rgba(82, 168, 236, 0.6);
-  outline: 0;
-  outline: thin dotted \9;
-}
-
-input[type="file"]:focus,
-input[type="checkbox"]:focus,
-select:focus {
-  outline: thin dotted;
-  outline: 0.3125em auto -webkit-focus-ring-color;
-  outline-offset: -0.125em;
-}
-
-/**
- * Inline inputs
- */
-.input-inline, #submit {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
-}
-
-/**
- * Search
- */
-.input-search {
-  width: 85%;
-  padding-left: 0.9375em;
-  padding-right: 2.5em;
-  border-radius: 1.3125em;
-  -webkit-transition: width 300ms ease-in;
-  transition: width 300ms ease-in;
-}
-@media (min-width: 38em) {
-  .input-search {
-    width: 65%;
-  }
-}
-
-.btn-search {
-  display: inline;
-  color: #808080;
-  border: none;
-  background: none;
-  margin-left: -2.5em;
-  margin-bottom: 0;
-}
-
-.btn-search:hover {
-  color: #5a5a5a;
-}
-
-.btn-search .icon {
-  fill: #808080;
-}
-
-.btn-search:hover .icon {
-  fill: #5a5a5a;
-}
-
-/**
- * Styling for for WP subscribe to comment checkbox label
- */
-#subscribe-label {
-  display: inline;
 }
 
 /**
@@ -876,78 +630,6 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /**
  * Hide fallback text if browser supports SVG
  */
-/*  Adds a border */
-.img-border {
-  border: 0.0725em solid #cccccc;
-}
-
-/*  Adds a 50% border radius,
- *  turning square images into a circle. */
-.img-circle, .avatar {
-  border-radius: 50%;
-}
-
-/**
- * @section WordPress Image Classes
- * Styling for the classes WordPress automatically applies to images.
- */
-/**
- * Comment Avatar Styling
- * Class automatically applied to comment avatars.
- */
-.avatar {
-  float: left;
-  margin-right: 0.5em;
-  /**
-   * Set $size to 2x desired size in comments.php
-   * for crisp images on retina screens.
-   */
-  height: 3.75em;
-  width: 3.75em;
-}
-
-/**
- * Image alignment
- */
-.aligncenter, .alignleft, .alignright, .alignnone {
-  display: block;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 28em) {
-  .alignleft {
-    float: left;
-    margin-right: 0.5em;
-  }
-}
-
-@media (min-width: 28em) {
-  .alignright {
-    float: right;
-    margin-left: 0.5em;
-  }
-}
-
-@media (min-width: 28em) {
-  .alignnone {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-/**
- * Image Caption Styling
- */
-.wp-caption-text {
-  font-size: 0.9375em;
-  font-style: italic;
-  color: #808080;
-  padding-top: 0.5em;
-  text-align: center;
-}
-
 /**
  * @section Background
  * Background color
@@ -955,32 +637,6 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 .bg {
   background-color: #343d4d;
   color: #ffffff;
-}
-
-/**
- * @section Background Hero
- * Hero image for landing page
- */
-.bg-hero {
-  background-image: url("../img/hero-xsmall.jpg");
-  background-position: bottom center;
-  -webkit-background-size: cover;
-  background-size: cover;
-}
-@media (min-width: 28em) {
-  .bg-hero {
-    background-image: url("../img/hero-small.jpg");
-  }
-}
-@media (min-width: 38em) {
-  .bg-hero {
-    background-image: url("../img/hero-medium.jpg");
-  }
-}
-@media (min-width: 60em) {
-  .bg-hero {
-    background-image: url("../img/hero-full.jpg");
-  }
 }
 
 /**
@@ -1354,7 +1010,7 @@ tbody tr:nth-child(even) {
  * @affected IE 8/9/10
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
-[hidden], .tarpit, .nav-toggle {
+[hidden], .nav-toggle {
   display: none;
   visibility: hidden;
 }
@@ -1377,93 +1033,4 @@ tbody tr:nth-child(even) {
 .clearfix:after, .container:after,
 .row:after, .nav-wrap:after {
   clear: both;
-}
-
-/**
- * @section Print
- * Styling for printed content. Adapted from HTML5BP.
- * @link http://html5boilerplate.com
- */
-@media print {
-  /**
-   * Universal selector.
-   * Reset all content to transparent background, black color, and remove box and text shadows.
-   */
-  * {
-    background: transparent !important;
-    color: #000 !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  /**
-   * Specifies page margin
-   */
-  @page {
-    margin: 0.5cm;
-  }
-  /**
-   * Underline all links
-   */
-  a, .link-block-styled,
-  a:visited,
-  .link-block-styled:visited {
-    text-decoration: underline;
-  }
-
-  /**
-   * Show URL after links
-   */
-  a[href]:after, [href].link-block-styled:after {
-    content: " (" attr(href) ")";
-  }
-
-  /**
-   * Don't show URL for internal links
-   */
-  a[href^="#"]:after, [href^="#"].link-block-styled:after {
-    content: "";
-  }
-
-  /**
-   * Specifies the minimum number of lines to print at the top and bottom of a page.
-   */
-  p,
-  h1, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  /**
-   * Avoid inserting a page break after headers
-   */
-  h1, h2, h3 {
-    page-break-after: avoid;
-  }
-
-  /**
-   * Change border color on blockquotes and preformatted text.
-   * Avoid page breaks inside the content
-   */
-  pre,
-  blockquote {
-    border-color: #999;
-    page-break-inside: avoid;
-  }
-
-  /**
-   * Displayed as a table header row group
-   */
-  thead {
-    display: table-header-group;
-  }
-
-  /**
-   * Avoid inserting a page break inside table rows and images
-   */
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
 }

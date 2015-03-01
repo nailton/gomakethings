@@ -23,7 +23,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="http://feeds.feedburner.com/GoMakeThings">
+							<a href="<?php bloginfo( 'rss2_url' ); ?>">
 								<svg class="icon margin-right"><use xlink:href="#icon-rss"></use></svg>RSS Feed
 							</a>
 						</li>
