@@ -122,7 +122,7 @@ gulp.task('build:scripts', ['clean:dist'], function() {
 	var jsTasks = lazypipe()
 		.pipe(header, banner.full, { package : package })
 		.pipe(gulp.dest, paths.scripts.output)
-		.pipe(rename, { suffix: '.min' })
+		.pipe(rename, { suffix: '.min.' + package.version })
 		.pipe(uglify)
 		.pipe(header, banner.min, { package : package })
 		.pipe(gulp.dest, paths.scripts.output);
@@ -149,7 +149,7 @@ gulp.task('build:styles', ['clean:dist'], function() {
 		.pipe(prefix('last 2 version', '> 1%'))
 		.pipe(header(banner.full, { package : package }))
 		.pipe(gulp.dest(paths.styles.output))
-		.pipe(rename({ suffix: '.min' }))
+		.pipe(rename({ suffix: '.min.' + package.version }))
 		.pipe(minify())
 		.pipe(header(banner.min, { package : package }))
 		.pipe(gulp.dest(paths.styles.output));

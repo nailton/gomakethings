@@ -3,6 +3,13 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 
 ## Changelog
 
+* v9.1.0 - March 1, 2015
+	* Switched to Feedburner for header feed discovery link.
+	* Added search form with query to search results page.
+	* Fixed bug preventing search term from displaying in search form.
+	* Added hero background images directly to CSS and optimized for screen-sizes.
+	* Inlined critical CSS for better performance.
+	* Automated cache-busting on minified files.
 * v9.0.2 - February 17, 2015
 	* Updated page structure for better content wrapping.
 * v9.0.1 - February 16, 2015

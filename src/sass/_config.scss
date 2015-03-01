@@ -87,8 +87,8 @@ $grid-dynamic: (
 	// (".grid-dynamic", $bp-xsmall, map-get($grid-sizes, half))
 	// (".grid-dynamic", $bp-small, map-get($grid-sizes, third))
 	// (".grid-dynamic", $bp-medium, map-get($grid-sizes, fourth))
-	(".grid-dynamic", $bp-small, map-get($grid-sizes, half))
-	(".grid-dynamic", $bp-large, 25%)
+	// (".grid-dynamic", $bp-small, map-get($grid-sizes, half))
+	// (".grid-dynamic", $bp-large, 25%)
 );
 
 
@@ -100,5 +100,5 @@ $icons: (
 	// $name - {string} the name of the icon (will be prefixed by `.icon-`)
 	// $character - {string} the unicode character for the icon
 	// $color - {string|variable|optional} the hex or named color of the icon
-	("logo", "\e600", null),
+	// ("logo", "\e600", null),
 );
