@@ -296,7 +296,8 @@ ol ul {
   margin-bottom: 0;
 }
 
-dl {
+dl,
+dd {
   margin-left: 0;
 }
 
