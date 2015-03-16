@@ -11,8 +11,12 @@
 	 */
 	function keel_load_theme_files() {
 		$keel_theme = wp_get_theme();
-		// Inlining critical CSS for better performance
-		// wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.css', null, null, 'all' );
+		// If stylesheet is in browser cache, load it the traditional way
+		// Otherwise, inline critical CSS and load full stylesheet asynchronously
+		// See keel_initialize_theme_detects()
+		if ( isset($_COOKIE['fullCSS']) && $_COOKIE['fullCSS'] === 'true' ) {
+			wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.' . $keel_theme->get( 'Version' ) . '.css', null, null, 'all' );
+		}
 		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.' . $keel_theme->get( 'Version' ) . '.js', null, null, true );
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
@@ -24,16 +28,33 @@
 	 */
 	function keel_initialize_theme_detects() {
 		$keel_theme = wp_get_theme();
+
+		// If stylesheet is in browser cache, load it the traditional way
+		if ( isset($_COOKIE['fullCSS']) && $_COOKIE['fullCSS'] === 'true' ) {
 		?>
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
 				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
-				loadCSS('<?php echo get_template_directory_uri() . "/dist/css/main.min." . $keel_theme->get( "Version" ) . ".css"; ?>');
+			</script>
+		<?php
+
+		// Otherwise, inline critical CSS and load full stylesheet asynchronously
+		} else {
+		?>
+			<script>
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
+				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
+				var keelCSS = loadCSS('<?php echo get_template_directory_uri() . "/dist/css/main.min." . $keel_theme->get( "Version" ) . ".css"; ?>');
+				onloadCSS( keelCSS, function() {
+					var expires = new Date(+new Date + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+					document.cookie = 'fullCSS=true; expires=' + expires;
+				});
 			</script>
 			<style>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/css/critical.min.' . $keel_theme->get( 'Version' ) . '.css' ); ?>
 			</style>
 		<?php
+		}
 	}
 	add_action('wp_head', 'keel_initialize_theme_detects', 30);
 
@@ -44,15 +65,30 @@
 	 */
 	function keel_initialize_theme_scripts() {
 		$keel_theme = wp_get_theme();
+
+		// If stylesheet is in browser cache, don't set noscript fallback
+		if ( isset($_COOKIE['fullCSS']) && $_COOKIE['fullCSS'] === 'true' ) {
+		?>
+			<noscript>
+				<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+			</noscript>
+		<?php
+
+		// Otherwise, set a noscript fallback
+		} else {
 		?>
 			<noscript>
 				<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 				<link href='<?php echo get_template_directory_uri() . "/dist/css/main.min." . $keel_theme->get( "Version" ) . ".css"; ?>' rel='stylesheet' type='text/css'>
 			</noscript>
+		<?php
+		}
+
+		?>
 			<script>
 				fluidvids.init({
-					selector: ["iframe", "object"],
-					players: ["www.youtube.com", "player.vimeo.com", "www.slideshare.net", "www.hulu.com"]
+					selector: ['iframe', 'object'],
+					players: ['www.youtube.com', 'player.vimeo.com', 'www.slideshare.net', 'www.hulu.com']
 				});
 			</script>
 		<?php

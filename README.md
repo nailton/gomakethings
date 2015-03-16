@@ -7,9 +7,8 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 	* Updated site navigation and footer.
 	* Removed expand/collapse menu on smaller viewports.
 	* Switch to Normalize.css.
-	* @todo Switch from SVG sprites to inline SVG.
 	* @todo Added content for consulting and training services.
-	* @todo Added method to check for cached CSS and use instead of inlining critical CSS.
+	* Added method to check for cached CSS and use instead of inlining critical CSS..
 * v9.1.0 - March 1, 2015
 	* Switched to Feedburner for header feed discovery link.
 	* Added search form with query to search results page.
