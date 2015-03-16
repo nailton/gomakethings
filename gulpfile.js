@@ -305,7 +305,7 @@ gulp.task('tests', [
 gulp.task('default', [
 	'compile',
 	// 'docs',
-	'tests'
+	// 'tests'
 ]);
 
 // Compile files, generate docs, and run unit tests when something changes

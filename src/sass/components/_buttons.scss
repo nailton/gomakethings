@@ -17,8 +17,6 @@
 }
 
 .btn,
-.btn:visited,
-a .btn:visited,
 .btn:hover,
 a .btn:hover,
 .btn:focus,
@@ -91,11 +89,15 @@ a .btn:active,
 // 	padding-left: 0;
 // }
 
+.btn,
 button,
-.btn {
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 	cursor: pointer;
 	text-align: center;
 	vertical-align: middle;
+
 	/**
 	 * @workaround Override default button styling
 	 * @affected Webkit/Firefox

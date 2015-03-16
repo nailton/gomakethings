@@ -50,7 +50,6 @@
 				<link href='<?php echo get_template_directory_uri() . "/dist/css/main.min." . $keel_theme->get( "Version" ) . ".css"; ?>' rel='stylesheet' type='text/css'>
 			</noscript>
 			<script>
-				astro.init();
 				fluidvids.init({
 					selector: ["iframe", "object"],
 					players: ["www.youtube.com", "player.vimeo.com", "www.slideshare.net", "www.hulu.com"]
