@@ -32,7 +32,6 @@ var minify = require('gulp-minify-css');
 // SVGs
 var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
-var cheerio = require('gulp-cheerio');
 
 // Docs
 var markdown = require('gulp-markdown');
