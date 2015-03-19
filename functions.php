@@ -17,7 +17,6 @@
 		if ( isset($_COOKIE['fullCSS']) && $_COOKIE['fullCSS'] === 'true' ) {
 			wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.' . $keel_theme->get( 'Version' ) . '.css', null, null, 'all' );
 		}
-		wp_enqueue_script( 'keel-theme-scripts', get_template_directory_uri() . '/dist/js/main.min.' . $keel_theme->get( 'Version' ) . '.js', null, null, true );
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
@@ -84,12 +83,13 @@
 		<?php
 		}
 
+		// Asynchronously load JavaScript if browser passes mustard test
 		?>
 			<script>
-				fluidvids.init({
-					selector: ['iframe', 'object'],
-					players: ['www.youtube.com', 'player.vimeo.com', 'www.slideshare.net', 'www.hulu.com']
-				});
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadJS.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
+				if ( !!document.querySelector && !!window.addEventListener ) {
+					loadJS('<?php echo get_template_directory_uri() . "/dist/js/main.min." . $keel_theme->get( "Version" ) . ".js"; ?>');
+				}
 			</script>
 		<?php
 	}

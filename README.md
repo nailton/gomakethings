@@ -9,6 +9,7 @@ The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomak
 	* Switch to Normalize.css.
 	* @todo Added content for consulting and training services.
 	* Added method to check for cached CSS and use instead of inlining critical CSS..
+	* Added mustard test and asynchronous loading for main JavaScript.
 * v9.1.0 - March 1, 2015
 	* Switched to Feedburner for header feed discovery link.
 	* Added search form with query to search results page.
