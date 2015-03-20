@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.2.0
+ * gomakethings v9.2.0c
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -186,7 +186,7 @@ figure {
   margin-right: -1.4%;
 }
 
-.grid-third, .grid-half, .grid-two-thirds {
+.grid-fourth, .grid-third, .grid-half, .grid-two-thirds, .grid-three-fourths {
   float: left;
   width: 100%;
   padding-left: 1.4%;
@@ -203,7 +203,32 @@ figure {
 /**
  * Add columns to grid on bigger screens
  */
+@media (min-width: 19em) {
+  .row-start-xsmall .grid-fourth {
+    width: 25%;
+  }
+
+  .row-start-xsmall .grid-third {
+    width: 33.33333%;
+  }
+
+  .row-start-xsmall .grid-half {
+    width: 50%;
+  }
+
+  .row-start-xsmall .grid-two-thirds {
+    width: 66.66667%;
+  }
+
+  .row-start-xsmall .grid-three-fourths {
+    width: 75%;
+  }
+}
 @media (min-width: 38em) {
+  .grid-fourth {
+    width: 25%;
+  }
+
   .grid-third {
     width: 33.33333%;
   }
@@ -214,6 +239,10 @@ figure {
 
   .grid-two-thirds {
     width: 66.66667%;
+  }
+
+  .grid-three-fourths {
+    width: 75%;
   }
 }
 /**
@@ -905,11 +934,6 @@ input[type="search"]::-webkit-search-decoration {
 .svg .icon-xlarge {
   height: 3em;
   width: 3em;
-}
-
-.svg .icon-xxlarge {
-  height: 5em;
-  width: 5em;
 }
 
 /**
