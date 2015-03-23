@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.2.0c
+ * gomakethings v9.2.1
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -1331,6 +1331,12 @@ tbody tr:nth-child(even) {
     text-align: right;
   }
 }
+.float-center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /**
  * Margins
  */
