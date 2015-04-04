@@ -21,6 +21,10 @@ Make sure these are installed first.
 
 ## Changelog
 
+* v9.3.0 - TBD
+	* Updated `blockquote` styling.
+	* Added `display: block` default for `cite` element.
+	* Fixed sizing for footer elements.
 * v9.2.1 - March 22, 2015
 	* Updated site navigation and footer.
 	* Removed expand/collapse menu on smaller viewports.
