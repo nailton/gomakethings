@@ -1,11 +1,10 @@
 @import "config";
 @import "mixins";
-@import "components/reset";
+@import "components/normalize";
 @import "components/grid";
 @import "components/typography";
 @import "components/buttons";
 @import "components/svgs";
 @import "components/bg";
 @import "components/astro-navbar";
-@import "components/tables";
 @import "components/overrides";

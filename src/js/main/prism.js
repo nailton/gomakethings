@@ -340,7 +340,13 @@ if (script) {
 	_.filename = script.src;
 
 	if (document.addEventListener && !script.hasAttribute('data-manual')) {
-		document.addEventListener('DOMContentLoaded', _.highlightAll);
+		// document.addEventListener('DOMContentLoaded', _.highlightAll);
+		if(document.readyState !== "loading") {
+		    setTimeout(_.highlightAll, 0);
+		}
+		else {
+		    document.addEventListener('DOMContentLoaded', _.highlightAll);
+		}
 	}
 }
 

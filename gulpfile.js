@@ -32,7 +32,6 @@ var minify = require('gulp-minify-css');
 // SVGs
 var svgmin = require('gulp-svgmin');
 var svgstore = require('gulp-svgstore');
-var cheerio = require('gulp-cheerio');
 
 // Docs
 var markdown = require('gulp-markdown');
@@ -173,11 +172,11 @@ gulp.task('build:svgs', ['clean:dist'], function () {
 			}
 		}))
 		.pipe(svgmin())
-		.pipe(svgstore({
-			fileName: 'icons.svg',
-			prefix: 'icon-',
-			inlineSvg: true
-		}))
+		// .pipe(svgstore({
+		// 	fileName: 'icons.svg',
+		// 	prefix: 'icon-',
+		// 	inlineSvg: true
+		// }))
 		.pipe(gulp.dest(paths.svgs.output));
 });
 
@@ -305,7 +304,7 @@ gulp.task('tests', [
 gulp.task('default', [
 	'compile',
 	// 'docs',
-	'tests'
+	// 'tests'
 ]);
 
 // Compile files, generate docs, and run unit tests when something changes

@@ -1,8 +1,38 @@
 # Go Make Things [![Build Status](https://travis-ci.org/cferdinandi/gomakethings.svg)](https://travis-ci.org/cferdinandi/gomakethings)
 The personal website of Chris Ferdinandi. [http://gomakethings.com](http://gomakethings.com)
 
+
+## Dependencies
+Make sure these are installed first.
+
+* [Node.js](http://nodejs.org)
+* [Ruby Sass](http://sass-lang.com/install)
+* [Gulp](http://gulpjs.com) `sudo npm install -g gulp`
+
+
+## Quick Start
+
+1. In bash/terminal/command line, `cd` into your project directory.
+2. Run `npm install` to install required files.
+3. When it's done installing, run one of the task runners to get going:
+	* `gulp` manually compiles files and runs unit tests.
+	* `gulp watch` automatically compiles files, runs unit tests, and applies changes using [LiveReload](http://livereload.com/).
+
+
 ## Changelog
 
+* v9.3.0 - TBD
+	* Updated `blockquote` styling.
+	* Added `display: block` default for `cite` element.
+	* Fixed sizing for footer elements.
+* v9.2.1 - March 22, 2015
+	* Updated site navigation and footer.
+	* Removed expand/collapse menu on smaller viewports.
+	* Switch to Normalize.css.
+	* Added method to check for cached CSS and use instead of inlining critical CSS..
+	* Added mustard test and asynchronous loading for main JavaScript.
+	* Added FastClick.js to remove the 300ms click delay on mobile devices.
+	* Switched from SVG sprites to inline SVGs.
 * v9.1.0 - March 1, 2015
 	* Switched to Feedburner for header feed discovery link.
 	* Added search form with query to search results page.

@@ -35,18 +35,6 @@
 
 	<body>
 
-		<div hidden>
-			<?php
-				echo file_get_contents( get_template_directory_uri() . '/dist/svg/icons.svg' );
-				if ( is_front_page() ) {
-					echo file_get_contents( get_template_directory_uri() . '/dist/svg/landing.svg' );
-				}
-				if ( is_page('projects') ) {
-					echo file_get_contents( get_template_directory_uri() . '/dist/svg/portfolio.svg' );
-				}
-			?>
-		</div>
-
 		<!-- Old Browser Warning -->
 		<!--[if lt IE 9]>
 			<aside class="container">

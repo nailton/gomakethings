@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.1.0
+ * gomakethings v9.3.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -49,7 +49,31 @@ function loadCSS( href, before, media ){
 	toggleMedia();
 	return ss;
 }
+/*!
+onloadCSS: adds onload support for asynchronous stylesheets loaded with loadCSS.
+[c]2014 @zachleat, Filament Group, Inc.
+Licensed MIT
+*/
+function onloadCSS( ss, callback ) {
+	ss.onload = function() {
+		ss.onload = null;
+		if( callback ) {
+			callback.call( ss );
+		}
+	};
 
+	// This code is for browsers that don’t support onload, any browser that
+	// supports onload should use that instead.
+	// No support for onload:
+	//	* Android 4.3 (Samsung Galaxy S4, Browserstack)
+	//	* Android 4.2 Browser (Samsung Galaxy SIII Mini GT-I8200L)
+	//	* Android 2.3 (Pantech Burst P9070)
+
+	// Weak inference targets Android < 4.4
+	if( "isApplicationInstalled" in navigator && "onloadcssdefined" in ss ) {
+		ss.onloadcssdefined( callback );
+	}
+}
 ;(function (window, document, undefined) {
 
 	'use strict';
@@ -57,13 +81,8 @@ function loadCSS( href, before, media ){
 	// SVG feature detection
 	var supports = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
 
-	// Check against Opera Mini (throws a false positive)
-	var whitelist = navigator.userAgent.indexOf('Opera Mini') === -1;
-
 	// If SVG is supported, add `.svg` class to <html> element
-	if ( supports && whitelist ) {
-		document.documentElement.className += (document.documentElement.className ? ' ' : '') + 'svg';
-	}
-
+	if ( !supports ) return;
+	document.documentElement.className += (document.documentElement.className ? ' ' : '') + 'svg';
 
 })(window, document);
