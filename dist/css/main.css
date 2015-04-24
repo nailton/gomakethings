@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.3.0
+ * gomakethings v9.4.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -484,26 +484,14 @@ sub {
 }
 
 /**
- * Highlighting colors
- */
-::-moz-selection {
-  color: #ffffff;
-  background: #0088cc;
-}
-::selection {
-  color: #ffffff;
-  background: #0088cc;
-}
-
-/**
  * Blockquotes
  */
 blockquote {
   font-size: 1.1875em;
   font-style: italic;
-  margin-bottom: 1.5625em;
-  padding-left: 0.42105em;
-  padding-right: 0.42105em;
+  margin: 0 0 1.5625em;
+  padding-left: 0.84211em;
+  padding-right: 0.84211em;
 }
 blockquote cite {
   color: #808080;
