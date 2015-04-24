@@ -55,7 +55,8 @@
 			<p class="margin-bottom-large">
 				<span class="text-small">
 					Made with &lt;3 by Chris Ferdinandi.<br>
-					Copyright <?php echo date( 'Y' ); ?> Go Make Things, LLC.
+					Copyright <?php echo date( 'Y' ); ?> Go Make Things, LLC.<br>
+					Training icon by <a href="https://thenounproject.com/term/projection-screen/1318/">Garrett Knoll</a>.
 				</span>
 			</p>
 

@@ -257,13 +257,6 @@ sub {
 	bottom: -0.25em;
 }
 
-/**
- * Highlighting colors
- */
-::selection {
-	color: $color-white;
-	background: $color-primary;
-}
 
 /**
  * Blockquotes
@@ -272,9 +265,9 @@ sub {
 blockquote {
 	font-size: calc-em(19px);
 	font-style: italic;
-	margin-bottom: $spacing;
-	padding-left: calc-em(8px, 19px);
-	padding-right: calc-em(8px, 19px);
+	margin: 0 0 $spacing;
+	padding-left: calc-em(16px, 19px);
+	padding-right: calc-em(16px, 19px);
 
 	cite {
 		color: $color-gray-dark;

@@ -21,7 +21,11 @@ Make sure these are installed first.
 
 ## Changelog
 
-* v9.3.0 - TBD
+* v9.4.0 - April 23, 2015
+	* Removed `::selection` highlighting.
+	* Removed top and side margins from `blockquote` elements.
+	* Updated navigation.
+* v9.3.0 - April 4, 2015
 	* Updated `blockquote` styling.
 	* Added `display: block` default for `cite` element.
 	* Fixed sizing for footer elements.
