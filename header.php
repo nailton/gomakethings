@@ -66,12 +66,12 @@
 				 */
 				if ( is_front_page() ) :
 			?>
-				<header class="bg bg-hero margin-bottom">
 					<?php
 						$theme_options = keel_get_theme_options();
-						echo stripslashes( $theme_options['landing_hero_text'] );
+						if ( !empty($theme_options) && !empty( $theme_options['landing_hero_text'] ) ) {
+							echo stripslashes( $theme_options['landing_hero_text'] );
+						}
 					?>
-				</header>
 			<?php endif; ?>
 
 			<div class="container <?php echo $container; ?>">

@@ -448,10 +448,13 @@
 
 
 	/**
-	 * Add new allowed tags
+	 * Allow new content types in posts
 	 */
+	$allowedposttags['svg']['xmlns'] = true;
 	$allowedposttags['svg']['class'] = true;
-	$allowedposttags['use']['xlink:href'] = true;
+	$allowedposttags['svg']['id'] = true;
+	$allowedposttags['svg']['viewbox'] = true;
+	$allowedposttags['path']['d'] = true;
 
 
 
