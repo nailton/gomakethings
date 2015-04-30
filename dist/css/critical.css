@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.4.0
+ * gomakethings v9.5.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -845,6 +845,13 @@ a.logo:hover, .logo.link-block-styled:hover, .link-block:hover .logo.link-block-
  * @section Overrides
  * Nudge and tweak alignment, spacing, and visibility.
  */
+/**
+ * Backgrounds
+ */
+.bg-muted {
+  background-color: #e5e5e5;
+}
+
 /**
  * Text sizes
  */

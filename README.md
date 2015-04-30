@@ -21,6 +21,11 @@ Make sure these are installed first.
 
 ## Changelog
 
+* v9.5.0 - April 29, 2015
+	* Added `bg-muted` class.
+	* Updated landing page hero for more flexibility and customization.
+	* Added more SVG properties to allowed content list in `functions.php`.
+	* Changed link to "Free Stuff".
 * v9.4.0 - April 23, 2015
 	* Removed `::selection` highlighting.
 	* Removed top and side margins from `blockquote` elements.

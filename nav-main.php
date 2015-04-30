@@ -26,8 +26,8 @@
 				<li <?php if (is_page('about')) { echo 'class="active"'; }?>>
 					<a href="<?php echo site_url(); ?>/about/"><?php _e( 'About', 'keel' ); ?></a>
 				</li>
-				<li <?php if (is_page('code')) { echo 'class="active"'; } ?>>
-					<a href="<?php echo site_url(); ?>/code/"><?php _e( 'Free Stuff', 'keel' ); ?></a>
+				<li <?php if (is_page('free-stuff')) { echo 'class="active"'; } ?>>
+					<a href="<?php echo site_url(); ?>/free-stuff/"><?php _e( 'Free Stuff', 'keel' ); ?></a>
 				</li>
 				<li <?php if (is_home() || is_single()) { echo 'class="active"'; }?>>
 					<a href="<?php echo site_url(); ?>/blog/"><?php _e( 'Blog', 'keel' ); ?></a>
