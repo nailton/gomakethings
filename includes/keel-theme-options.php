@@ -30,7 +30,8 @@
 		);
 
 		// Register our individual settings fields
-		add_settings_field( 'sample_textarea', __( 'Landing Page Hero', 'keel' ), 'keel_settings_field_landing_page_hero_text', 'theme_options', 'general' );
+		add_settings_field( 'landing_page_hero', __( 'Landing Page Hero', 'keel' ), 'keel_settings_field_landing_page_hero_text', 'theme_options', 'general' );
+		add_settings_field( 'blog_posts_message', __( 'Blog Posts Message', 'keel' ), 'keel_settings_field_blog_posts_message', 'theme_options', 'general' );
 	}
 	add_action( 'admin_init', 'keel_theme_options_init' );
 
@@ -72,6 +73,7 @@
 		$saved = (array) get_option( 'keel_theme_options' );
 		$defaults = array(
 			'landing_hero_text' => '',
+			'blog_posts_message' => '',
 		);
 
 		$defaults = apply_filters( 'keel_default_theme_options', $defaults );
@@ -83,13 +85,24 @@
 	}
 
 	/**
-	 * Renders the sample textarea setting field.
+	 * Renders the landing page hero textarea setting field.
 	 */
 	function keel_settings_field_landing_page_hero_text() {
 		$options = keel_get_theme_options();
 		?>
 		<textarea class="large-text" type="text" name="keel_theme_options[landing_hero_text]" id="landing-hero-text" cols="50" rows="10" /><?php echo esc_textarea( $options['landing_hero_text'] ); ?></textarea>
 		<label class="description" for="landing-hero-text"><?php _e( 'Add content for the landing page hero.', 'keel' ); ?></label>
+		<?php
+	}
+
+	/**
+	 * Renders the blog posts message textarea setting field.
+	 */
+	function keel_settings_field_blog_posts_message() {
+		$options = keel_get_theme_options();
+		?>
+		<textarea class="large-text" type="text" name="keel_theme_options[blog_posts_message]" id="blog-posts-message" cols="50" rows="10" /><?php echo esc_textarea( $options['blog_posts_message'] ); ?></textarea>
+		<label class="description" for="blog-posts-message"><?php _e( 'Message to be displayed at the end of each blog post.', 'keel' ); ?></label>
 		<?php
 	}
 
@@ -129,9 +142,11 @@
 	function keel_theme_options_validate( $input ) {
 		$output = array();
 
-		// The sample textarea must be safe text with the allowed tags for posts
 		if ( isset( $input['landing_hero_text'] ) && ! empty( $input['landing_hero_text'] ) )
 			$output['landing_hero_text'] = wp_filter_post_kses( $input['landing_hero_text'] );
+
+		if ( isset( $input['blog_posts_message'] ) && ! empty( $input['blog_posts_message'] ) )
+			$output['blog_posts_message'] = wp_filter_post_kses( $input['blog_posts_message'] );
 
 		return apply_filters( 'keel_theme_options_validate', $output, $input );
 	}

@@ -21,6 +21,8 @@ Make sure these are installed first.
 
 ## Changelog
 
+* v9.6.0 - April 30, 2015
+	* Added optional message field to display after each blog post.
 * v9.5.0 - April 29, 2015
 	* Added `bg-muted` class.
 	* Updated landing page hero for more flexibility and customization.

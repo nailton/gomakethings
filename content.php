@@ -62,6 +62,13 @@
 
 	<?php if ( is_single() ) : ?>
 		<?php
+			$theme_options = keel_get_theme_options();
+			if ( !empty($theme_options) && !empty( $theme_options['blog_posts_message'] ) ) {
+				echo stripslashes( $theme_options['blog_posts_message'] );
+			}
+		?>
+
+		<?php
 			// Add comments template to blog posts
 			comments_template();
 		?>
