@@ -440,14 +440,6 @@
 
 
 	/**
-	 * Remove WordPress emoji styles and scripts
-	 */
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
-
-
-	/**
 	 * Remove empty paragraphs created by wpautop()
 	 * @author Ryan Hamilton
 	 * @link https://gist.github.com/Fantikerz/5557617
