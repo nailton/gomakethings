@@ -91,6 +91,13 @@
 					loadJS('<?php echo get_template_directory_uri() . "/dist/js/main.min." . $keel_theme->get( "Version" ) . ".js"; ?>');
 				}
 			</script>
+			<?php if ( is_page('newsletter') ) : ?>
+				<script>var mc_custom_error_style = '#mc_embed_signup div.mce_inline_error { display: block; font-style: italic; margin-left: 33.33333%; margin-bottom: 1em; padding: 1.4%; } input.mce_inline_error { margin-bottom: 0.5em; } #mce-responses { font-style: italic; }';</script>
+				<script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+				<script>
+					(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);
+				</script>
+			<?php endif; ?>
 		<?php
 	}
 	add_action('wp_footer', 'keel_initialize_theme_scripts', 30);
@@ -429,6 +436,14 @@
 	 * @todo Remove once Jetpack glitch fixed
 	 */
 	add_filter( 'jetpack_implode_frontend_css', '__return_false' );
+
+
+
+	/**
+	 * Remove WordPress emoji styles and scripts
+	 */
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 
 
