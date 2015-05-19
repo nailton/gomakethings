@@ -20,7 +20,7 @@
 		</a>
 		<div class="nav-menu" id="nav-menu">
 			<ul class="nav">
-				<li <?php if (is_front_page()) { echo 'class="active"'; }?>>
+				<li <?php if (is_front_page() || is_page('action-plan') || is_page('training') || is_page('consulting')) { echo 'class="active"'; }?>>
 					<a href="<?php echo site_url(); ?>/"><?php _e( 'What I Do', 'keel' ); ?></a>
 				</li>
 				<li <?php if (is_page('about')) { echo 'class="active"'; }?>>

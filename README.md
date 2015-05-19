@@ -21,6 +21,11 @@ Make sure these are installed first.
 
 ## Changelog
 
+* v9.7.0 - May 18, 2015
+	* Updated footer.
+	* Added responsive tables.
+	* Updated grid.
+	* Add navigation highlighting.
 * v9.6.0 - April 30, 2015
 	* Added optional message field to display after each blog post.
 * v9.5.0 - April 29, 2015
