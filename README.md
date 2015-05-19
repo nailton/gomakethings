@@ -21,6 +21,9 @@ Make sure these are installed first.
 
 ## Changelog
 
+* v9.8.0 - May 19, 2015
+	* Added Mailchimp styles and validation scripts.
+	* Removed WP auto-loaded emoji styles and scripts.
 * v9.7.0 - May 18, 2015
 	* Updated footer.
 	* Added responsive tables.
