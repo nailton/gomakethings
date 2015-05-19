@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.6.0
+ * gomakethings v9.7.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -187,7 +187,7 @@ figure {
   margin-right: -1.4%;
 }
 
-.grid-fourth, .grid-third, .grid-half, .grid-two-thirds, .grid-three-fourths {
+.grid-third, .grid-half, .grid-two-thirds {
   float: left;
   width: 100%;
   padding-left: 1.4%;
@@ -204,32 +204,7 @@ figure {
 /**
  * Add columns to grid on bigger screens
  */
-@media (min-width: 19em) {
-  .row-start-xsmall .grid-fourth {
-    width: 25%;
-  }
-
-  .row-start-xsmall .grid-third {
-    width: 33.33333%;
-  }
-
-  .row-start-xsmall .grid-half {
-    width: 50%;
-  }
-
-  .row-start-xsmall .grid-two-thirds {
-    width: 66.66667%;
-  }
-
-  .row-start-xsmall .grid-three-fourths {
-    width: 75%;
-  }
-}
 @media (min-width: 38em) {
-  .grid-fourth {
-    width: 25%;
-  }
-
   .grid-third {
     width: 33.33333%;
   }
@@ -242,8 +217,16 @@ figure {
     width: 66.66667%;
   }
 
-  .grid-three-fourths {
-    width: 75%;
+  .offset-third {
+    margin-left: 33.33333%;
+  }
+
+  .offset-half {
+    margin-left: 50%;
+  }
+
+  .offset-two-thirds {
+    margin-left: 66.66667%;
   }
 }
 /**
@@ -609,7 +592,7 @@ input.btn {
  */
 .svg .icon {
   height: 1em;
-  width: 1em;
+  width: auto;
 }
 
 /**
@@ -617,12 +600,10 @@ input.btn {
  */
 .svg .icon-large {
   height: 2em;
-  width: 2em;
 }
 
 .svg .icon-xlarge {
   height: 3em;
-  width: 3em;
 }
 
 /**

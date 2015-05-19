@@ -1,5 +1,5 @@
 /**
- * gomakethings v9.6.0
+ * gomakethings v9.7.0
  * WordPress theme for GoMakeThings.com, by Chris Ferdinandi.
  * https://github.com/cferdinandi/gomakethings
  * 
@@ -187,7 +187,7 @@ figure {
   margin-right: -1.4%;
 }
 
-.grid-fourth, .grid-third, .grid-half, .grid-two-thirds, .grid-three-fourths {
+.grid-third, .grid-half, .grid-two-thirds {
   float: left;
   width: 100%;
   padding-left: 1.4%;
@@ -204,32 +204,7 @@ figure {
 /**
  * Add columns to grid on bigger screens
  */
-@media (min-width: 19em) {
-  .row-start-xsmall .grid-fourth {
-    width: 25%;
-  }
-
-  .row-start-xsmall .grid-third {
-    width: 33.33333%;
-  }
-
-  .row-start-xsmall .grid-half {
-    width: 50%;
-  }
-
-  .row-start-xsmall .grid-two-thirds {
-    width: 66.66667%;
-  }
-
-  .row-start-xsmall .grid-three-fourths {
-    width: 75%;
-  }
-}
 @media (min-width: 38em) {
-  .grid-fourth {
-    width: 25%;
-  }
-
   .grid-third {
     width: 33.33333%;
   }
@@ -242,8 +217,16 @@ figure {
     width: 66.66667%;
   }
 
-  .grid-three-fourths {
-    width: 75%;
+  .offset-third {
+    margin-left: 33.33333%;
+  }
+
+  .offset-half {
+    margin-left: 50%;
+  }
+
+  .offset-two-thirds {
+    margin-left: 66.66667%;
   }
 }
 /**
@@ -915,7 +898,7 @@ input[type="search"]::-webkit-search-decoration {
  */
 .svg .icon {
   height: 1em;
-  width: 1em;
+  width: auto;
 }
 
 /**
@@ -923,12 +906,10 @@ input[type="search"]::-webkit-search-decoration {
  */
 .svg .icon-large {
   height: 2em;
-  width: 2em;
 }
 
 .svg .icon-xlarge {
   height: 3em;
-  width: 3em;
 }
 
 /**
@@ -1276,6 +1257,41 @@ tbody tr:nth-child(even) {
   background-color: #f7f7f7;
 }
 
+/**
+ * Pure CSS responsive tables
+ * Adds label to each cell using the [data-label] attribute
+ * @link https://techblog.livingsocial.com/blog/2015/04/06/responsive-tables-in-pure-css/
+ */
+@media (max-width: 38em) {
+  .table-responsive {
+    border: 0;
+  }
+  .table-responsive thead {
+    display: none;
+    visibility: hidden;
+  }
+  .table-responsive tr {
+    border-top: 0.0725em solid #ededed;
+    display: block;
+    padding: 0.5em;
+  }
+  .table-responsive tr:nth-child(even) {
+    background-color: transparent;
+  }
+  .table-responsive tr:nth-child(odd) {
+    background-color: #f7f7f7;
+  }
+  .table-responsive td {
+    border: 0;
+    display: block;
+    padding: 0.25em;
+  }
+  .table-responsive td:before {
+    content: attr(data-label);
+    display: block;
+    font-weight: bold;
+  }
+}
 /**
  * @section Overrides
  * Nudge and tweak alignment, spacing, and visibility.
