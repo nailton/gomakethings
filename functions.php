@@ -33,7 +33,6 @@
 		?>
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
-				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
 			</script>
 		<?php
 
@@ -42,7 +41,6 @@
 		?>
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
-				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
 				var keelCSS = loadCSS('<?php echo get_template_directory_uri() . "/dist/css/main.min." . $keel_theme->get( "Version" ) . ".css"; ?>');
 				onloadCSS( keelCSS, function() {
 					var expires = new Date(+new Date + (7 * 24 * 60 * 60 * 1000)).toUTCString();
@@ -54,6 +52,12 @@
 			</style>
 		<?php
 		}
+		?>
+		<script>
+			loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
+			document.createElement( 'picture' );
+		</script>
+		<?php
 	}
 	add_action('wp_head', 'keel_initialize_theme_detects', 30);
 

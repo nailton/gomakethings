@@ -21,6 +21,9 @@ Make sure these are installed first.
 
 ## Changelog
 
+* v9.9.0 - May 27, 2015
+	* Added link styling for `.bg`.
+	* Added Picturefill.js.
 * v9.8.0 - May 19, 2015
 	* Added Mailchimp styles and validation scripts.
 	* Removed WP auto-loaded emoji styles and scripts.
